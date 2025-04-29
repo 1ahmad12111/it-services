@@ -1,47 +1,12 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
 import { Calendar, Clock } from "lucide-react";
-import { toast } from "sonner";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import CalendarIntegration from "@/components/services/CalendarIntegration";
 
 const ConsultationForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSelectChange = (value: string) => {
-    setFormData({ ...formData, service: value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast.success("Consultation request submitted successfully! We'll contact you shortly.", {
-      description: "Check your email for confirmation details.",
-    });
-    setFormData({
-      name: "",
-      company: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    });
-  };
+  const [activeTab, setActiveTab] = useState("details");
 
   return (
     <section id="consultation" className="py-16 bg-consulting-50">
@@ -70,7 +35,7 @@ const ConsultationForm = () => {
                     <div className="bg-consulting-600 rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 mt-1">2</div>
                     <div>
                       <h4 className="font-bold text-lg mb-1">Schedule a Meeting</h4>
-                      <p className="text-consulting-200">Our team will contact you to arrange a convenient time for the consultation.</p>
+                      <p className="text-consulting-200">Choose a convenient date and time for your consultation using our calendar system.</p>
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -93,83 +58,15 @@ const ConsultationForm = () => {
                 </div>
               </div>
 
-              <div className="p-8 md:col-span-3">
-                <form onSubmit={handleSubmit}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="John Doe"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="company">Company Name</Label>
-                      <Input
-                        id="company"
-                        name="company"
-                        placeholder="Your Company"
-                        value={formData.company}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="your@email.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        placeholder="(123) 456-7890"
-                        value={formData.phone}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="space-y-2 md:col-span-2">
-                      <Label htmlFor="service">Service Interested In</Label>
-                      <Select value={formData.service} onValueChange={handleSelectChange}>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select a service" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="website-development">Website Development</SelectItem>
-                          <SelectItem value="software-development">Software Development</SelectItem>
-                          <SelectItem value="it-support">IT Support</SelectItem>
-                          <SelectItem value="it-consulting">IT Consulting</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                    <div className="space-y-2 md:col-span-2">
-                      <Label htmlFor="message">Project Description & Goals</Label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        placeholder="Tell us about your project and what you're looking to achieve..."
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="min-h-[120px]"
-                      />
-                    </div>
-                  </div>
-                  <Button type="submit" className="mt-6 w-full bg-consulting-600 hover:bg-consulting-700">
-                    Submit Request
-                  </Button>
-                </form>
+              <div className="p-6 md:col-span-3">
+                <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+                  <TabsList className="grid grid-cols-1 mb-6">
+                    <TabsTrigger value="details">Book Your Consultation</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="details" className="space-y-4">
+                    <CalendarIntegration />
+                  </TabsContent>
+                </Tabs>
               </div>
             </div>
           </div>
