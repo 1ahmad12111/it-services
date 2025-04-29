@@ -8,87 +8,68 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search, Tag, Clock, ArrowRight, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import LiveChat from "@/components/services/LiveChat";
+import SEOMetaTags from "@/components/common/SEOMetaTags";
+import { blogPosts } from "@/data/blogPosts";
+import { 
+  Pagination, 
+  PaginationContent, 
+  PaginationEllipsis, 
+  PaginationItem, 
+  PaginationLink, 
+  PaginationNext, 
+  PaginationPrevious 
+} from "@/components/ui/pagination";
 
-// Sample blog data
-const blogPosts = [
-  {
-    id: "why-professional-website",
-    title: "Why Your Business Needs Professional Website Development",
-    excerpt: "In today's digital landscape, a professionally developed website is crucial for business success. Learn why investing in professional web development pays off.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHdlYnNpdGUlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-    author: "Alex Johnson",
-    date: "April 15, 2023",
-    category: "Web Development",
-    tags: ["website", "development", "business growth"]
-  },
-  {
-    id: "it-strategy-digital-transformation",
-    title: "The Importance of IT Strategy in Digital Transformation",
-    excerpt: "Digital transformation requires a solid IT strategy. Discover how strategic IT planning can guide your organization through successful digital transformation.",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZGlnaXRhbCUyMHRyYW5zZm9ybWF0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-    author: "Maria Garcia",
-    date: "March 22, 2023",
-    category: "IT Strategy",
-    tags: ["digital transformation", "IT strategy", "business innovation"]
-  },
-  {
-    id: "cloud-computing-benefits",
-    title: "5 Ways Cloud Computing Can Benefit Your Business",
-    excerpt: "Cloud computing offers numerous advantages for businesses of all sizes. Explore five key benefits that could transform your operations and drive growth.",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xvdWQlMjBjb21wdXRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-    author: "David Park",
-    date: "February 8, 2023",
-    category: "Cloud Services",
-    tags: ["cloud computing", "business efficiency", "scalability"]
-  },
-  {
-    id: "cybersecurity-essentials",
-    title: "Cybersecurity Essentials Every Business Should Implement",
-    excerpt: "With cyber threats on the rise, businesses must prioritize security. Learn about essential cybersecurity measures to protect your organization's data and assets.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3liZXJzZWN1cml0eXxlbnwwfHwwfHx8MA%3D&auto=format&fit=crop&w=800&q=60",
-    author: "Sarah Williams",
-    date: "January 17, 2023",
-    category: "Cybersecurity",
-    tags: ["cybersecurity", "data protection", "risk management"]
-  },
-  {
-    id: "custom-software-vs-off-shelf",
-    title: "Custom Software vs. Off-the-Shelf Solutions: Making the Right Choice",
-    excerpt: "Deciding between custom software and pre-built solutions? This comparison will help you determine which approach best suits your business requirements.",
-    image: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c29mdHdhcmUlMjBkZXZlbG9wbWVudHxlbnwwfHwwfHx8MA%3D&auto=format&fit=crop&w=800&q=60",
-    author: "Michael Chen",
-    date: "December 5, 2022",
-    category: "Software Development",
-    tags: ["custom software", "software solutions", "business software"]
-  }
-];
+// Get unique categories from blog posts
+const categories = Array.from(new Set(blogPosts.map(post => post.category)));
 
-const popularTags = [
-  "digital transformation",
-  "cybersecurity",
-  "cloud computing",
-  "web development",
-  "IT strategy",
-  "software development",
-  "business technology",
-  "IT consulting"
-];
+// Popular tags extraction
+const allTags = blogPosts.flatMap(post => post.tags);
+const tagCount = allTags.reduce((acc: {[key: string]: number}, tag) => {
+  acc[tag] = (acc[tag] || 0) + 1;
+  return acc;
+}, {});
+
+const popularTags = Object.keys(tagCount)
+  .sort((a, b) => tagCount[b] - tagCount[a])
+  .slice(0, 12);
 
 const Blog = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeTab, setActiveTab] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 5;
   
   const filteredPosts = blogPosts.filter(post => {
     const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+                         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     
     const matchesCategory = activeTab === "all" || post.category.toLowerCase() === activeTab.toLowerCase();
     
     return matchesSearch && matchesCategory;
   });
 
+  // Pagination logic
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    // Scroll to top when changing pages
+    window.scrollTo({ top: 400, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
+      <SEOMetaTags
+        title="IT Insights & Expertise Blog"
+        description="Stay informed with the latest technology trends, best practices, and industry insights from our expert consultants."
+        keywords="IT consulting, technology trends, digital transformation, cybersecurity, cloud computing"
+        ogType="website"
+      />
       <Navbar />
       <main className="flex-grow">
         {/* Blog Hero Section */}
@@ -120,30 +101,30 @@ const Blog = () => {
               {/* Main Content */}
               <div className="lg:w-2/3">
                 {/* Category Tabs */}
-                <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
-                  <TabsList className="bg-white border shadow-sm">
+                <Tabs value={activeTab} onValueChange={(value) => {
+                  setActiveTab(value);
+                  setCurrentPage(1);
+                }} className="mb-8">
+                  <TabsList className="bg-white border shadow-sm overflow-auto flex w-full h-auto p-1">
                     <TabsTrigger value="all" className="data-[state=active]:bg-consulting-50 data-[state=active]:text-consulting-700">
                       All Posts
                     </TabsTrigger>
-                    <TabsTrigger value="Web Development" className="data-[state=active]:bg-consulting-50 data-[state=active]:text-consulting-700">
-                      Web Dev
-                    </TabsTrigger>
-                    <TabsTrigger value="IT Strategy" className="data-[state=active]:bg-consulting-50 data-[state=active]:text-consulting-700">
-                      IT Strategy
-                    </TabsTrigger>
-                    <TabsTrigger value="Cloud Services" className="data-[state=active]:bg-consulting-50 data-[state=active]:text-consulting-700">
-                      Cloud
-                    </TabsTrigger>
-                    <TabsTrigger value="Cybersecurity" className="data-[state=active]:bg-consulting-50 data-[state=active]:text-consulting-700">
-                      Security
-                    </TabsTrigger>
+                    {categories.map(category => (
+                      <TabsTrigger 
+                        key={category} 
+                        value={category}
+                        className="data-[state=active]:bg-consulting-50 data-[state=active]:text-consulting-700 whitespace-nowrap"
+                      >
+                        {category}
+                      </TabsTrigger>
+                    ))}
                   </TabsList>
                 </Tabs>
                 
                 {/* Blog Posts */}
                 <div className="grid gap-8">
-                  {filteredPosts.length > 0 ? (
-                    filteredPosts.map((post) => (
+                  {currentPosts.length > 0 ? (
+                    currentPosts.map((post) => (
                       <article key={post.id} className="bg-white rounded-xl overflow-hidden shadow-md border-0 transition-all hover:shadow-lg">
                         <div className="md:flex">
                           <div className="md:w-1/3">
@@ -207,6 +188,66 @@ const Blog = () => {
                     </div>
                   )}
                 </div>
+                
+                {/* Pagination */}
+                {filteredPosts.length > postsPerPage && (
+                  <Pagination className="mt-8">
+                    <PaginationContent>
+                      <PaginationItem>
+                        <PaginationPrevious 
+                          onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
+                          className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                        />
+                      </PaginationItem>
+                      
+                      {Array.from({ length: Math.min(5, totalPages) }).map((_, index) => {
+                        let pageNumber;
+                        
+                        // Logic to show correct page numbers based on current page
+                        if (totalPages <= 5) {
+                          pageNumber = index + 1;
+                        } else if (currentPage <= 3) {
+                          pageNumber = index + 1;
+                        } else if (currentPage >= totalPages - 2) {
+                          pageNumber = totalPages - 4 + index;
+                        } else {
+                          pageNumber = currentPage - 2 + index;
+                        }
+                        
+                        return (
+                          <PaginationItem key={index}>
+                            <PaginationLink 
+                              onClick={() => handlePageChange(pageNumber)}
+                              isActive={pageNumber === currentPage}
+                            >
+                              {pageNumber}
+                            </PaginationLink>
+                          </PaginationItem>
+                        );
+                      })}
+                      
+                      {totalPages > 5 && currentPage < totalPages - 2 && (
+                        <>
+                          <PaginationItem>
+                            <PaginationEllipsis />
+                          </PaginationItem>
+                          <PaginationItem>
+                            <PaginationLink onClick={() => handlePageChange(totalPages)}>
+                              {totalPages}
+                            </PaginationLink>
+                          </PaginationItem>
+                        </>
+                      )}
+                      
+                      <PaginationItem>
+                        <PaginationNext 
+                          onClick={() => currentPage < totalPages && handlePageChange(currentPage + 1)}
+                          className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                        />
+                      </PaginationItem>
+                    </PaginationContent>
+                  </Pagination>
+                )}
               </div>
               
               {/* Sidebar */}
@@ -247,7 +288,7 @@ const Blog = () => {
                   <h3 className="text-xl font-bold mb-3">Need Expert IT Advice?</h3>
                   <p className="mb-4">Schedule a free consultation with our experienced IT consultants.</p>
                   <Button className="w-full bg-white text-consulting-800 hover:bg-gray-100">
-                    <Link to="/services">Book a Consultation</Link>
+                    <Link to="/contact">Book a Consultation</Link>
                   </Button>
                 </div>
               </div>
