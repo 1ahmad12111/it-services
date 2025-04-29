@@ -8,6 +8,8 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import CtaSection from "@/components/home/CtaSection";
 import ConsultationForm from "@/components/home/ConsultationForm";
+import ClientsSection from "@/components/home/ClientsSection";
+import InsightsSection from "@/components/home/InsightsSection";
 
 const Index = () => {
   return (
@@ -15,8 +17,10 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
+        <ClientsSection />
         <ServiceOverview />
         <WhyChooseUs />
+        <InsightsSection />
         <Testimonials />
         <CtaSection />
         <ConsultationForm />
