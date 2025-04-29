@@ -10,6 +10,8 @@ import CtaSection from "@/components/home/CtaSection";
 import ConsultationForm from "@/components/home/ConsultationForm";
 import ClientsSection from "@/components/home/ClientsSection";
 import InsightsSection from "@/components/home/InsightsSection";
+import ScaleRatingTool from "@/components/feedback/ScaleRatingTool";
+import LiveChat from "@/components/services/LiveChat";
 
 const Index = () => {
   // Adds observer for scroll animations
@@ -62,6 +64,8 @@ const Index = () => {
         <div className="animate-on-scroll opacity-0">
           <ConsultationForm />
         </div>
+        <ScaleRatingTool />
+        <LiveChat />
       </main>
       <Footer />
     </div>

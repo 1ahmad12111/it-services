@@ -7,6 +7,8 @@ import { ArrowRight } from "lucide-react";
 import ServiceDetail from "@/components/services/ServiceDetail";
 import ConsultationForm from "@/components/home/ConsultationForm";
 import LiveChat from "@/components/services/LiveChat";
+import PaymentInfo from "@/components/services/PaymentInfo";
+import ScaleRatingTool from "@/components/feedback/ScaleRatingTool";
 
 const Services = () => {
   // Data for detailed service offerings
@@ -113,8 +115,14 @@ const Services = () => {
           </div>
         </section>
 
+        {/* Payment Information Section */}
+        <PaymentInfo />
+
         {/* Consultation Form Section */}
         <ConsultationForm />
+
+        {/* Rating and feedback tool */}
+        <ScaleRatingTool />
 
         {/* Live chat component */}
         <LiveChat />
