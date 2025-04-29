@@ -97,10 +97,16 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    @apply font-heading tracking-tight;
+  }
+
+  /* Smoother scrolling experience */
+  html {
+    scroll-behavior: smooth;
   }
 }
 
+/* Enhanced animation styles */
 .animate-delay-100 {
   animation-delay: 100ms;
 }
@@ -119,4 +125,60 @@
 
 .animate-delay-500 {
   animation-delay: 500ms;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Hover animations */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-1;
+}
+
+/* Custom utilities */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Glass morphism effects */
+.glass {
+  @apply backdrop-blur-md bg-white/70 border border-white/20;
+}
+
+.glass-dark {
+  @apply backdrop-blur-md bg-gray-900/70 border border-gray-800/50;
+}
+
+/* Gradient text */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-consulting-600 to-consulting-400;
 }
