@@ -53,7 +53,7 @@ const ConsultationForm = () => {
                   </div>
                   <div className="flex items-center">
                     <Clock className="mr-3 text-consulting-400" />
-                    <span>30-minute initial consultation</span>
+                    <span>15-minute initial consultation</span>
                   </div>
                 </div>
               </div>
@@ -65,7 +65,7 @@ const ConsultationForm = () => {
                   </TabsList>
                   <TabsContent value="details" className="space-y-4">
                     <CalendlyWidget 
-                      url="https://calendly.com/ahmad-mkandsonsllc/30min" 
+                      url="https://calendly.com/ahmad-mkandsonsllc/15min" 
                       styles={{ height: "650px" }}
                     />
                   </TabsContent>
