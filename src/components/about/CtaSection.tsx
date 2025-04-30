@@ -22,12 +22,11 @@ const CtaSection = () => {
             </Link>
           </Button>
           <Button
-            variant="outline"
-            className="border-white text-white hover:bg-consulting-700"
+            className="bg-consulting-400 text-white hover:bg-consulting-500 border-2 border-white"
             size="lg"
             asChild
           >
-            <Link to="#consultation">
+            <Link to="/booking">
               Schedule a Consultation
             </Link>
           </Button>
