@@ -86,15 +86,7 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
               Learn More <ArrowRight className="ml-2 h-4 w-4" />
             </RouterLink>
           </Button>
-          <Button
-            variant="outline"
-            className="border-consulting-600 text-consulting-600 hover:bg-consulting-50"
-            asChild
-          >
-            <RouterLink to="/booking">
-              Request a Consultation
-            </RouterLink>
-          </Button>
+          {/* Removed "Request a Consultation" button */}
         </div>
       </div>
       

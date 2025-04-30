@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,7 +7,6 @@ import ServiceDetail from "@/components/services/ServiceDetail";
 import ConsultationForm from "@/components/home/ConsultationForm";
 import LiveChat from "@/components/services/LiveChat";
 import PaymentInfo from "@/components/services/PaymentInfo";
-import ScaleRatingTool from "@/components/feedback/ScaleRatingTool";
 
 const Services = () => {
   // Data for detailed service offerings
@@ -87,9 +85,6 @@ const Services = () => {
               <p className="text-xl text-consulting-100 mb-8">
                 End-to-end digital solutions designed to drive growth, innovation, and operational excellence
               </p>
-              <Button className="bg-white text-consulting-800 hover:bg-consulting-100 px-8 py-6 text-lg">
-                Schedule a Free Consultation
-              </Button>
             </div>
           </div>
         </section>
@@ -123,9 +118,6 @@ const Services = () => {
 
         {/* Consultation Form Section */}
         <ConsultationForm />
-
-        {/* Rating and feedback tool */}
-        <ScaleRatingTool />
 
         {/* Live chat component */}
         <LiveChat />
