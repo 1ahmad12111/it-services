@@ -1,4 +1,3 @@
-
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -108,8 +107,11 @@ const Services = () => {
             </div>
 
             <div className="mt-16 text-center">
-              <Button className="bg-consulting-600 hover:bg-consulting-700 text-white px-8 py-6 text-lg flex items-center gap-2 mx-auto">
-                View All Services <ArrowRight size={20} />
+              <Button 
+                className="bg-consulting-600 hover:bg-consulting-700 text-white px-8 py-6 text-lg flex items-center gap-2 mx-auto"
+                onClick={() => document.getElementById("services-hero")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Back to Top <ArrowRight size={20} />
               </Button>
             </div>
           </div>

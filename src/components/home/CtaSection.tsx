@@ -1,7 +1,7 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, ExternalLink } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 
 const benefits = [
   "Strategic IT roadmap development",
@@ -47,8 +47,14 @@ const CtaSection = () => {
                   <Button className="bg-gradient-to-r from-consulting-500 to-consulting-600 hover:from-consulting-600 hover:to-consulting-700 text-white px-8 py-7 text-lg shadow-xl shadow-consulting-950/30 transition-all duration-300 hover:translate-y-[-2px] rounded-xl border border-consulting-400/20">
                     Schedule a Consultation
                   </Button>
-                  <Button variant="outline" className="bg-transparent border-white/20 hover:bg-white/10 text-white px-8 py-7 text-lg group transition-all duration-300 hover:translate-y-[-2px] rounded-xl">
-                    Explore Our Solutions <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <Button 
+                    variant="outline" 
+                    className="bg-transparent border-white/20 hover:bg-white/10 text-white px-8 py-7 text-lg group transition-all duration-300 hover:translate-y-[-2px] rounded-xl"
+                    asChild
+                  >
+                    <RouterLink to="/services">
+                      Explore Our Solutions <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </RouterLink>
                   </Button>
                 </div>
               </div>
