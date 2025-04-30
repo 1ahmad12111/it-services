@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CalendarIntegration from "@/components/services/CalendarIntegration";
+import CalendlyWidget from "@/components/services/CalendlyWidget";
 
 const ConsultationForm = () => {
   const [activeTab, setActiveTab] = useState("details");
@@ -15,7 +15,7 @@ const ConsultationForm = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Request a Consultation</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Fill out the form below to schedule a free consultation with our IT experts.
+              Schedule a free consultation with our IT experts using our online booking system.
             </p>
           </div>
 
@@ -27,22 +27,22 @@ const ConsultationForm = () => {
                   <li className="flex items-start">
                     <div className="bg-consulting-600 rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 mt-1">1</div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Submit Your Details</h4>
-                      <p className="text-consulting-200">Complete the consultation request form with your information and requirements.</p>
+                      <h4 className="font-bold text-lg mb-1">Choose a Service</h4>
+                      <p className="text-consulting-200">Select the type of consultation you need with our experts.</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <div className="bg-consulting-600 rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 mt-1">2</div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Schedule a Meeting</h4>
-                      <p className="text-consulting-200">Choose a convenient date and time for your consultation using our calendar system.</p>
+                      <h4 className="font-bold text-lg mb-1">Select a Time</h4>
+                      <p className="text-consulting-200">Browse available slots and choose a time that works for you.</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <div className="bg-consulting-600 rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0 mt-1">3</div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">Receive Custom Solutions</h4>
-                      <p className="text-consulting-200">Get personalized IT recommendations tailored to your business needs.</p>
+                      <h4 className="font-bold text-lg mb-1">Confirm Details</h4>
+                      <p className="text-consulting-200">Fill in your information and we'll send you a confirmation.</p>
                     </div>
                   </li>
                 </ul>
@@ -64,7 +64,10 @@ const ConsultationForm = () => {
                     <TabsTrigger value="details">Book Your Consultation</TabsTrigger>
                   </TabsList>
                   <TabsContent value="details" className="space-y-4">
-                    <CalendarIntegration />
+                    <CalendlyWidget 
+                      url="https://calendly.com/your-account/30min" 
+                      styles={{ height: "650px" }}
+                    />
                   </TabsContent>
                 </Tabs>
               </div>
