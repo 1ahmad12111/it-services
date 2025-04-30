@@ -6,34 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Award, CheckCircle, Globe, Users, Briefcase, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Team members data
-const teamMembers = [
-  {
-    name: "Alexander Mitchell",
-    role: "CEO & Founder",
-    bio: "20+ years of experience in enterprise technology and digital transformation.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-  },
-  {
-    name: "Jennifer Ramirez",
-    role: "CTO",
-    bio: "Former Google engineer with expertise in cloud architecture and software development.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-  },
-  {
-    name: "Michael Chen",
-    role: "Lead Solutions Architect",
-    bio: "Specializes in building scalable enterprise applications and system integrations.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-  },
-  {
-    name: "Sarah Johnson",
-    role: "Director of Client Services",
-    bio: "Dedicated to ensuring client success through strategic IT implementations.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=256&q=80",
-  },
-];
-
 // Company milestones
 const milestones = [
   {
@@ -171,31 +143,6 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="py-16 bg-consulting-50">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">Meet Our Leadership Team</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              {teamMembers.map((member, index) => (
-                <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg">
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="w-full h-full object-cover object-center"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                    <p className="text-consulting-600 mb-3">{member.role}</p>
-                    <p className="text-gray-600 text-sm">{member.bio}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Certifications */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
@@ -252,3 +199,4 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
