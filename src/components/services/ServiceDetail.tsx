@@ -82,7 +82,7 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
             className="bg-consulting-600 hover:bg-consulting-700 text-white"
             asChild
           >
-            <RouterLink to={`/services/${service.id}`}>
+            <RouterLink to={`/booking`}>
               Learn More <ArrowRight className="ml-2 h-4 w-4" />
             </RouterLink>
           </Button>
@@ -91,7 +91,7 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
             className="border-consulting-600 text-consulting-600 hover:bg-consulting-50"
             asChild
           >
-            <RouterLink to="/consultation">
+            <RouterLink to="/booking">
               Request a Consultation
             </RouterLink>
           </Button>

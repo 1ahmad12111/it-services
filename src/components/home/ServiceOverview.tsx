@@ -10,37 +10,37 @@ const services = [
     icon: <Globe className="h-10 w-10 text-consulting-600" />,
     title: "Digital Transformation",
     description: "End-to-end digital solutions that help organizations reimagine their business models and customer experiences.",
-    link: "/services/digital-transformation"
+    link: "/services#website-development"
   },
   {
     icon: <Server className="h-10 w-10 text-consulting-600" />,
     title: "Cloud Services",
     description: "Scalable, secure cloud solutions that enable business agility and drive operational efficiency.",
-    link: "/services/cloud-services"
+    link: "/services#it-consulting"
   },
   {
     icon: <Code className="h-10 w-10 text-consulting-600" />,
     title: "Software Engineering",
     description: "Custom software development with modern tech stacks designed to address your unique business challenges.",
-    link: "/services/software-engineering"
+    link: "/services#software-development"
   },
   {
     icon: <Database className="h-10 w-10 text-consulting-600" />,
     title: "Data & Analytics",
     description: "Turn your data into actionable insights with our advanced analytics and AI-powered solutions.",
-    link: "/services/data-analytics"
+    link: "/services#it-consulting"
   },
   {
     icon: <Smartphone className="h-10 w-10 text-consulting-600" />,
     title: "Experience Design",
     description: "Human-centered design approach that creates meaningful digital experiences for your customers.",
-    link: "/services/experience-design"
+    link: "/services#website-development"
   },
   {
     icon: <ShieldCheck className="h-10 w-10 text-consulting-600" />,
     title: "Cybersecurity",
     description: "Comprehensive security solutions to protect your digital assets and ensure business continuity.",
-    link: "/services/cybersecurity"
+    link: "/services#it-support"
   }
 ];
 
@@ -68,8 +68,14 @@ const ServiceOverview = () => {
                 <CardDescription className="text-gray-600 mb-6 text-base">
                   {service.description}
                 </CardDescription>
-                <Button variant="ghost" className="text-consulting-600 hover:text-consulting-800 hover:bg-consulting-50 p-0 justify-start">
-                  Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                <Button 
+                  variant="ghost" 
+                  className="text-consulting-600 hover:text-consulting-800 hover:bg-consulting-50 p-0 justify-start"
+                  asChild
+                >
+                  <RouterLink to={service.link}>
+                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
+                  </RouterLink>
                 </Button>
               </CardContent>
             </Card>

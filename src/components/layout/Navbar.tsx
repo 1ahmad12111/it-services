@@ -5,6 +5,7 @@ import Logo from "./navbar/Logo";
 import MobileMenu from "./navbar/MobileMenu";
 import DesktopMenuItems from "./navbar/DesktopMenuItems";
 import { Button } from "@/components/ui/button";
+import { Link as RouterLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,8 +41,11 @@ const Navbar = () => {
             <Button 
               className="bg-gradient-to-r from-consulting-600 to-consulting-700 hover:from-consulting-700 hover:to-consulting-800 text-white shadow-md" 
               size="sm"
+              asChild
             >
-              Schedule Consultation
+              <RouterLink to="/booking">
+                Schedule Consultation
+              </RouterLink>
             </Button>
           </div>
 
