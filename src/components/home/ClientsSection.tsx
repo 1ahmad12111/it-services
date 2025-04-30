@@ -73,7 +73,7 @@ const ClientsSection = () => {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto opacity-0 animate-fade-in animate-delay-200">
-            We partner with forward-thinking organizations to drive innovation and digital excellence across industries
+            MOSIVANT partners with forward-thinking organizations to drive innovation and digital excellence across industries
           </p>
         </div>
 

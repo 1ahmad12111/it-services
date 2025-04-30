@@ -2,7 +2,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
 
 interface MobileMenuProps {
   isOpen: boolean;

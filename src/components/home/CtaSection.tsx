@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, ExternalLink } from "lucide-react";
@@ -33,7 +34,7 @@ const CtaSection = () => {
                 </div>
                 <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Ready to Accelerate Your <span className="text-gradient bg-gradient-to-r from-consulting-300 to-blue-300">Digital Transformation?</span></h2>
                 <p className="text-xl text-consulting-100 mb-8 leading-relaxed">
-                  Partner with us to unlock new opportunities for growth, innovation, and operational excellence.
+                  Partner with MOSIVANT to unlock new opportunities for growth, innovation, and operational excellence.
                 </p>
                 <div className="space-y-4 mb-10">
                   {benefits.map((benefit, index) => (
@@ -80,9 +81,11 @@ const CtaSection = () => {
                       <div className="flex-1 overflow-hidden flex flex-col justify-center items-center">
                         <div className="animate-pulse-slow">
                           <div className="h-24 w-24 mx-auto mb-6">
-                            <div className="bg-gradient-to-br from-consulting-400 to-blue-400 h-full w-full rounded-full flex items-center justify-center text-white text-3xl font-bold">
-                              T
-                            </div>
+                            <img 
+                              src="/lovable-uploads/34880202-0804-4af2-a75d-b60725da0d26.png" 
+                              alt="MOSIVANT logo"
+                              className="h-full w-full"
+                            />
                           </div>
                         </div>
                         

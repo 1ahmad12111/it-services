@@ -12,7 +12,17 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">TechConsult</h3>
+            <div className="flex items-center mb-4">
+              <img 
+                src="/lovable-uploads/34880202-0804-4af2-a75d-b60725da0d26.png" 
+                alt="MOSIVANT logo"
+                className="h-8 w-auto mr-2"
+              />
+              <div>
+                <h3 className="text-xl font-bold">MOSIVANT</h3>
+                <p className="text-xs text-gray-400">CONSULTING (OPC) PRIVATE LIMITED</p>
+              </div>
+            </div>
             <p className="text-gray-300 mb-4">
               Professional IT consulting services tailored to your business needs.
             </p>
@@ -99,8 +109,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="mr-3 text-consulting-400 flex-shrink-0" />
-                <a href="mailto:info@techconsult.com" className="text-gray-300 hover:text-consulting-400 transition-colors">
-                  info@techconsult.com
+                <a href="mailto:info@mosivant.com" className="text-gray-300 hover:text-consulting-400 transition-colors">
+                  info@mosivant.com
                 </a>
               </li>
             </ul>
@@ -109,7 +119,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="pt-8 mt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {currentYear} TechConsult. All rights reserved.</p>
+          <p>&copy; {currentYear} MOSIVANT CONSULTING (OPC) PRIVATE LIMITED. All rights reserved.</p>
         </div>
       </div>
     </footer>
