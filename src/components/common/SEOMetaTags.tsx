@@ -20,7 +20,7 @@ const SEOMetaTags: React.FC<SEOProps> = ({
   canonicalUrl,
 }) => {
   // Default site name
-  const siteName = 'TechConsult - IT Solutions & Consulting';
+  const siteName = 'Mosivant - IT Solutions & Consulting';
   
   // Format the title to include the site name if not already present
   const formattedTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;

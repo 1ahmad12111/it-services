@@ -39,7 +39,7 @@ const milestones = [
   {
     year: "2010",
     title: "Founded",
-    description: "TechConsult was established with a vision to provide tailored technology solutions.",
+    description: "Mosivant was established with a vision to provide tailored technology solutions.",
     icon: <Briefcase className="w-6 h-6 text-consulting-500" />,
   },
   {
@@ -97,7 +97,7 @@ const AboutPage = () => {
         <section className="py-20 bg-gradient-to-br from-consulting-800 to-consulting-950 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">About TechConsult</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">About Mosivant</h1>
               <p className="text-xl text-consulting-100 mb-8 leading-relaxed">
                 We're a team of passionate technology experts dedicated to helping businesses thrive in the digital age through innovative IT solutions.
               </p>
@@ -115,13 +115,13 @@ const AboutPage = () => {
               <h2 className="text-3xl font-bold mb-6 text-center">Our Story</h2>
               <div className="text-lg text-gray-700 space-y-4">
                 <p>
-                  Founded in 2010, TechConsult began with a clear mission: to help businesses leverage technology for growth and innovation. Our founder, Alexander Mitchell, recognized that many companies were struggling to keep pace with rapidly evolving digital landscapes.
+                  Founded in 2010, Mosivant began with a clear mission: to help businesses leverage technology for growth and innovation. Our founder, Alexander Mitchell, recognized that many companies were struggling to keep pace with rapidly evolving digital landscapes.
                 </p>
                 <p>
                   What started as a small team of dedicated consultants has grown into a comprehensive IT solutions provider trusted by businesses across multiple industries. Throughout our journey, we've maintained our commitment to delivering tailored, high-quality solutions that address our clients' unique challenges.
                 </p>
                 <p>
-                  Today, TechConsult is recognized as a leader in digital transformation, helping organizations navigate complex technological environments and implement solutions that drive real business value. Our team of experts brings diverse skills and experiences, united by a shared passion for technology and client success.
+                  Today, Mosivant is recognized as a leader in digital transformation, helping organizations navigate complex technological environments and implement solutions that drive real business value. Our team of experts brings diverse skills and experiences, united by a shared passion for technology and client success.
                 </p>
               </div>
             </div>
@@ -220,7 +220,7 @@ const AboutPage = () => {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Partner with TechConsult for innovative technology solutions that drive growth and efficiency.
+              Partner with Mosivant for innovative technology solutions that drive growth and efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button

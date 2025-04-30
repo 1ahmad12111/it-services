@@ -4,17 +4,17 @@ import { Separator } from "@/components/ui/separator";
 
 const testimonials = [
   {
-    quote: "TechConsult transformed our outdated systems, significantly improving our operational efficiency. Their expertise and dedication were invaluable.",
+    quote: "Mosivant transformed our outdated systems, significantly improving our operational efficiency. Their expertise and dedication were invaluable.",
     author: "Sarah Johnson",
     position: "CTO, Nexus Innovations",
   },
   {
-    quote: "The team at TechConsult delivered our new website ahead of schedule and exceeded our expectations. Their attention to detail is outstanding.",
+    quote: "The team at Mosivant delivered our new website ahead of schedule and exceeded our expectations. Their attention to detail is outstanding.",
     author: "Michael Chen",
     position: "Marketing Director, GrowthForce",
   },
   {
-    quote: "We've been working with TechConsult for over three years now. Their IT support has been consistently excellent, with quick response times.",
+    quote: "We've been working with Mosivant for over three years now. Their IT support has been consistently excellent, with quick response times.",
     author: "David Rodriguez",
     position: "Operations Manager, Evolve Systems",
   },
