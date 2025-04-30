@@ -63,19 +63,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                // IT Consultancy custom colors
+                // Updated consulting colors to match logo's teal/blue scheme
                 consulting: {
-                    50: '#f0f9ff',
-                    100: '#e0f2fe',
-                    200: '#bae6fd',
-                    300: '#7dd3fc',
-                    400: '#38bdf8',
-                    500: '#0ea5e9',
-                    600: '#0284c7',
-                    700: '#0369a1',
-                    800: '#075985',
-                    900: '#0c4a6e',
-                    950: '#082f49',
+                    50: '#ebfffe',
+                    100: '#cefffb',
+                    200: '#9ffaf5',
+                    300: '#67f0ee',
+                    400: '#34dde0',
+                    500: '#17c0c8',
+                    600: '#0d98a5',
+                    700: '#0f7985',
+                    800: '#13616c',
+                    900: '#16515c',
+                    950: '#07363f',
                 }
 			},
 			borderRadius: {
