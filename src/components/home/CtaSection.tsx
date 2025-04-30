@@ -44,8 +44,13 @@ const CtaSection = () => {
                   ))}
                 </div>
                 <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-5">
-                  <Button className="bg-gradient-to-r from-consulting-500 to-consulting-600 hover:from-consulting-600 hover:to-consulting-700 text-white px-8 py-7 text-lg shadow-xl shadow-consulting-950/30 transition-all duration-300 hover:translate-y-[-2px] rounded-xl border border-consulting-400/20">
-                    Schedule a Consultation
+                  <Button 
+                    className="bg-gradient-to-r from-consulting-500 to-consulting-600 hover:from-consulting-600 hover:to-consulting-700 text-white px-8 py-7 text-lg shadow-xl shadow-consulting-950/30 transition-all duration-300 hover:translate-y-[-2px] rounded-xl border border-consulting-400/20"
+                    asChild
+                  >
+                    <RouterLink to="/booking">
+                      Schedule a Consultation
+                    </RouterLink>
                   </Button>
                   <Button 
                     variant="outline" 

@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight, LineChart, ShieldCheck, Cpu } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -40,11 +41,22 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5 animate-fade-in animate-delay-300 justify-center md:justify-start">
-              <Button className="bg-gradient-to-r from-consulting-500 to-consulting-600 hover:from-consulting-600 hover:to-consulting-700 text-white px-8 py-7 text-lg shadow-xl shadow-consulting-800/30 transition-all duration-300 hover:translate-y-[-2px] font-medium rounded-xl border border-consulting-400/20">
-                Explore Our Solutions
+              <Button 
+                className="bg-gradient-to-r from-consulting-500 to-consulting-600 hover:from-consulting-600 hover:to-consulting-700 text-white px-8 py-7 text-lg shadow-xl shadow-consulting-800/30 transition-all duration-300 hover:translate-y-[-2px] font-medium rounded-xl border border-consulting-400/20"
+                asChild
+              >
+                <RouterLink to="/services">
+                  Explore Our Solutions
+                </RouterLink>
               </Button>
-              <Button variant="outline" className="bg-transparent border-white/20 hover:bg-white/10 text-white px-8 py-7 text-lg group transition-all duration-300 hover:translate-y-[-2px] rounded-xl backdrop-blur-sm">
-                Schedule a Consultation <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button 
+                variant="outline" 
+                className="bg-transparent border-white/20 hover:bg-white/10 text-white px-8 py-7 text-lg group transition-all duration-300 hover:translate-y-[-2px] rounded-xl backdrop-blur-sm"
+                asChild
+              >
+                <RouterLink to="/booking">
+                  Schedule a Consultation <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                </RouterLink>
               </Button>
             </div>
 
