@@ -3,6 +3,7 @@ import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Database, Globe, ShieldCheck, Smartphone, Server } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
 
 const services = [
   {
@@ -73,6 +74,19 @@ const ServiceOverview = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+        
+        {/* View All Services button */}
+        <div className="mt-12 text-center">
+          <Button 
+            className="bg-consulting-600 hover:bg-consulting-700 text-white px-8 py-6 text-lg"
+            size="lg"
+            asChild
+          >
+            <RouterLink to="/services">
+              View All Services <ArrowRight className="ml-2 h-5 w-5" />
+            </RouterLink>
+          </Button>
         </div>
       </div>
     </section>
