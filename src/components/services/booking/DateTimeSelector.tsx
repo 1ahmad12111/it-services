@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { UseFormReturn } from "react-hook-form";
 import { z } from "zod";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Define the form schema type to match parent component
 const formSchema = z.object({
@@ -39,6 +40,8 @@ const DateTimeSelector = ({
   prevStep,
   timeSlots,
 }: DateTimeSelectorProps) => {
+  const isMobile = useIsMobile();
+  
   // Filter out weekends and past dates
   const isDateDisabled = (date: Date) => {
     const day = date.getDay();
@@ -61,7 +64,7 @@ const DateTimeSelector = ({
             selected={selectedDate}
             onSelect={handleDateChange}
             disabled={isDateDisabled}
-            className="border rounded-md"
+            className="border rounded-md mx-auto max-w-full"
           />
           {form.formState.errors.date && (
             <p className="text-sm font-medium text-destructive">{form.formState.errors.date.message}</p>
@@ -70,7 +73,7 @@ const DateTimeSelector = ({
         
         <div className="space-y-4">
           <Label>Select a Time Slot</Label>
-          <div className="grid grid-cols-2 gap-2">
+          <div className={`grid ${isMobile ? "grid-cols-2" : "grid-cols-2"} gap-2`}>
             {timeSlots.map((time) => (
               <Button
                 key={time}

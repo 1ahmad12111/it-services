@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Database, Globe, ShieldCheck, Server } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface ServiceDetailProps {
   service: {
@@ -17,6 +18,8 @@ interface ServiceDetailProps {
 }
 
 const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
+  const isMobile = useIsMobile();
+  
   // Map the icon string to the corresponding component
   const IconComponent = () => {
     switch (service.icon) {
@@ -38,21 +41,22 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
   return (
     <div
       id={service.id}
-      className={`grid md:grid-cols-2 gap-8 md:gap-16 items-center ${
-        isReversed ? "md:grid-flow-dense" : ""
+      className={`grid md:grid-cols-2 gap-6 md:gap-16 items-center ${
+        isReversed && !isMobile ? "md:grid-flow-dense" : ""
       }`}
     >
-      <div className={isReversed ? "md:col-start-2" : ""}>
+      {/* For mobile, always show content first, then image */}
+      <div className={isReversed && !isMobile ? "md:col-start-2" : ""}>
         <div className="bg-consulting-50 p-4 rounded-full w-20 h-20 flex items-center justify-center mb-6">
           <IconComponent />
         </div>
-        <h2 className="text-3xl font-bold mb-3">{service.title}</h2>
-        <p className="text-xl text-gray-600 mb-4">{service.subtitle}</p>
+        <h2 className="text-2xl md:text-3xl font-bold mb-3">{service.title}</h2>
+        <p className="text-lg md:text-xl text-gray-600 mb-4">{service.subtitle}</p>
         <p className="text-gray-700 mb-6">{service.description}</p>
         
         <div className="mb-8">
-          <h3 className="text-xl font-semibold mb-4">Key Features</h3>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <h3 className="text-lg md:text-xl font-semibold mb-4">Key Features</h3>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {service.features.map((feature, index) => (
               <li key={index} className="flex items-start">
                 <div className="mr-2 mt-1 text-consulting-500">
@@ -90,11 +94,16 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
         </div>
       </div>
       
-      <div className={`rounded-xl overflow-hidden shadow-xl ${isReversed ? "md:col-start-1" : ""}`}>
+      {/* For mobile, we'll make the image more appropriate for smaller screens */}
+      <div 
+        className={`rounded-xl overflow-hidden shadow-xl mt-6 md:mt-0 ${
+          isReversed && !isMobile ? "md:col-start-1" : ""
+        }`}
+      >
         <img
           src={`https://images.unsplash.com/photo-${isReversed ? '1486312338219-ce68d2c6f44d' : '1498050108023-c5249f4df085'}?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
           alt={service.title}
-          className="w-full h-full object-cover aspect-square md:aspect-[4/3] rounded-xl"
+          className="w-full h-full object-cover aspect-[3/2] md:aspect-[4/3] rounded-xl"
         />
       </div>
     </div>

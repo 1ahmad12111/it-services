@@ -32,7 +32,7 @@ const BookingForm = ({ form, nextStep }: BookingFormProps) => {
     <div className="space-y-4">
       <h3 className="text-xl font-semibold mb-4">Your Information</h3>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <FormField
           control={form.control}
           name="name"
@@ -68,7 +68,7 @@ const BookingForm = ({ form, nextStep }: BookingFormProps) => {
             <FormItem>
               <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <Input placeholder="(123) 456-7890" {...field} />
+                <Input placeholder="(123) 456-7890" {...field} type="tel" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -102,7 +102,7 @@ const BookingForm = ({ form, nextStep }: BookingFormProps) => {
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
               </FormControl>
-              <SelectContent>
+              <SelectContent className="max-h-[40vh]">
                 <SelectItem value="website-development">Website Development</SelectItem>
                 <SelectItem value="software-development">Software Development</SelectItem>
                 <SelectItem value="it-support">IT Support</SelectItem>
