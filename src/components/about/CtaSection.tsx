@@ -1,0 +1,40 @@
+
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+
+const CtaSection = () => {
+  return (
+    <section className="py-16 bg-consulting-800 text-white">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
+        <p className="text-xl mb-8 max-w-2xl mx-auto">
+          Partner with Mosivant for innovative technology solutions that drive growth and efficiency.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button
+            className="bg-white text-consulting-800 hover:bg-gray-100"
+            size="lg"
+            asChild
+          >
+            <Link to="/services">
+              Explore Our Services
+            </Link>
+          </Button>
+          <Button
+            variant="outline"
+            className="border-white text-white hover:bg-consulting-700"
+            size="lg"
+            asChild
+          >
+            <Link to="#consultation">
+              Schedule a Consultation
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CtaSection;
