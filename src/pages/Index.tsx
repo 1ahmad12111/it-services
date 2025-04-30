@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -10,7 +9,6 @@ import CtaSection from "@/components/home/CtaSection";
 import ConsultationForm from "@/components/home/ConsultationForm";
 import ClientsSection from "@/components/home/ClientsSection";
 import InsightsSection from "@/components/home/InsightsSection";
-import ScaleRatingTool from "@/components/feedback/ScaleRatingTool";
 import LiveChat from "@/components/services/LiveChat";
 import SEOMetaTags from "@/components/common/SEOMetaTags";
 
@@ -70,7 +68,6 @@ const Index = () => {
         <div className="animate-on-scroll opacity-0">
           <ConsultationForm />
         </div>
-        <ScaleRatingTool />
         <LiveChat />
       </main>
       <Footer />
