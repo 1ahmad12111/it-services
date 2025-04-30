@@ -12,6 +12,7 @@ import ClientsSection from "@/components/home/ClientsSection";
 import InsightsSection from "@/components/home/InsightsSection";
 import ScaleRatingTool from "@/components/feedback/ScaleRatingTool";
 import LiveChat from "@/components/services/LiveChat";
+import SEOMetaTags from "@/components/common/SEOMetaTags";
 
 const Index = () => {
   // Adds observer for scroll animations
@@ -42,6 +43,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEOMetaTags 
+        title="Mosivant - IT Solutions & Consulting"
+        description="Mosivant delivers cutting-edge IT consulting, software development, and digital transformation solutions to help businesses thrive in the digital age."
+        keywords="IT consulting, software development, website development, IT support, digital transformation"
+      />
       <Navbar />
       <main className="flex-grow">
         <Hero />
