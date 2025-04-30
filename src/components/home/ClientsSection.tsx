@@ -9,47 +9,48 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { CheckCircle, Trophy, Award, Shield } from "lucide-react";
+import { Avatar, AvatarImage } from "@/components/ui/avatar"; 
 
 const clients = [
   {
-    name: "Acme Corp",
-    logo: "https://via.placeholder.com/180x90?text=Acme",
-    industry: "Manufacturing"
-  },
-  {
-    name: "Global Finance",
-    logo: "https://via.placeholder.com/180x90?text=Global",
-    industry: "Banking"
-  },
-  {
-    name: "MediHealth",
-    logo: "https://via.placeholder.com/180x90?text=Medi",
-    industry: "Healthcare"
-  },
-  {
-    name: "TechSphere",
-    logo: "https://via.placeholder.com/180x90?text=Tech",
+    name: "TechForward",
+    logo: "/lovable-uploads/444132e7-126c-4118-b764-039c0a9c9548.png",
     industry: "Technology"
   },
   {
-    name: "RetailPlus",
-    logo: "https://via.placeholder.com/180x90?text=Retail",
-    industry: "Retail"
+    name: "Global Finance Partners",
+    logo: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=180&h=90&q=80",
+    industry: "Finance"
   },
   {
-    name: "EnergyX",
-    logo: "https://via.placeholder.com/180x90?text=Energy",
+    name: "MediHealth Solutions",
+    logo: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=180&h=90&q=80",
+    industry: "Healthcare"
+  },
+  {
+    name: "EcoSustain",
+    logo: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=180&h=90&q=80",
     industry: "Energy"
   },
   {
-    name: "LogiTech",
-    logo: "https://via.placeholder.com/180x90?text=Logi",
+    name: "IndustriaX",
+    logo: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=180&h=90&q=80",
+    industry: "Manufacturing"
+  },
+  {
+    name: "EduSphere",
+    logo: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=180&h=90&q=80",
+    industry: "Education"
+  },
+  {
+    name: "LogiTech Express",
+    logo: "/lovable-uploads/444132e7-126c-4118-b764-039c0a9c9548.png",
     industry: "Logistics"
   },
   {
-    name: "EduSmart",
-    logo: "https://via.placeholder.com/180x90?text=Edu",
-    industry: "Education"
+    name: "RetailNext",
+    logo: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=180&h=90&q=80",
+    industry: "Retail"
   }
 ];
 
@@ -89,7 +90,9 @@ const ClientsSection = () => {
                 <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 pl-4">
                   <div className="bg-white border-0 p-8 rounded-2xl h-full flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px] group">
                     <div className="h-20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-                      <img src={client.logo} alt={`${client.name} logo`} className="max-h-full" />
+                      <Avatar className="h-20 w-40 rounded-none">
+                        <AvatarImage src={client.logo} alt={`${client.name} logo`} className="object-contain" />
+                      </Avatar>
                     </div>
                     <h3 className="font-semibold text-lg text-gray-800">{client.name}</h3>
                     <p className="text-sm text-consulting-600 font-medium mt-1">{client.industry}</p>
