@@ -1,9 +1,6 @@
 
-import React, { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import React, { useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
 
 interface NewsletterSubscribeProps {
   buttonText?: string;
@@ -13,130 +10,68 @@ interface NewsletterSubscribeProps {
 }
 
 const NewsletterSubscribe = ({
-  buttonText = "Subscribe",
-  placeholder = "Your email address",
   darkMode = false,
   className = "",
 }: NewsletterSubscribeProps) => {
-  const [email, setEmail] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const formContainerRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
-
-  const validateEmail = (email: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
-
-  const submitToHubSpot = async (email: string) => {
-    const portalId = "YOUR_HUBSPOT_PORTAL_ID"; // Replace with your actual HubSpot Portal ID
-    const formId = "YOUR_HUBSPOT_FORM_ID"; // Replace with your actual HubSpot Form ID
+  
+  useEffect(() => {
+    // Add HubSpot script only if not already loaded
+    if (!document.querySelector('script[src="https://js-na2.hsforms.net/forms/embed/242666894.js"]')) {
+      const script = document.createElement('script');
+      script.src = "https://js-na2.hsforms.net/forms/embed/242666894.js";
+      script.defer = true;
+      script.onload = () => {
+        console.log("HubSpot script loaded");
+      };
+      script.onerror = () => {
+        console.error("Error loading HubSpot script");
+        toast({
+          title: "Error",
+          description: "Failed to load newsletter form. Please try again later.",
+          variant: "destructive",
+        });
+      };
+      document.head.appendChild(script);
+    }
     
-    const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
-    
-    const data = {
-      fields: [
-        {
-          name: "email",
-          value: email
-        }
-      ],
-      context: {
-        pageUri: window.location.href,
-        pageName: document.title
-      }
+    // Clean up script when component unmounts
+    return () => {
+      // No need to remove the script as it should be available globally once loaded
     };
-    
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-      
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      
-      return await response.json();
-    } catch (error) {
-      console.error("Error submitting to HubSpot:", error);
-      throw error;
-    }
-  };
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!email) {
-      toast({
-        title: "Error",
-        description: "Please enter your email address",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (!validateEmail(email)) {
-      toast({
-        title: "Error",
-        description: "Please enter a valid email address",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      console.log("Subscribing email:", email);
-      
-      // Submit to HubSpot
-      await submitToHubSpot(email);
-      
-      toast({
-        title: "Success!",
-        description: "Thank you for subscribing to our newsletter!",
-      });
-      
-      setEmail("");
-    } catch (error) {
-      console.error("Error subscribing to newsletter:", error);
-      toast({
-        title: "Subscription failed",
-        description: "There was an error subscribing to the newsletter. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  }, [toast]);
 
   return (
-    <form onSubmit={handleSubscribe} className={`space-y-4 ${className}`}>
-      <Input
-        type="email"
-        placeholder={placeholder}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className={darkMode ? "bg-white/10 border-white/20 text-white placeholder:text-gray-300" : ""}
-        disabled={isLoading}
-      />
-      <Button 
-        type="submit" 
-        className={`w-full ${darkMode ? "bg-white text-consulting-800 hover:bg-gray-100" : ""}`}
-        disabled={isLoading}
+    <div className={`space-y-4 ${className}`}>
+      <div 
+        ref={formContainerRef} 
+        className={`hs-form-frame ${darkMode ? "hs-form-dark" : ""}`} 
+        data-region="na2" 
+        data-form-id="98e2fe9c-4e88-4be7-b886-6f73a286e4b6" 
+        data-portal-id="242666894"
       >
-        {isLoading ? (
-          <>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-            Processing...
-          </>
-        ) : (
-          buttonText
-        )}
-      </Button>
-    </form>
+        {/* HubSpot form will be rendered here */}
+      </div>
+      
+      <style jsx>{`
+        /* Additional styles to make HubSpot forms match your site design */
+        :global(.hs-form-dark .hs-form-field label) {
+          color: white !important;
+        }
+        
+        :global(.hs-form-dark .hs-form-field input) {
+          background-color: rgba(255, 255, 255, 0.1) !important;
+          border-color: rgba(255, 255, 255, 0.2) !important;
+          color: white !important;
+        }
+        
+        :global(.hs-form-dark .hs-submit .hs-button) {
+          background-color: white !important;
+          color: #1a365d !important;
+        }
+      `}</style>
+    </div>
   );
 };
 
