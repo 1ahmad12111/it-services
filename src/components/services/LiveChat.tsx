@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, X } from "lucide-react";
 import { toast } from "sonner";
-import SEOMetaTags from "@/components/common/SEOMetaTags";
+import { mosivantChatbotData } from "@/data/chatbotTraining";
 
 // Define message type for better type safety
 interface ChatMessage {
@@ -11,77 +11,10 @@ interface ChatMessage {
   timestamp: Date;
 }
 
-// Website data used to train the AI responses
-const websiteData = {
-  companyName: "Mosivant",
-  services: [
-    {
-      title: "Website Development",
-      description: "Creating powerful, responsive websites that drive business growth",
-      features: [
-        "Custom website design and development",
-        "E-commerce solutions",
-        "Content management systems",
-        "Website maintenance and support",
-        "SEO optimization",
-        "Performance optimization",
-      ]
-    },
-    {
-      title: "Software Development",
-      description: "Custom software solutions tailored to your business needs",
-      features: [
-        "Custom application development",
-        "Enterprise software solutions",
-        "API development and integration",
-        "Mobile app development",
-        "Cloud-native applications",
-        "Legacy system modernization",
-      ]
-    },
-    {
-      title: "IT Support",
-      description: "Reliable technical support to keep your business running smoothly",
-      features: [
-        "24/7 helpdesk support",
-        "Network monitoring and management",
-        "Security management",
-        "Data backup and recovery",
-        "Hardware and software troubleshooting",
-        "IT infrastructure maintenance",
-      ]
-    },
-    {
-      title: "IT Consulting",
-      description: "Strategic technology guidance to drive business transformation",
-      features: [
-        "IT strategy development",
-        "Digital transformation planning",
-        "Technology roadmap creation",
-        "IT audit and assessment",
-        "Vendor selection and management",
-        "Project management and implementation",
-      ]
-    }
-  ],
-  whyChooseUs: [
-    "Enterprise Experience",
-    "Innovation-First Approach",
-    "Industry Expertise",
-    "Global Talent Network",
-    "Proven Methodologies",
-    "Strategic Partnerships"
-  ],
-  contact: {
-    email: "info@gomosivant.com",
-    phone: "+1 (818)-925-7116"
-  }
-};
-
 const LiveChat = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
-    { text: "Hi there! How can we help you today?", isUser: false, timestamp: new Date() },
+    { text: mosivantChatbotData.conversationFlow.greeting, isUser: false, timestamp: new Date() },
   ]);
   const [newMessage, setNewMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -141,18 +74,18 @@ const LiveChat = () => {
     }, 1500);
   };
 
-  // Function to generate responses based on the website content
+  // Function to generate responses based on the training data
   const generateResponse = (query: string, previousMessages: ChatMessage[]): string => {
     // Convert query to lowercase for easier matching
     const q = query.toLowerCase();
     
     // Check for service-related queries
     if (q.includes("service") || q.includes("offer") || q.includes("provide") || q.includes("help with")) {
-      return `At Mosivant, we offer a range of IT services including: ${websiteData.services.map(s => s.title).join(", ")}. Would you like to know more about any specific service?`;
+      return `At ${mosivantChatbotData.companyInfo.name}, we offer a range of IT services including: ${mosivantChatbotData.services.map(s => s.title).join(", ")}. Would you like to know more about any specific service?`;
     }
     
     // Check for specific service inquiries
-    for (const service of websiteData.services) {
+    for (const service of mosivantChatbotData.services) {
       if (q.includes(service.title.toLowerCase())) {
         return `Our ${service.title} service focuses on ${service.description}. Key features include: ${service.features.slice(0, 3).join(", ")} and more. Would you like to schedule a consultation about this service?`;
       }
@@ -160,7 +93,15 @@ const LiveChat = () => {
     
     // Check for "why choose us" questions
     if (q.includes("why choose") || q.includes("why should i") || q.includes("difference") || q.includes("better than")) {
-      return `Mosivant stands out because of our ${websiteData.whyChooseUs.slice(0, 3).join(", ")} and more. Would you like to learn more about our approach?`;
+      const differentiators = mosivantChatbotData.differentiators.slice(0, 3).map(d => d.title);
+      return `Mosivant stands out because of our ${differentiators.join(", ")} and more. Would you like to learn more about our approach?`;
+    }
+    
+    // Check for common queries using patterns
+    for (const commonQuery of mosivantChatbotData.commonQueries) {
+      if (commonQuery.pattern.some(pattern => q.includes(pattern))) {
+        return commonQuery.response;
+      }
     }
     
     // Check for consultation or booking questions
@@ -170,17 +111,12 @@ const LiveChat = () => {
     
     // Check for contact information requests
     if (q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("call") || q.includes("reach")) {
-      return `You can reach us at ${websiteData.contact.email} or by phone at ${websiteData.contact.phone}. Our team is available during business hours to assist you.`;
-    }
-    
-    // Check for pricing questions
-    if (q.includes("price") || q.includes("cost") || q.includes("rate") || q.includes("fee") || q.includes("pricing")) {
-      return "Our pricing varies based on project scope and requirements. We offer competitive rates and flexible payment options. Would you like to discuss your project so we can provide a customized quote?";
+      return `You can reach us at ${mosivantChatbotData.companyInfo.email} or by phone at ${mosivantChatbotData.companyInfo.phone}. Our team is available during business hours to assist you.`;
     }
     
     // Check for greetings
     if (q.includes("hello") || q.includes("hi ") || q.includes("hey") || q.includes("greetings") || q.match(/^hi$/)) {
-      return "Hello! Welcome to Mosivant. How can we assist you with your IT needs today?";
+      return `Hello! Welcome to Mosivant. How can we assist you with your IT needs today?`;
     }
     
     // Check for thanks
@@ -194,7 +130,7 @@ const LiveChat = () => {
     }
     
     // Default response if no specific pattern is matched
-    return "Thank you for your message! Can you please provide more details about your inquiry so we can better assist you? We offer services in website development, software development, IT support, and IT consulting.";
+    return mosivantChatbotData.conversationFlow.fallback;
   };
 
   // Auto-scroll to bottom when new messages appear
@@ -230,7 +166,7 @@ const LiveChat = () => {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold">Mosivant Support</h3>
+                  <h3 className="font-semibold">{mosivantChatbotData.identity.name} - {mosivantChatbotData.companyInfo.name}</h3>
                   <p className="text-xs text-teal-200">We typically reply in a few minutes</p>
                 </div>
               </div>
