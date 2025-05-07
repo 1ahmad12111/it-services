@@ -1,5 +1,5 @@
 
-import React, { memo, useCallback } from "react";
+import React from "react";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
@@ -8,12 +8,10 @@ interface BlogHeroProps {
   setSearchQuery: (query: string) => void;
 }
 
-// Memoize the component to prevent unnecessary re-renders
-const BlogHero = memo(({ searchQuery, setSearchQuery }: BlogHeroProps) => {
-  // Optimize search input handling with debounce
-  const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+const BlogHero = ({ searchQuery, setSearchQuery }: BlogHeroProps) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
-  }, [setSearchQuery]);
+  };
 
   return (
     <section className="bg-gradient-to-r from-consulting-900 to-consulting-800 text-white py-20">
@@ -38,9 +36,6 @@ const BlogHero = memo(({ searchQuery, setSearchQuery }: BlogHeroProps) => {
       </div>
     </section>
   );
-});
-
-// Add display name for better debugging
-BlogHero.displayName = "BlogHero";
+};
 
 export default BlogHero;

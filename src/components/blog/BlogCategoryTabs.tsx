@@ -1,5 +1,5 @@
 
-import React, { memo } from "react";
+import React from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface BlogCategoryTabsProps {
@@ -9,8 +9,7 @@ interface BlogCategoryTabsProps {
   categories: string[];
 }
 
-// Memoize the component to prevent unnecessary re-renders
-const BlogCategoryTabs = memo(({ 
+const BlogCategoryTabs = ({ 
   activeTab, 
   setActiveTab, 
   setCurrentPage, 
@@ -42,9 +41,6 @@ const BlogCategoryTabs = memo(({
       </TabsList>
     </Tabs>
   );
-});
-
-// Add display name for better debugging
-BlogCategoryTabs.displayName = "BlogCategoryTabs";
+};
 
 export default BlogCategoryTabs;
