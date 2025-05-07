@@ -26,6 +26,45 @@ const NewsletterSubscribe = ({
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
+  const submitToHubSpot = async (email: string) => {
+    const portalId = "YOUR_HUBSPOT_PORTAL_ID"; // Replace with your actual HubSpot Portal ID
+    const formId = "YOUR_HUBSPOT_FORM_ID"; // Replace with your actual HubSpot Form ID
+    
+    const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+    
+    const data = {
+      fields: [
+        {
+          name: "email",
+          value: email
+        }
+      ],
+      context: {
+        pageUri: window.location.href,
+        pageName: document.title
+      }
+    };
+    
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      
+      return await response.json();
+    } catch (error) {
+      console.error("Error submitting to HubSpot:", error);
+      throw error;
+    }
+  };
+
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -50,11 +89,10 @@ const NewsletterSubscribe = ({
     setIsLoading(true);
 
     try {
-      // Simulate API call with timeout
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // In a real implementation, you would make an API call to your backend
       console.log("Subscribing email:", email);
+      
+      // Submit to HubSpot
+      await submitToHubSpot(email);
       
       toast({
         title: "Success!",
