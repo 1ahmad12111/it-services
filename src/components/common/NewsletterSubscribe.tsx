@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 interface NewsletterSubscribeProps {
@@ -17,6 +17,7 @@ const NewsletterSubscribe = ({
 }: NewsletterSubscribeProps) => {
   const formContainerRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
+  const [scriptLoaded, setScriptLoaded] = useState(false);
   
   useEffect(() => {
     // Add HubSpot script only if not already loaded
@@ -26,6 +27,7 @@ const NewsletterSubscribe = ({
       script.defer = true;
       script.onload = () => {
         console.log("HubSpot script loaded");
+        setScriptLoaded(true);
       };
       script.onerror = () => {
         console.error("Error loading HubSpot script");
@@ -36,6 +38,8 @@ const NewsletterSubscribe = ({
         });
       };
       document.head.appendChild(script);
+    } else {
+      setScriptLoaded(true);
     }
     
     // Clean up script when component unmounts
@@ -43,6 +47,35 @@ const NewsletterSubscribe = ({
       // No need to remove the script as it should be available globally once loaded
     };
   }, [toast]);
+  
+  // Observer to detect when form is fully loaded and hide duplicate elements
+  useEffect(() => {
+    if (!scriptLoaded || !formContainerRef.current) return;
+    
+    // Use MutationObserver to detect when HubSpot form is fully rendered
+    const observer = new MutationObserver((mutations) => {
+      // Look for the duplicate headers and descriptions
+      const titleElements = formContainerRef.current?.querySelectorAll('.hs-richtext h1, .hs-richtext p');
+      if (titleElements && titleElements.length > 0) {
+        titleElements.forEach(el => {
+          if (hideTitle) {
+            (el as HTMLElement).style.display = 'none';
+          }
+        });
+        
+        // Once we've handled the elements, disconnect the observer
+        observer.disconnect();
+      }
+    });
+    
+    // Start observing
+    observer.observe(formContainerRef.current, {
+      childList: true,
+      subtree: true
+    });
+    
+    return () => observer.disconnect();
+  }, [scriptLoaded, hideTitle]);
 
   return (
     <div className={`space-y-4 ${className}`}>
@@ -65,7 +98,7 @@ const NewsletterSubscribe = ({
         
         /* Hide duplicate title and description if hideTitle is true */
         .hs-form-frame .hs-richtext {
-          display: ${hideTitle ? 'none' : 'block'} !important;
+          display: ${hideTitle ? 'none !important' : 'block'};
         }
         
         .hs-form-frame .hs-form-field label {
@@ -170,8 +203,12 @@ const NewsletterSubscribe = ({
         /* Fix duplicate header text */
         .hs-form-frame .hs-form-field .hs-richtext h1,
         .hs-form-frame .hs-form-field .hs-richtext h2,
-        .hs-form-frame .hs-form-field .hs-richtext h3 {
-          display: none !important;
+        .hs-form-frame .hs-form-field .hs-richtext h3,
+        .hs-form-frame .hs-form-field .hs-richtext h4,
+        .hs-form-frame .hs-form-field .hs-richtext h5,
+        .hs-form-frame .hs-form-field .hs-richtext h6,
+        .hs-form-frame .hs-form-field .hs-richtext p {
+          display: ${hideTitle ? 'none !important' : 'block'};
         }
       `}} />
     </div>
