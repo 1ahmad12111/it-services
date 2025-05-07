@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
@@ -22,6 +23,9 @@ const EMAILJS_USER_ID = "YOUR_USER_ID"; // Replace this with your actual EmailJS
 const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace this with your actual EmailJS Service ID
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace this with your actual EmailJS Template ID
 
+// Initialize EmailJS
+emailjs.init(EMAILJS_USER_ID);
+
 const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -44,8 +48,8 @@ const Contact = () => {
         to_email: "info@gomosivant.com", // The recipient email address
       };
 
-      if (process.env.NODE_ENV === 'production' && EMAILJS_USER_ID !== "YOUR_USER_ID") {
-        // In production with proper API keys, use EmailJS
+      if (process.env.NODE_ENV === 'production' || EMAILJS_USER_ID !== "YOUR_USER_ID") {
+        // In production or with proper API keys, use EmailJS
         await emailjs.send(
           EMAILJS_SERVICE_ID,
           EMAILJS_TEMPLATE_ID,
@@ -54,7 +58,7 @@ const Contact = () => {
         );
         console.log("Email sent successfully!");
       } else {
-        // In development or without API keys, simulate sending
+        // In development without API keys, simulate sending
         console.log("Development mode or missing API keys - simulating email send");
         console.log("Email would be sent with:", templateParams);
         // Simulate API delay
