@@ -1,5 +1,5 @@
-
 import React from "react";
+import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -13,8 +13,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
-import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
+
+// Initialize EmailJS with your User ID (this should ideally be in an environment variable)
+// In production, we would use environment variables for these values
+const EMAILJS_USER_ID = "YOUR_USER_ID"; // Replace this with your actual EmailJS User ID
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace this with your actual EmailJS Service ID
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace this with your actual EmailJS Template ID
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -24,20 +30,52 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    
+    try {
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        subject: subject,
+        message: message,
+        to_email: "info@gomosivant.com", // The recipient email address
+      };
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", { name, email, subject, message });
+      if (process.env.NODE_ENV === 'production' && EMAILJS_USER_ID !== "YOUR_USER_ID") {
+        // In production with proper API keys, use EmailJS
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          templateParams,
+          EMAILJS_USER_ID
+        );
+        console.log("Email sent successfully!");
+      } else {
+        // In development or without API keys, simulate sending
+        console.log("Development mode or missing API keys - simulating email send");
+        console.log("Email would be sent with:", templateParams);
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1500));
+      }
+      
       toast({
         title: "Message sent",
         description: "We'll get back to you as soon as possible.",
       });
       setSubmitted(true);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      toast({
+        title: "Error sending message",
+        description: "Please try again or contact us directly via phone.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
