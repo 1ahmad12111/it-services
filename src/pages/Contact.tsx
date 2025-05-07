@@ -67,8 +67,8 @@ const Contact = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Call Us</h3>
                 <p className="text-gray-600 mb-4">Our team is available to help during business hours</p>
-                <a href="tel:+14155550123" className="text-consulting-600 font-medium hover:underline">
-                  (415) 555-0123
+                <a href="tel:+18189257116" className="text-consulting-600 font-medium hover:underline">
+                  +1 (818)-925-7116
                 </a>
               </div>
 
@@ -90,10 +90,10 @@ const Contact = () => {
                   <MapPin size={28} />
                 </div>
                 <h3 className="text-xl font-bold mb-2">Visit Us</h3>
-                <p className="text-gray-600 mb-4">Our office is centrally located in San Francisco</p>
+                <p className="text-gray-600 mb-4">Our office is centrally located in Columbus</p>
                 <address className="not-italic text-consulting-600 font-medium">
-                  123 Tech Street, Suite 456<br />
-                  San Francisco, CA 94105
+                  1153 Lantern Trail Ave, Unit 101<br />
+                  Columbus, OH 43228
                 </address>
               </div>
             </div>
