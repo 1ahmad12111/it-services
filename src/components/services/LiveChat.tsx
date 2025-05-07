@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageSquare, X } from "lucide-react";
@@ -74,8 +73,8 @@ const websiteData = {
     "Strategic Partnerships"
   ],
   contact: {
-    email: "info@mosivant.com",
-    phone: "+1 (555) 123-4567"
+    email: "info@gomosivant.com",
+    phone: "+1 (818)-925-7116"
   }
 };
 

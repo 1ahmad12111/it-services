@@ -109,8 +109,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="mr-3 text-consulting-400 flex-shrink-0" />
-                <a href="mailto:info@mosivant.com" className="text-gray-300 hover:text-consulting-400 transition-colors">
-                  info@mosivant.com
+                <a href="mailto:info@gomosivant.com" className="text-gray-300 hover:text-consulting-400 transition-colors">
+                  info@gomosivant.com
                 </a>
               </li>
             </ul>
