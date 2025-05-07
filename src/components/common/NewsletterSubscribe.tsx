@@ -19,6 +19,7 @@ const NewsletterSubscribe = ({
   const { toast } = useToast();
   const [scriptLoaded, setScriptLoaded] = useState(false);
   
+  // Load the HubSpot script
   useEffect(() => {
     // Add HubSpot script only if not already loaded
     if (!document.querySelector('script[src="https://js-na2.hsforms.net/forms/embed/242666894.js"]')) {
@@ -42,68 +43,90 @@ const NewsletterSubscribe = ({
       setScriptLoaded(true);
     }
     
-    // Clean up script when component unmounts
     return () => {
       // No need to remove the script as it should be available globally once loaded
     };
   }, [toast]);
   
-  // Observer to detect when form is fully loaded and hide duplicate elements
+  // This effect will run once the script is loaded to process the form
   useEffect(() => {
     if (!scriptLoaded || !formContainerRef.current) return;
     
-    // Add a style element to forcefully hide the duplicate content
-    const styleElement = document.createElement('style');
-    styleElement.textContent = `
-      .hs-form-frame .hs-richtext h1,
-      .hs-form-frame .hs-richtext h2,
-      .hs-form-frame .hs-richtext h3,
-      .hs-form-frame .hs-richtext h4,
-      .hs-form-frame .hs-richtext h5,
-      .hs-form-frame .hs-richtext h6,
-      .hs-form-frame .hs-richtext p {
-        display: none !important;
-        visibility: hidden !important;
-        height: 0 !important;
-        overflow: hidden !important;
-        margin: 0 !important;
-        padding: 0 !important;
+    // Insert CSS to hide all rich text within iframe before it renders
+    const styleTag = document.createElement('style');
+    styleTag.innerHTML = `
+      iframe[data-hubspot="true"] {
+        opacity: 0;
+        transition: opacity 0.3s ease;
       }
     `;
-    document.head.appendChild(styleElement);
+    document.head.appendChild(styleTag);
     
-    // Use MutationObserver to detect when HubSpot form is fully rendered
-    const observer = new MutationObserver((mutations) => {
-      // Look for any elements with the hs-richtext class
-      const richTextElements = formContainerRef.current?.querySelectorAll('.hs-richtext');
-      if (richTextElements && richTextElements.length > 0) {
+    // Function to process iframes when they appear
+    const processIframes = () => {
+      const iframesInContainer = document.querySelectorAll('iframe[data-hubspot="true"]');
+      
+      if (iframesInContainer && iframesInContainer.length > 0) {
+        iframesInContainer.forEach(iframe => {
+          const iframeElement = iframe as HTMLIFrameElement;
+          
+          // Wait for iframe content to load
+          if (iframeElement.contentDocument && iframeElement.contentDocument.readyState === 'complete') {
+            processIframeContent(iframeElement);
+          } else {
+            iframeElement.onload = () => {
+              processIframeContent(iframeElement);
+            };
+          }
+        });
+      }
+    };
+    
+    // Function to modify iframe content once loaded
+    const processIframeContent = (iframe: HTMLIFrameElement) => {
+      try {
+        // Access iframe document
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
+        if (!iframeDoc) return;
+        
+        // Find and remove rich text elements
+        const richTextElements = iframeDoc.querySelectorAll('.hs-richtext');
         richTextElements.forEach(el => {
-          // Force hide these elements
-          (el as HTMLElement).style.display = 'none';
-          (el as HTMLElement).style.visibility = 'hidden';
-          (el as HTMLElement).style.height = '0';
-          (el as HTMLElement).style.overflow = 'hidden';
-          (el as HTMLElement).style.margin = '0';
-          (el as HTMLElement).style.padding = '0';
+          el.remove();
         });
         
-        // Once we've handled the elements, disconnect the observer
-        observer.disconnect();
+        // Also hide any HubSpot branding
+        const brandingElements = iframeDoc.querySelectorAll('a[href^="https://app.hubspot.com/"]');
+        brandingElements.forEach(el => {
+          el.remove();
+        });
+        
+        // Make iframe visible now that content has been modified
+        iframe.style.opacity = '1';
+        
+      } catch (err) {
+        console.error('Error modifying iframe content:', err);
       }
+    };
+    
+    // Create observer to watch for iframe insertion
+    const observer = new MutationObserver(() => {
+      processIframes();
     });
     
-    // Start observing with a more comprehensive configuration
     observer.observe(formContainerRef.current, {
       childList: true,
       subtree: true,
-      attributes: true,
-      characterData: true
+      attributes: true
     });
+    
+    // Initial check in case iframes already exist
+    setTimeout(processIframes, 500);
     
     return () => {
       observer.disconnect();
-      if (styleElement.parentNode) {
-        styleElement.parentNode.removeChild(styleElement);
+      if (styleTag.parentNode) {
+        styleTag.parentNode.removeChild(styleTag);
       }
     };
   }, [scriptLoaded]);
@@ -120,22 +143,11 @@ const NewsletterSubscribe = ({
         {/* HubSpot form will be rendered here */}
       </div>
       
-      {/* Use style jsx global to style the HubSpot form */}
+      {/* Style the form */}
       <style dangerouslySetInnerHTML={{ __html: `
         /* Global styles for HubSpot forms */
         .hs-form-frame .hs-form {
           font-family: var(--font-sans, 'Inter', sans-serif) !important;
-        }
-        
-        /* Hide richtext elements completely */
-        .hs-form-frame .hs-richtext,
-        .hs-form-frame .hs-richtext * {
-          display: none !important;
-          visibility: hidden !important;
-          height: 0 !important;
-          overflow: hidden !important;
-          margin: 0 !important;
-          padding: 0 !important;
         }
         
         .hs-form-frame .hs-form-field label {
@@ -180,11 +192,6 @@ const NewsletterSubscribe = ({
         
         .hs-form-frame .hs-submit .hs-button:hover {
           background-color: #0d98a5 !important;
-        }
-
-        /* Remove HubSpot branding */
-        .hs-form-frame .hs-richtext p:last-child {
-          display: none !important;
         }
         
         /* Dark mode styles */
@@ -235,12 +242,6 @@ const NewsletterSubscribe = ({
           margin-bottom: 0.5rem !important;
           padding: 0 !important;
           list-style-type: none !important;
-        }
-        
-        /* Hide the HubSpot branding at the bottom */
-        .hs-form-frame a[href^="https://app.hubspot.com/"] {
-          display: none !important;
-          visibility: hidden !important;
         }
       `}} />
     </div>
