@@ -65,18 +65,9 @@ const ServiceOverview = () => {
                 <CardTitle className="text-xl">{service.title}</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col justify-between h-full">
-                <CardDescription className="text-gray-600 mb-6 text-base">
+                <CardDescription className="text-gray-600 text-base">
                   {service.description}
                 </CardDescription>
-                <Button 
-                  variant="ghost" 
-                  className="text-consulting-600 hover:text-consulting-800 hover:bg-consulting-50 p-0 justify-start"
-                  asChild
-                >
-                  <RouterLink to={service.link}>
-                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                  </RouterLink>
-                </Button>
               </CardContent>
             </Card>
           ))}
