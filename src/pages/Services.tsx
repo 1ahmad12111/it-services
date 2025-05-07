@@ -1,8 +1,9 @@
+
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import ServiceDetail from "@/components/services/ServiceDetail";
 import ConsultationForm from "@/components/home/ConsultationForm";
 import LiveChat from "@/components/services/LiveChat";
@@ -73,12 +74,19 @@ const Services = () => {
     },
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
         {/* Services Hero Section */}
-        <section className="bg-gradient-to-r from-consulting-900 to-consulting-800 text-white py-20">
+        <section id="services-top" className="bg-gradient-to-r from-consulting-900 to-consulting-800 text-white py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Our IT Consulting Services</h1>
@@ -105,9 +113,9 @@ const Services = () => {
             <div className="mt-16 text-center">
               <Button 
                 className="bg-consulting-600 hover:bg-consulting-700 text-white px-8 py-6 text-lg flex items-center gap-2 mx-auto"
-                onClick={() => document.getElementById("services-hero")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={scrollToTop}
               >
-                Back to Top <ArrowRight size={20} />
+                Back to Top <ArrowUp size={20} />
               </Button>
             </div>
           </div>
