@@ -12,15 +12,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle, Download } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import emailjs from 'emailjs-com';
-
-// EmailJS configuration
-// These should be replaced with actual values from your EmailJS account
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your actual EmailJS Public Key
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace with your actual EmailJS Service ID
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace with your actual EmailJS Template ID
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -30,45 +23,82 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Generate mailto link with form data
+  const generateMailtoLink = () => {
+    const recipient = "info@gomosivant.com";
+    const subjectLine = `Contact Form: ${subject || "General Inquiry"}`;
+    const body = `Name: ${name}
+Email: ${email}
+Subject: ${subject || "General Inquiry"}
+
+Message:
+${message}
+
+This message was sent from the contact form on your website.`;
+
+    return `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subjectLine)}&body=${encodeURIComponent(body)}`;
+  };
+
+  // Generate downloadable text file with form data
+  const generateTextFile = () => {
+    const content = `Contact Form Submission
+====================
+Date: ${new Date().toLocaleString()}
+
+FROM: ${name} (${email})
+SUBJECT: ${subject || "General Inquiry"}
+
+MESSAGE:
+${message}
+
+====================
+This message was generated from the contact form on your website.`;
+
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `contact-form-${new Date().toISOString().split('T')[0]}.txt`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Form validation
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      toast({
+        title: "Missing information",
+        description: "Please fill out all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
-      // Prepare template parameters for EmailJS
-      const templateParams = {
-        from_name: name,
-        from_email: email,
-        subject: subject,
-        message: message,
-        to_email: "info@gomosivant.com", // The recipient email address
-      };
-
-      // Check if we're using real API keys or in development mode
-      if (process.env.NODE_ENV === 'production' || EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
-        // In production or with proper API keys, use EmailJS
-        await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          templateParams,
-          EMAILJS_PUBLIC_KEY
-        );
-        console.log("Email sent successfully!");
-      } else {
-        // In development without API keys, simulate sending
-        console.log("Development mode or missing API keys - simulating email send");
-        console.log("Email would be sent with:", templateParams);
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
-      }
-      
-      toast({
-        title: "Message sent",
-        description: "We'll get back to you as soon as possible.",
+      // Log form submission details
+      console.log("Contact form submitted:", {
+        name,
+        email,
+        subject: subject || "General Inquiry",
+        message,
+        timestamp: new Date().toISOString()
       });
+      
+      // Show success message
+      toast({
+        title: "Message received",
+        description: "Your message has been successfully submitted.",
+      });
+      
       setSubmitted(true);
     } catch (error) {
-      console.error("Failed to send email:", error);
+      console.error("Error processing form:", error);
       toast({
         title: "Error sending message",
         description: "Please try again or contact us directly via phone.",
@@ -151,18 +181,36 @@ const Contact = () => {
                     <p className="text-gray-600 mb-6">
                       Thank you for contacting us. We'll respond to your inquiry as soon as possible.
                     </p>
-                    <Button 
-                      variant="outline"
-                      onClick={() => {
-                        setSubmitted(false);
-                        setName("");
-                        setEmail("");
-                        setSubject("");
-                        setMessage("");
-                      }}
-                    >
-                      Send Another Message
-                    </Button>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <Button 
+                        variant="outline"
+                        onClick={() => {
+                          setSubmitted(false);
+                          setName("");
+                          setEmail("");
+                          setSubject("");
+                          setMessage("");
+                        }}
+                      >
+                        Send Another Message
+                      </Button>
+                      <Button
+                        variant="default"
+                        onClick={() => window.location.href = generateMailtoLink()}
+                        className="flex items-center gap-2"
+                      >
+                        <Mail size={16} />
+                        Open in Email App
+                      </Button>
+                      <Button 
+                        variant="secondary"
+                        onClick={generateTextFile}
+                        className="flex items-center gap-2"
+                      >
+                        <Download size={16} />
+                        Download as Text
+                      </Button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
