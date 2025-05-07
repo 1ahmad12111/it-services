@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -214,21 +215,6 @@ const Contact = () => {
                     </div>
                   </form>
                 )}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Map Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center">Find Us</h2>
-              <div className="h-96 bg-gray-200 rounded-xl overflow-hidden shadow-md">
-                {/* Embedded map placeholder - in a real project, you'd replace this with an actual Google Maps embed */}
-                <div className="w-full h-full flex items-center justify-center bg-gray-300">
-                  <p className="text-gray-600 font-medium">Map Placeholder - In production, embed an actual map here</p>
-                </div>
               </div>
             </div>
           </div>
