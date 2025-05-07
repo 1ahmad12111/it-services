@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -19,6 +18,8 @@ import {
   PaginationNext, 
   PaginationPrevious 
 } from "@/components/ui/pagination";
+import NewsletterSubscribe from "@/components/common/NewsletterSubscribe";
+import { Toaster } from "@/components/ui/toaster";
 
 // Get unique categories from blog posts
 const categories = Array.from(new Set(blogPosts.map(post => post.category)));
@@ -256,12 +257,7 @@ const Blog = () => {
                 <div className="bg-consulting-800 text-white p-6 rounded-xl mb-8">
                   <h3 className="text-xl font-bold mb-4">Subscribe to Our Newsletter</h3>
                   <p className="text-consulting-100 mb-4">Get the latest insights delivered directly to your inbox.</p>
-                  <div className="space-y-4">
-                    <Input placeholder="Your email address" className="bg-white/10 border-white/20 text-white placeholder:text-gray-300" />
-                    <Button className="w-full bg-white text-consulting-800 hover:bg-gray-100">
-                      Subscribe
-                    </Button>
-                  </div>
+                  <NewsletterSubscribe darkMode={true} />
                 </div>
                 
                 {/* Popular Tags */}
@@ -300,6 +296,7 @@ const Blog = () => {
         <LiveChat />
       </main>
       <Footer />
+      <Toaster />
     </div>
   );
 };

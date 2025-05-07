@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
@@ -17,6 +16,8 @@ import {
   TableHeader, 
   TableRow 
 } from "@/components/ui/table";
+import NewsletterSubscribe from "@/components/common/NewsletterSubscribe";
+import { Toaster } from "@/components/ui/toaster";
 
 const BlogDetail = () => {
   const { postId } = useParams<{ postId: string }>();
@@ -273,16 +274,7 @@ const BlogDetail = () => {
               <div className="bg-consulting-800 text-white p-6 rounded-xl">
                 <h3 className="text-xl font-bold mb-3">Stay Updated</h3>
                 <p className="mb-4">Subscribe to our newsletter for the latest insights and industry news.</p>
-                <div className="space-y-3">
-                  <input 
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full px-4 py-2 rounded bg-white/10 border border-white/20 text-white placeholder:text-gray-300"
-                  />
-                  <Button className="w-full bg-white text-consulting-800 hover:bg-gray-100">
-                    Subscribe
-                  </Button>
-                </div>
+                <NewsletterSubscribe darkMode={true} />
               </div>
             </div>
           </div>
@@ -291,6 +283,7 @@ const BlogDetail = () => {
         <LiveChat />
       </main>
       <Footer />
+      <Toaster />
     </div>
   );
 };

@@ -8,6 +8,7 @@ import ServiceDetail from "@/components/services/ServiceDetail";
 import ConsultationForm from "@/components/home/ConsultationForm";
 import LiveChat from "@/components/services/LiveChat";
 import PaymentInfo from "@/components/services/PaymentInfo";
+import { Toaster } from "@/components/ui/toaster";
 
 const Services = () => {
   // Data for detailed service offerings
@@ -131,6 +132,7 @@ const Services = () => {
         <LiveChat />
       </main>
       <Footer />
+      <Toaster />
     </div>
   );
 };
