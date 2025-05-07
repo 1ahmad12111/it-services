@@ -8,7 +8,7 @@ const ContactHero = () => {
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl text-consulting-100">
-            Have a question or need assistance? Reach out to our team and we'll get back to you promptly.
+            Have a question or need assistance? Reach out to our team via phone, email, or connect with us on LinkedIn.
           </p>
         </div>
       </div>
@@ -17,3 +17,4 @@ const ContactHero = () => {
 };
 
 export default ContactHero;
+

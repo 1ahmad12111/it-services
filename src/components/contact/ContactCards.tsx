@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Linkedin } from "lucide-react";
 
 const ContactCards = () => {
   return (
@@ -29,20 +29,25 @@ const ContactCards = () => {
         </a>
       </div>
 
-      {/* Contact Card - Office */}
+      {/* Contact Card - LinkedIn */}
       <div className="bg-white rounded-lg p-8 text-center shadow-md hover:shadow-lg transition-shadow">
         <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-consulting-50 text-consulting-600 mb-6">
-          <MapPin size={28} />
+          <Linkedin size={28} />
         </div>
-        <h3 className="text-xl font-bold mb-2">Visit Us</h3>
-        <p className="text-gray-600 mb-4">Our office is centrally located in Columbus</p>
-        <address className="not-italic text-consulting-600 font-medium">
-          1153 Lantern Trail Ave, Unit 101<br />
-          Columbus, OH 43228
-        </address>
+        <h3 className="text-xl font-bold mb-2">Connect with Us</h3>
+        <p className="text-gray-600 mb-4">Follow us on LinkedIn for updates and news</p>
+        <a 
+          href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-consulting-600 font-medium hover:underline"
+        >
+          Mosivant on LinkedIn
+        </a>
       </div>
     </div>
   );
 };
 
 export default ContactCards;
+

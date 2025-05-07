@@ -44,6 +44,9 @@ const SEOMetaTags: React.FC<SEOProps> = ({
       <meta name="twitter:description" content={description} />
       {ogImage && <meta name="twitter:image" content={ogImage} />}
       
+      {/* LinkedIn */}
+      <meta property="og:url" content="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" />
+      
       {/* Canonical URL */}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       
@@ -55,3 +58,4 @@ const SEOMetaTags: React.FC<SEOProps> = ({
 };
 
 export default SEOMetaTags;
+
