@@ -7,11 +7,13 @@ interface NewsletterSubscribeProps {
   placeholder?: string;
   darkMode?: boolean;
   className?: string;
+  hideTitle?: boolean;
 }
 
 const NewsletterSubscribe = ({
   darkMode = false,
   className = "",
+  hideTitle = false,
 }: NewsletterSubscribeProps) => {
   const formContainerRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
@@ -59,6 +61,11 @@ const NewsletterSubscribe = ({
         /* Global styles for HubSpot forms */
         .hs-form-frame .hs-form {
           font-family: var(--font-sans, 'Inter', sans-serif) !important;
+        }
+        
+        /* Hide duplicate title and description if hideTitle is true */
+        .hs-form-frame .hs-richtext {
+          display: ${hideTitle ? 'none' : 'block'} !important;
         }
         
         .hs-form-frame .hs-form-field label {

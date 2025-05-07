@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
@@ -274,7 +275,7 @@ const BlogDetail = () => {
               <div className="bg-consulting-800 text-white p-6 rounded-xl">
                 <h3 className="text-xl font-bold mb-3">Stay Updated</h3>
                 <p className="mb-4">Subscribe to our newsletter for the latest insights and industry news.</p>
-                <NewsletterSubscribe darkMode={true} />
+                <NewsletterSubscribe darkMode={true} hideTitle={true} />
               </div>
             </div>
           </div>
