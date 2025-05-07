@@ -52,15 +52,39 @@ const NewsletterSubscribe = ({
   useEffect(() => {
     if (!scriptLoaded || !formContainerRef.current) return;
     
+    // Add a style element to forcefully hide the duplicate content
+    const styleElement = document.createElement('style');
+    styleElement.textContent = `
+      .hs-form-frame .hs-richtext h1,
+      .hs-form-frame .hs-richtext h2,
+      .hs-form-frame .hs-richtext h3,
+      .hs-form-frame .hs-richtext h4,
+      .hs-form-frame .hs-richtext h5,
+      .hs-form-frame .hs-richtext h6,
+      .hs-form-frame .hs-richtext p {
+        display: none !important;
+        visibility: hidden !important;
+        height: 0 !important;
+        overflow: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+    `;
+    document.head.appendChild(styleElement);
+    
     // Use MutationObserver to detect when HubSpot form is fully rendered
     const observer = new MutationObserver((mutations) => {
-      // Look for the duplicate headers and descriptions
-      const titleElements = formContainerRef.current?.querySelectorAll('.hs-richtext h1, .hs-richtext p');
-      if (titleElements && titleElements.length > 0) {
-        titleElements.forEach(el => {
-          if (hideTitle) {
-            (el as HTMLElement).style.display = 'none';
-          }
+      // Look for any elements with the hs-richtext class
+      const richTextElements = formContainerRef.current?.querySelectorAll('.hs-richtext');
+      if (richTextElements && richTextElements.length > 0) {
+        richTextElements.forEach(el => {
+          // Force hide these elements
+          (el as HTMLElement).style.display = 'none';
+          (el as HTMLElement).style.visibility = 'hidden';
+          (el as HTMLElement).style.height = '0';
+          (el as HTMLElement).style.overflow = 'hidden';
+          (el as HTMLElement).style.margin = '0';
+          (el as HTMLElement).style.padding = '0';
         });
         
         // Once we've handled the elements, disconnect the observer
@@ -68,14 +92,21 @@ const NewsletterSubscribe = ({
       }
     });
     
-    // Start observing
+    // Start observing with a more comprehensive configuration
     observer.observe(formContainerRef.current, {
       childList: true,
-      subtree: true
+      subtree: true,
+      attributes: true,
+      characterData: true
     });
     
-    return () => observer.disconnect();
-  }, [scriptLoaded, hideTitle]);
+    return () => {
+      observer.disconnect();
+      if (styleElement.parentNode) {
+        styleElement.parentNode.removeChild(styleElement);
+      }
+    };
+  }, [scriptLoaded]);
 
   return (
     <div className={`space-y-4 ${className}`}>
@@ -96,9 +127,15 @@ const NewsletterSubscribe = ({
           font-family: var(--font-sans, 'Inter', sans-serif) !important;
         }
         
-        /* Hide duplicate title and description if hideTitle is true */
-        .hs-form-frame .hs-richtext {
-          display: ${hideTitle ? 'none !important' : 'block'};
+        /* Hide richtext elements completely */
+        .hs-form-frame .hs-richtext,
+        .hs-form-frame .hs-richtext * {
+          display: none !important;
+          visibility: hidden !important;
+          height: 0 !important;
+          overflow: hidden !important;
+          margin: 0 !important;
+          padding: 0 !important;
         }
         
         .hs-form-frame .hs-form-field label {
@@ -199,16 +236,11 @@ const NewsletterSubscribe = ({
           padding: 0 !important;
           list-style-type: none !important;
         }
-
-        /* Fix duplicate header text */
-        .hs-form-frame .hs-form-field .hs-richtext h1,
-        .hs-form-frame .hs-form-field .hs-richtext h2,
-        .hs-form-frame .hs-form-field .hs-richtext h3,
-        .hs-form-frame .hs-form-field .hs-richtext h4,
-        .hs-form-frame .hs-form-field .hs-richtext h5,
-        .hs-form-frame .hs-form-field .hs-richtext h6,
-        .hs-form-frame .hs-form-field .hs-richtext p {
-          display: ${hideTitle ? 'none !important' : 'block'};
+        
+        /* Hide the HubSpot branding at the bottom */
+        .hs-form-frame a[href^="https://app.hubspot.com/"] {
+          display: none !important;
+          visibility: hidden !important;
         }
       `}} />
     </div>
