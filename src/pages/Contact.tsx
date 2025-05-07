@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
@@ -17,14 +16,11 @@ import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import emailjs from 'emailjs-com';
 
-// Initialize EmailJS with your User ID (this should ideally be in an environment variable)
-// In production, we would use environment variables for these values
-const EMAILJS_USER_ID = "YOUR_USER_ID"; // Replace this with your actual EmailJS User ID
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace this with your actual EmailJS Service ID
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace this with your actual EmailJS Template ID
-
-// Initialize EmailJS
-emailjs.init(EMAILJS_USER_ID);
+// EmailJS configuration
+// These should be replaced with actual values from your EmailJS account
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Replace with your actual EmailJS Public Key
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Replace with your actual EmailJS Service ID
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Replace with your actual EmailJS Template ID
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -48,13 +44,14 @@ const Contact = () => {
         to_email: "info@gomosivant.com", // The recipient email address
       };
 
-      if (process.env.NODE_ENV === 'production' || EMAILJS_USER_ID !== "YOUR_USER_ID") {
+      // Check if we're using real API keys or in development mode
+      if (process.env.NODE_ENV === 'production' || EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
         // In production or with proper API keys, use EmailJS
         await emailjs.send(
           EMAILJS_SERVICE_ID,
           EMAILJS_TEMPLATE_ID,
           templateParams,
-          EMAILJS_USER_ID
+          EMAILJS_PUBLIC_KEY
         );
         console.log("Email sent successfully!");
       } else {

@@ -6,9 +6,9 @@ To fully enable email sending functionality, you need to set up an EmailJS accou
 1. Create a free account at [EmailJS](https://www.emailjs.com/)
 2. Create an email service (connect to Gmail, Outlook, etc.)
 3. Create an email template
-4. Get your User ID, Service ID, and Template ID
+4. Get your Public Key, Service ID, and Template ID from your EmailJS dashboard
 5. Replace the placeholder values in the Contact.tsx file:
-   - EMAILJS_USER_ID
+   - EMAILJS_PUBLIC_KEY (found in Account > API Keys)
    - EMAILJS_SERVICE_ID
    - EMAILJS_TEMPLATE_ID
 
@@ -33,3 +33,4 @@ If emails are not being received:
 2. Check your spam/junk folder
 3. Ensure your email service provider (Gmail, etc.) isn't blocking the emails
 4. Confirm all template variables are correctly defined in your EmailJS template
+5. Make sure you're using the correct Public Key from your EmailJS account (not User ID)
