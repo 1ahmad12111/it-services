@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useState } from "react";
 import Navbar from "@/components/layout/Navbar";
@@ -12,7 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Phone, Mail, MapPin, Send, CheckCircle, Download } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle, Download, Info } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 
 const Contact = () => {
@@ -81,7 +82,7 @@ This message was generated from the contact form on your website.`;
     setIsSubmitting(true);
     
     try {
-      // Log form submission details
+      // Log form data for development purposes
       console.log("Contact form submitted:", {
         name,
         email,
@@ -90,17 +91,17 @@ This message was generated from the contact form on your website.`;
         timestamp: new Date().toISOString()
       });
       
-      // Show success message
+      // Show next steps message
       toast({
-        title: "Message received",
-        description: "Your message has been successfully submitted.",
+        title: "Form completed",
+        description: "Please choose an option below to send your message.",
       });
       
       setSubmitted(true);
     } catch (error) {
       console.error("Error processing form:", error);
       toast({
-        title: "Error sending message",
+        title: "Error processing form",
         description: "Please try again or contact us directly via phone.",
         variant: "destructive",
       });
@@ -170,16 +171,23 @@ This message was generated from the contact form on your website.`;
             {/* Contact Form */}
             <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
               <div className="p-8">
-                <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
+                <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 flex items-start">
+                  <Info className="text-blue-500 mr-2 mt-0.5 shrink-0" size={16} />
+                  <p className="text-sm text-blue-700">
+                    This form will help you prepare your message. After completing the form, 
+                    you'll need to select one of the provided options to send your message directly.
+                  </p>
+                </div>
                 
                 {submitted ? (
                   <div className="text-center py-12">
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-50 text-green-500 mb-6">
                       <CheckCircle size={32} />
                     </div>
-                    <h3 className="text-2xl font-bold mb-2">Message Received!</h3>
+                    <h3 className="text-2xl font-bold mb-2">Your message is ready!</h3>
                     <p className="text-gray-600 mb-6">
-                      Thank you for contacting us. We'll respond to your inquiry as soon as possible.
+                      To complete your submission, please choose one of the following options:
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                       <Button 
@@ -290,12 +298,12 @@ This message was generated from the contact form on your website.`;
                               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
-                            Sending...
+                            Processing...
                           </span>
                         ) : (
                           <span className="flex items-center">
                             <Send className="mr-2 h-5 w-5" />
-                            Send Message
+                            Continue
                           </span>
                         )}
                       </Button>
