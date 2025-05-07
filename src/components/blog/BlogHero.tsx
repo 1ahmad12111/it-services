@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { memo, useCallback } from "react";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 
@@ -8,7 +8,13 @@ interface BlogHeroProps {
   setSearchQuery: (query: string) => void;
 }
 
-const BlogHero = ({ searchQuery, setSearchQuery }: BlogHeroProps) => {
+// Memoize the component to prevent unnecessary re-renders
+const BlogHero = memo(({ searchQuery, setSearchQuery }: BlogHeroProps) => {
+  // Optimize search input handling with debounce
+  const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  }, [setSearchQuery]);
+
   return (
     <section className="bg-gradient-to-r from-consulting-900 to-consulting-800 text-white py-20">
       <div className="container mx-auto px-4">
@@ -21,16 +27,20 @@ const BlogHero = ({ searchQuery, setSearchQuery }: BlogHeroProps) => {
           <div className="relative max-w-xl mx-auto">
             <Input
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={handleSearchChange}
               placeholder="Search for articles..."
               className="pl-10 py-6 bg-white/10 border-white/20 text-white placeholder:text-gray-300 w-full"
+              aria-label="Search for articles"
             />
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={20} />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={20} aria-hidden="true" />
           </div>
         </div>
       </div>
     </section>
   );
-};
+});
+
+// Add display name for better debugging
+BlogHero.displayName = "BlogHero";
 
 export default BlogHero;

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { memo } from "react";
 import { Button } from "@/components/ui/button";
 import BlogPostCard from "./BlogPostCard";
 import { BlogPost } from "@/types/blog";
@@ -11,7 +11,8 @@ interface BlogPostListProps {
   setActiveTab: (tab: string) => void;
 }
 
-const BlogPostList = ({ 
+// Memoize the component to prevent unnecessary re-renders
+const BlogPostList = memo(({ 
   currentPosts, 
   searchQuery, 
   setSearchQuery, 
@@ -40,6 +41,9 @@ const BlogPostList = ({
       )}
     </div>
   );
-};
+});
+
+// Add display name for better debugging
+BlogPostList.displayName = "BlogPostList";
 
 export default BlogPostList;

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { memo } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface BlogCategoryTabsProps {
@@ -9,17 +9,20 @@ interface BlogCategoryTabsProps {
   categories: string[];
 }
 
-const BlogCategoryTabs = ({ 
+// Memoize the component to prevent unnecessary re-renders
+const BlogCategoryTabs = memo(({ 
   activeTab, 
   setActiveTab, 
   setCurrentPage, 
   categories 
 }: BlogCategoryTabsProps) => {
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    setCurrentPage(1);
+  };
+
   return (
-    <Tabs value={activeTab} onValueChange={(value) => {
-      setActiveTab(value);
-      setCurrentPage(1);
-    }} className="mb-8">
+    <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8">
       <TabsList className="bg-white border shadow-sm overflow-auto flex w-full h-auto p-1">
         <TabsTrigger 
           value="all" 
@@ -39,6 +42,9 @@ const BlogCategoryTabs = ({
       </TabsList>
     </Tabs>
   );
-};
+});
+
+// Add display name for better debugging
+BlogCategoryTabs.displayName = "BlogCategoryTabs";
 
 export default BlogCategoryTabs;
