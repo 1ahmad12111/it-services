@@ -10,6 +10,7 @@ import Testimonials from "@/components/home/Testimonials";
 import CtaSection from "@/components/home/CtaSection";
 import ConsultationForm from "@/components/home/ConsultationForm";
 import InsightsSection from "@/components/home/InsightsSection";
+import WorkingProcess from "@/components/home/WorkingProcess";
 import LiveChat from "@/components/services/LiveChat";
 import SEOMetaTags from "@/components/common/SEOMetaTags";
 
@@ -53,6 +54,9 @@ const Index = () => {
         <ClientsSection />
         <div className="animate-on-scroll opacity-0">
           <ServiceOverview />
+        </div>
+        <div className="animate-on-scroll opacity-0">
+          <WorkingProcess />
         </div>
         <div className="animate-on-scroll opacity-0">
           <WhyChooseUs />
