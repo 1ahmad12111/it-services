@@ -64,18 +64,12 @@ const Footer = () => {
           <p className="text-gray-400 mb-4 md:mb-0">© {currentYear} Mosivant. All Rights Reserved.</p>
           
           <div className="flex flex-wrap gap-6 items-center">
-            {/* Navigation links moved here */}
+            {/* Navigation links moved here - removed Pricing and Use Cases */}
             <Link to="/about" className="text-gray-400 hover:text-positivus-green transition-colors">
               About us
             </Link>
             <Link to="/services" className="text-gray-400 hover:text-positivus-green transition-colors">
               Services
-            </Link>
-            <Link to="/use-cases" className="text-gray-400 hover:text-positivus-green transition-colors">
-              Use Cases
-            </Link>
-            <Link to="/pricing" className="text-gray-400 hover:text-positivus-green transition-colors">
-              Pricing
             </Link>
             <Link to="/blog" className="text-gray-400 hover:text-positivus-green transition-colors">
               Blog

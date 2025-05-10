@@ -4,7 +4,7 @@ import React from "react";
 /**
  * LiveChat component that uses Voiceflow for chat functionality
  * The actual chat functionality is loaded via the script in index.html
- * Styling has been updated to match the Positivus design system
+ * Styling has been updated to match the Mosivant design system
  */
 const LiveChat = () => {
   // The Voiceflow widget is loaded directly from the script in index.html
@@ -16,29 +16,29 @@ const LiveChat = () => {
     style.textContent = `
       /* Chat button styling */
       .voiceflow-chat-button {
-        background-color: #B9FF66 !important; /* Positivus green */
+        background-color: #9b87f5 !important; /* Primary Purple */
       }
       
       /* Chat icon color */
       .voiceflow-chat-button svg {
-        fill: #191A23 !important; /* Positivus dark */
+        fill: #1A1F2C !important; /* Dark Purple */
       }
       
       /* Chat container styling */
       .voiceflow-chat-container {
-        border: 1px solid #B9FF66 !important;
-        box-shadow: 0 4px 20px rgba(185, 255, 102, 0.2) !important;
+        border: 1px solid #9b87f5 !important;
+        box-shadow: 0 4px 20px rgba(155, 135, 245, 0.2) !important;
       }
       
       /* Header styling */
       .voiceflow-chat-header {
-        background-color: #191A23 !important; /* Positivus dark */
+        background-color: #1A1F2C !important; /* Dark Purple */
       }
       
       /* Active message elements */
       .voiceflow-chat-message-active {
-        background-color: #B9FF66 !important; /* Positivus green */
-        color: #191A23 !important; /* Positivus dark */
+        background-color: #9b87f5 !important; /* Primary Purple */
+        color: #FFFFFF !important; /* White */
       }
     `;
     document.head.appendChild(style);
