@@ -63,19 +63,24 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                // Updated consulting colors to match logo's teal/blue scheme
+				// Updated color palette based on the design reference
+                positivus: {
+                    green: '#B9FF66',
+                    dark: '#191A23',
+                    light: '#F3F3F3',
+                },
                 consulting: {
-                    50: '#ebfffe',
-                    100: '#cefffb',
-                    200: '#9ffaf5',
-                    300: '#67f0ee',
-                    400: '#34dde0',
-                    500: '#17c0c8',
-                    600: '#0d98a5',
-                    700: '#0f7985',
-                    800: '#13616c',
-                    900: '#16515c',
-                    950: '#07363f',
+                    50: '#f0fce6',
+                    100: '#ddfacc',
+                    200: '#b9ff66',  // Main accent green
+                    300: '#9ae756',
+                    400: '#7dd630',
+                    500: '#5fb31b',
+                    600: '#4a8e14',
+                    700: '#3a6910',
+                    800: '#2c4a0b',
+                    900: '#1d2e07',
+                    950: '#191A23',  // Dark background
                 }
 			},
 			borderRadius: {
@@ -126,8 +131,9 @@ export default {
                 'pulse-slow': 'pulse-slow 3s infinite'
 			},
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                heading: ['Montserrat', 'sans-serif']
+                sans: ['Space Grotesk', 'sans-serif'],
+                heading: ['Space Grotesk', 'sans-serif'], // Using Space Grotesk as a substitute for Positivus
+                positivus: ['Space Grotesk', 'sans-serif'], // Specific class for Positivus font
             }
 		}
 	},

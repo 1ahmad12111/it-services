@@ -39,7 +39,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-8">
             <DesktopMenuItems />
             <Button 
-              className="bg-gradient-to-r from-consulting-600 to-consulting-700 hover:from-consulting-700 hover:to-consulting-800 text-white shadow-md" 
+              className="bg-positivus-green text-positivus-dark hover:bg-positivus-green/90 hover:text-positivus-dark font-bold shadow-md" 
               size="sm"
               asChild
             >
@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMobileMenu}
-              className="text-gray-700 hover:text-consulting-600 focus:outline-none"
+              className="text-positivus-dark hover:text-positivus-green focus:outline-none"
             >
               {isMobileMenuOpen ? (
                 <X size={24} />
