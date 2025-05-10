@@ -17,6 +17,7 @@ const LiveChat = () => {
       /* Chat button styling */
       .voiceflow-chat-button {
         background-color: #9b87f5 !important; /* Primary Purple */
+        transform: scale(0.85) !important; /* Make button slightly smaller */
       }
       
       /* Chat icon color */
@@ -28,6 +29,7 @@ const LiveChat = () => {
       .voiceflow-chat-container {
         border: 1px solid #9b87f5 !important;
         box-shadow: 0 4px 20px rgba(155, 135, 245, 0.2) !important;
+        max-width: 380px !important; /* Limit maximum width */
       }
       
       /* Header styling */

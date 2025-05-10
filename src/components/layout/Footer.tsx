@@ -9,8 +9,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-positivus-dark text-white py-16">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-12">
+      <div className="container mx-auto px-4 max-w-5xl"> {/* Added max-width constraint */}
+        <div className="flex justify-between items-start mb-12">
           {/* Logo */}
           <div className="mb-8 lg:mb-0">
             <div className="flex items-center mb-4">
@@ -18,38 +18,38 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Social Media - LinkedIn only, smaller and moved to the right */}
-          <div className="flex mb-8 lg:mb-0">
+          {/* Social Media - LinkedIn only, smaller */}
+          <div className="flex">
             <a 
               href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white rounded-full p-1.5 hover:bg-positivus-green transition-colors"
+              className="bg-white rounded-full p-1 hover:bg-positivus-green transition-colors"
             >
-              <Linkedin size={14} className="text-positivus-dark" />
+              <Linkedin size={12} className="text-positivus-dark" />
             </a>
           </div>
         </div>
         
         {/* Contact Information */}
-        <div className="mb-12">
+        <div className="mb-8">
           <div className="inline-block bg-positivus-green px-4 py-2 rounded-md mb-6">
             <h3 className="text-xl font-bold text-positivus-dark">Contact us:</h3>
           </div>
           
-          <div className="space-y-4">
+          <div className="space-y-3">
             <div className="flex items-center">
-              <Mail className="mr-3 text-white flex-shrink-0" size={18} />
+              <Mail className="mr-3 text-white flex-shrink-0" size={16} />
               <p className="text-white">Email: <a href="mailto:info@gomosivant.com" className="hover:text-positivus-green transition-colors">info@gomosivant.com</a></p>
             </div>
             
             <div className="flex items-center">
-              <Phone className="mr-3 text-white flex-shrink-0" size={18} />
+              <Phone className="mr-3 text-white flex-shrink-0" size={16} />
               <p className="text-white">Phone: <a href="tel:+18189257116" className="hover:text-positivus-green transition-colors">+1 (818)-925-7116</a></p>
             </div>
             
             <div className="flex items-start">
-              <MapPin className="mr-3 text-white flex-shrink-0 mt-1" size={18} />
+              <MapPin className="mr-3 text-white flex-shrink-0 mt-1" size={16} />
               <p className="text-white">
                 Address: 1153 Lantern Trail Ave, Unit 101<br />
                 Columbus, OH 43228
@@ -58,13 +58,12 @@ const Footer = () => {
           </div>
         </div>
         
-        <Separator className="bg-gray-700 my-8" />
+        <Separator className="bg-gray-700 my-6" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 mb-4 md:mb-0">© {currentYear} Mosivant. All Rights Reserved.</p>
           
           <div className="flex flex-wrap gap-6 items-center">
-            {/* Navigation links moved here - removed Pricing and Use Cases */}
             <Link to="/about" className="text-gray-400 hover:text-positivus-green transition-colors">
               About us
             </Link>
