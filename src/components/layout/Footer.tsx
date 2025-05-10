@@ -3,9 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import NewsletterSubscribe from "@/components/common/NewsletterSubscribe";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,8 +14,7 @@ const Footer = () => {
           {/* Logo and Navigation */}
           <div className="mb-8 lg:mb-0">
             <div className="flex items-center mb-8">
-              <span className="text-white text-3xl font-bold mr-2">◆</span>
-              <span className="text-white text-3xl font-bold">Mosivant</span>
+              <span className="text-white text-3xl font-bold">◆</span>
             </div>
             
             <div className="hidden lg:flex space-x-8">
@@ -53,37 +49,30 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div>
-            <div className="inline-block bg-positivus-green px-4 py-2 rounded-md mb-6">
-              <h3 className="text-xl font-bold text-positivus-dark">Contact us:</h3>
-            </div>
-            
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <Mail className="mr-3 text-white flex-shrink-0" size={18} />
-                <p className="text-white">Email: <a href="mailto:info@gomosivant.com" className="hover:text-positivus-green transition-colors">info@gomosivant.com</a></p>
-              </div>
-              
-              <div className="flex items-center">
-                <Phone className="mr-3 text-white flex-shrink-0" size={18} />
-                <p className="text-white">Phone: <a href="tel:+18189257116" className="hover:text-positivus-green transition-colors">+1 (818)-925-7116</a></p>
-              </div>
-              
-              <div className="flex items-start">
-                <MapPin className="mr-3 text-white flex-shrink-0 mt-1" size={18} />
-                <p className="text-white">
-                  Address: 1153 Lantern Trail Ave, Unit 101<br />
-                  Columbus, OH 43228
-                </p>
-              </div>
-            </div>
+        {/* Contact Information - Now full width since newsletter is removed */}
+        <div>
+          <div className="inline-block bg-positivus-green px-4 py-2 rounded-md mb-6">
+            <h3 className="text-xl font-bold text-positivus-dark">Contact us:</h3>
           </div>
           
-          {/* Newsletter Subscription */}
-          <div className="bg-gray-800/50 rounded-xl p-8">
-            <NewsletterSubscribe darkMode={true} />
+          <div className="space-y-4">
+            <div className="flex items-center">
+              <Mail className="mr-3 text-white flex-shrink-0" size={18} />
+              <p className="text-white">Email: <a href="mailto:info@gomosivant.com" className="hover:text-positivus-green transition-colors">info@gomosivant.com</a></p>
+            </div>
+            
+            <div className="flex items-center">
+              <Phone className="mr-3 text-white flex-shrink-0" size={18} />
+              <p className="text-white">Phone: <a href="tel:+18189257116" className="hover:text-positivus-green transition-colors">+1 (818)-925-7116</a></p>
+            </div>
+            
+            <div className="flex items-start">
+              <MapPin className="mr-3 text-white flex-shrink-0 mt-1" size={18} />
+              <p className="text-white">
+                Address: 1153 Lantern Trail Ave, Unit 101<br />
+                Columbus, OH 43228
+              </p>
+            </div>
           </div>
         </div>
         
