@@ -41,7 +41,7 @@ const ThemeToggle = () => {
       className="ml-2 p-2 hover:bg-gray-200 dark:hover:bg-gray-800 rounded-full"
     >
       {isDarkMode ? (
-        <Moon className="h-4 w-4 text-positivus-green" />
+        <Moon className="h-4 w-4 text-white" />
       ) : (
         <Sun className="h-4 w-4 text-positivus-dark" />
       )}

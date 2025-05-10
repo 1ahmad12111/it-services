@@ -16,7 +16,7 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
       {/* Subscribe Card */}
       <div className="bg-consulting-800 text-white p-6 rounded-xl mb-8">
         <h3 className="text-xl font-bold mb-4">Subscribe to Our Newsletter</h3>
-        <p className="text-consulting-100 mb-4">Get the latest insights delivered directly to your inbox.</p>
+        <p className="text-white mb-4">Get the latest insights delivered directly to your inbox.</p>
         <NewsletterSubscribe darkMode={true} />
       </div>
       
@@ -30,7 +30,7 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
           {popularTags.map((tag, index) => (
             <div 
               key={index} 
-              className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer transition-colors dark:text-white"
+              className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer transition-colors text-gray-800 dark:text-gray-100"
               onClick={() => setSearchQuery(tag)}
             >
               {tag}
@@ -42,8 +42,8 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
       {/* Call to Action */}
       <div className="bg-gradient-to-r from-consulting-600 to-consulting-700 text-white p-6 rounded-xl shadow-md">
         <h3 className="text-xl font-bold mb-3">Need Expert IT Advice?</h3>
-        <p className="mb-4">Schedule a free consultation with our experienced IT consultants.</p>
-        <Button className="w-full bg-white text-consulting-800 hover:bg-gray-100 dark:bg-positivus-green dark:text-positivus-dark dark:hover:bg-positivus-green/90">
+        <p className="mb-4 text-white">Schedule a free consultation with our experienced IT consultants.</p>
+        <Button className="w-full bg-white text-consulting-800 hover:bg-gray-100 dark:bg-positivus-green dark:text-positivus-dark dark:hover:bg-positivus-green/90 font-medium">
           <Link to="/booking">Book a Consultation</Link>
         </Button>
       </div>
