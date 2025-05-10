@@ -99,7 +99,7 @@ const Services = () => {
         </section>
 
         {/* Services List */}
-        <section className="py-16 bg-white dark:bg-positivus-dark dark:text-white">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="grid gap-16">
               {servicesData.map((service, index) => (
@@ -113,7 +113,7 @@ const Services = () => {
 
             <div className="mt-16 text-center">
               <Button 
-                className="bg-consulting-600 hover:bg-consulting-700 text-white dark:text-white px-8 py-6 text-lg flex items-center gap-2 mx-auto"
+                className="bg-consulting-600 hover:bg-consulting-700 text-white px-8 py-6 text-lg flex items-center gap-2 mx-auto"
                 onClick={scrollToTop}
               >
                 Back to Top <ArrowUp size={20} />

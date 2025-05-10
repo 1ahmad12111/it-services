@@ -25,15 +25,6 @@ const LiveChat = () => {
         fill: #FFFFFF !important; /* White color for better visibility */
       }
       
-      /* Dark mode adjustments */
-      .dark .voiceflow-chat-button {
-        background-color: #B9FF66 !important; /* Positivus Green */
-      }
-      
-      .dark .voiceflow-chat-button svg {
-        fill: #191A23 !important; /* Dark color for contrast */
-      }
-      
       /* Chat container styling */
       .voiceflow-chat-container {
         border: 1px solid #9b87f5 !important;
@@ -51,24 +42,6 @@ const LiveChat = () => {
       .voiceflow-chat-message-active {
         background-color: #9b87f5 !important; /* Primary Purple */
         color: #FFFFFF !important; /* White */
-      }
-      
-      /* Dark mode adjustments */
-      .dark .voiceflow-chat-container {
-        border: 1px solid #B9FF66 !important;
-        box-shadow: 0 4px 20px rgba(185, 255, 102, 0.2) !important;
-      }
-      
-      /* Ensure all text in chat is visible in dark mode */
-      .dark .voiceflow-chat-message,
-      .dark .voiceflow-chat-title,
-      .dark .voiceflow-chat-subtitle {
-        color: #FFFFFF !important;
-      }
-
-      /* Ensure button text is visible in dark mode */
-      .dark .voiceflow-chat-button-text {
-        color: #191A23 !important;
       }
     `;
     document.head.appendChild(style);
