@@ -1,31 +1,23 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-positivus-dark text-white py-16">
+  return <footer className="bg-positivus-dark text-white rounded-lg px-0 my-0 py-0 mx-[80px]">
       <div className="container mx-auto px-4 max-w-5xl"> {/* Added max-width constraint */}
         <div className="flex justify-between items-start mb-12">
           {/* Logo */}
           <div className="mb-8 lg:mb-0">
             <div className="flex items-center mb-4">
-              <span className="text-white text-3xl font-bold">◆</span>
+              <span className="text-white text-3xl font-bold">
+            </span>
             </div>
           </div>
           
           {/* Social Media - LinkedIn only, smaller */}
           <div className="flex">
-            <a 
-              href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white rounded-full p-1 hover:bg-positivus-green transition-colors"
-            >
+            <a href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full p-1 hover:bg-positivus-green transition-colors">
               <Linkedin size={12} className="text-positivus-dark" />
             </a>
           </div>
@@ -79,8 +71,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
