@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -236,7 +237,7 @@
 
 /* Glass morphism effects */
 .glass {
-  @apply backdrop-blur-md bg-white/70 border border-white/20 shadow-lg;
+  @apply backdrop-blur-md bg-white/70 dark:bg-positivus-dark/70 border border-white/20 dark:border-positivus-green/20 shadow-lg;
 }
 
 .glass-dark {
@@ -392,9 +393,30 @@ html {
 }
 
 .section-positivus {
-  @apply bg-positivus-light py-16;
+  @apply bg-positivus-light dark:bg-positivus-dark py-16;
 }
 
 .card-positivus {
-  @apply bg-white border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-all;
+  @apply bg-white dark:bg-positivus-dark border border-gray-200 dark:border-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-all dark:text-white;
+}
+
+/* Dark mode specific overrides */
+.dark .text-gray-600 {
+  color: rgba(229, 231, 235);
+}
+
+.dark .bg-white {
+  background-color: #191A23;
+}
+
+.dark .text-positivus-dark {
+  color: #F3F3F3;
+}
+
+.dark .border-gray-100 {
+  border-color: rgba(31, 41, 55);
+}
+
+.dark .shadow-md {
+  box-shadow: 0 4px 6px -1px rgba(185, 255, 102, 0.1), 0 2px 4px -1px rgba(185, 255, 102, 0.06);
 }

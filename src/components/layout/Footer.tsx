@@ -43,7 +43,7 @@ const Footer = () => {
               </p>
             </div>
             
-            {/* LinkedIn icon moved below the address */}
+            {/* LinkedIn icon below the address */}
             <div className="flex items-center mt-3 pl-6">
               <a href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full p-1 hover:bg-positivus-green transition-colors">
                 <Linkedin size={12} className="text-positivus-dark" />

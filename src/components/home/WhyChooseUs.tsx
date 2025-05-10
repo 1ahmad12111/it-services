@@ -31,12 +31,12 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-16 bg-positivus-light">
+    <section className="py-16 bg-positivus-light dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-positivus-dark">Why Choose Mosivant</h2>
-            <p className="text-xl text-positivus-dark">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-positivus-dark dark:text-white">Why Choose Mosivant</h2>
+            <p className="text-xl text-positivus-dark dark:text-gray-300">
               We combine technology expertise with industry insights to deliver impactful business outcomes.
             </p>
           </div>
@@ -45,14 +45,14 @@ const WhyChooseUs = () => {
             {features.map((feature, index) => (
               <div 
                 key={index} 
-                className="flex items-start p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                className="flex items-start p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow dark:text-white"
               >
                 <div className="p-2 bg-positivus-green rounded-full mr-4 flex-shrink-0">
                   <CheckCircle className="text-positivus-dark h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-positivus-dark">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <h3 className="font-bold text-lg mb-2 text-positivus-dark dark:text-white">{feature.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{feature.description}</p>
                 </div>
               </div>
             ))}

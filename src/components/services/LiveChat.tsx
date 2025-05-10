@@ -25,6 +25,11 @@ const LiveChat = () => {
         fill: #1A1F2C !important; /* Dark Purple */
       }
       
+      /* Dark mode adjustments */
+      .dark .voiceflow-chat-button {
+        background-color: #B9FF66 !important; /* Positivus Green */
+      }
+      
       /* Chat container styling */
       .voiceflow-chat-container {
         border: 1px solid #9b87f5 !important;
@@ -41,6 +46,12 @@ const LiveChat = () => {
       .voiceflow-chat-message-active {
         background-color: #9b87f5 !important; /* Primary Purple */
         color: #FFFFFF !important; /* White */
+      }
+      
+      /* Dark mode adjustments */
+      .dark .voiceflow-chat-container {
+        border: 1px solid #B9FF66 !important;
+        box-shadow: 0 4px 20px rgba(185, 255, 102, 0.2) !important;
       }
     `;
     document.head.appendChild(style);

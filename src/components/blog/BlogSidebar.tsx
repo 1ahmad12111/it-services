@@ -21,7 +21,7 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
       </div>
       
       {/* Popular Tags */}
-      <div className="bg-white p-6 rounded-xl shadow-md mb-8">
+      <div className="bg-white dark:bg-consulting-950 dark:text-white p-6 rounded-xl shadow-md mb-8">
         <h3 className="text-xl font-bold mb-4 flex items-center">
           <Tag className="mr-2" size={18} />
           Popular Tags
@@ -30,7 +30,7 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
           {popularTags.map((tag, index) => (
             <div 
               key={index} 
-              className="bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded-full text-sm cursor-pointer transition-colors"
+              className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 px-3 py-1 rounded-full text-sm cursor-pointer transition-colors dark:text-white"
               onClick={() => setSearchQuery(tag)}
             >
               {tag}
@@ -43,7 +43,7 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
       <div className="bg-gradient-to-r from-consulting-600 to-consulting-700 text-white p-6 rounded-xl shadow-md">
         <h3 className="text-xl font-bold mb-3">Need Expert IT Advice?</h3>
         <p className="mb-4">Schedule a free consultation with our experienced IT consultants.</p>
-        <Button className="w-full bg-white text-consulting-800 hover:bg-gray-100">
+        <Button className="w-full bg-white text-consulting-800 hover:bg-gray-100 dark:bg-positivus-green dark:text-positivus-dark dark:hover:bg-positivus-green/90">
           <Link to="/booking">Book a Consultation</Link>
         </Button>
       </div>
