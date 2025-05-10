@@ -2,9 +2,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
-import { Mail, Phone, MapPin, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import NewsletterSubscribe from "@/components/common/NewsletterSubscribe";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,7 +18,7 @@ const Footer = () => {
           <div className="mb-8 lg:mb-0">
             <div className="flex items-center mb-8">
               <span className="text-white text-3xl font-bold mr-2">◆</span>
-              <span className="text-white text-3xl font-bold">Positivus</span>
+              <span className="text-white text-3xl font-bold">Mosivant</span>
             </div>
             
             <div className="hidden lg:flex space-x-8">
@@ -39,31 +40,15 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Social Media */}
-          <div className="flex space-x-4 mb-8 lg:mb-0">
+          {/* Social Media - LinkedIn only */}
+          <div className="flex mb-8 lg:mb-0">
             <a 
               href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-white rounded-full p-2 hover:bg-positivus-green transition-colors"
             >
-              <Linkedin size={20} className="text-positivus-dark" />
-            </a>
-            <a 
-              href="https://www.facebook.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white rounded-full p-2 hover:bg-positivus-green transition-colors"
-            >
-              <Facebook size={20} className="text-positivus-dark" />
-            </a>
-            <a 
-              href="https://www.twitter.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-white rounded-full p-2 hover:bg-positivus-green transition-colors"
-            >
-              <Twitter size={20} className="text-positivus-dark" />
+              <Linkedin size={16} className="text-positivus-dark" />
             </a>
           </div>
         </div>
@@ -77,17 +62,17 @@ const Footer = () => {
             
             <div className="space-y-4">
               <div className="flex items-center">
-                <Mail className="mr-3 text-white flex-shrink-0" />
+                <Mail className="mr-3 text-white flex-shrink-0" size={18} />
                 <p className="text-white">Email: <a href="mailto:info@gomosivant.com" className="hover:text-positivus-green transition-colors">info@gomosivant.com</a></p>
               </div>
               
               <div className="flex items-center">
-                <Phone className="mr-3 text-white flex-shrink-0" />
+                <Phone className="mr-3 text-white flex-shrink-0" size={18} />
                 <p className="text-white">Phone: <a href="tel:+18189257116" className="hover:text-positivus-green transition-colors">+1 (818)-925-7116</a></p>
               </div>
               
               <div className="flex items-start">
-                <MapPin className="mr-3 text-white flex-shrink-0 mt-1" />
+                <MapPin className="mr-3 text-white flex-shrink-0 mt-1" size={18} />
                 <p className="text-white">
                   Address: 1153 Lantern Trail Ave, Unit 101<br />
                   Columbus, OH 43228
@@ -98,23 +83,14 @@ const Footer = () => {
           
           {/* Newsletter Subscription */}
           <div className="bg-gray-800/50 rounded-xl p-8">
-            <div className="flex flex-col space-y-4">
-              <Input 
-                type="email" 
-                placeholder="Email" 
-                className="h-14 px-4 bg-gray-700/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-positivus-green"
-              />
-              <Button className="bg-positivus-green text-positivus-dark hover:bg-positivus-green/90 font-bold py-6 px-6 rounded-lg w-full md:w-auto">
-                Subscribe to news
-              </Button>
-            </div>
+            <NewsletterSubscribe darkMode={true} />
           </div>
         </div>
         
         <Separator className="bg-gray-700 my-8" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 mb-4 md:mb-0">© {currentYear} Positivus. All Rights Reserved.</p>
+          <p className="text-gray-400 mb-4 md:mb-0">© {currentYear} Mosivant. All Rights Reserved.</p>
           
           <div className="flex space-x-6">
             <Link to="/privacy-policy" className="text-gray-400 hover:text-positivus-green transition-colors">
