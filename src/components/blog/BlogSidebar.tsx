@@ -44,7 +44,7 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
         <h3 className="text-xl font-bold mb-3">Need Expert IT Advice?</h3>
         <p className="mb-4">Schedule a free consultation with our experienced IT consultants.</p>
         <Button className="w-full bg-white text-consulting-800 hover:bg-gray-100">
-          <Link to="/contact">Book a Consultation</Link>
+          <Link to="/booking">Book a Consultation</Link>
         </Button>
       </div>
     </div>
