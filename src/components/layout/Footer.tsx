@@ -1,11 +1,13 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-positivus-dark text-white rounded-lg px-0 my-0 py-0 mx-[80px]">
-      <div className="container mx-auto px-4 max-w-5xl"> {/* Added max-width constraint */}
+      <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex justify-between items-start mb-12">
           {/* Logo */}
           <div className="mb-8 lg:mb-0">
@@ -13,13 +15,6 @@ const Footer = () => {
               <span className="text-white text-3xl font-bold">
             </span>
             </div>
-          </div>
-          
-          {/* Social Media - LinkedIn only, smaller */}
-          <div className="flex">
-            <a href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full p-1 hover:bg-positivus-green transition-colors">
-              <Linkedin size={12} className="text-positivus-dark" />
-            </a>
           </div>
         </div>
         
@@ -46,6 +41,13 @@ const Footer = () => {
                 Address: 1153 Lantern Trail Ave, Unit 101<br />
                 Columbus, OH 43228
               </p>
+            </div>
+            
+            {/* LinkedIn icon moved below the address */}
+            <div className="flex items-center mt-3 pl-6">
+              <a href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full p-1 hover:bg-positivus-green transition-colors">
+                <Linkedin size={12} className="text-positivus-dark" />
+              </a>
             </div>
           </div>
         </div>
