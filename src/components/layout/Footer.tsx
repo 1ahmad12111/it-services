@@ -10,47 +10,29 @@ const Footer = () => {
   return (
     <footer className="bg-positivus-dark text-white py-16">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row justify-between mb-12">
-          {/* Logo and Navigation */}
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-12">
+          {/* Logo */}
           <div className="mb-8 lg:mb-0">
-            <div className="flex items-center mb-8">
+            <div className="flex items-center mb-4">
               <span className="text-white text-3xl font-bold">◆</span>
-            </div>
-            
-            <div className="hidden lg:flex space-x-8">
-              <Link to="/about" className="text-white hover:text-positivus-green transition-colors">
-                About us
-              </Link>
-              <Link to="/services" className="text-white hover:text-positivus-green transition-colors">
-                Services
-              </Link>
-              <Link to="/use-cases" className="text-white hover:text-positivus-green transition-colors">
-                Use Cases
-              </Link>
-              <Link to="/pricing" className="text-white hover:text-positivus-green transition-colors">
-                Pricing
-              </Link>
-              <Link to="/blog" className="text-white hover:text-positivus-green transition-colors">
-                Blog
-              </Link>
             </div>
           </div>
           
-          {/* Social Media - LinkedIn only */}
+          {/* Social Media - LinkedIn only, smaller and moved to the right */}
           <div className="flex mb-8 lg:mb-0">
             <a 
               href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white rounded-full p-2 hover:bg-positivus-green transition-colors"
+              className="bg-white rounded-full p-1.5 hover:bg-positivus-green transition-colors"
             >
-              <Linkedin size={16} className="text-positivus-dark" />
+              <Linkedin size={14} className="text-positivus-dark" />
             </a>
           </div>
         </div>
         
-        {/* Contact Information - Now full width since newsletter is removed */}
-        <div>
+        {/* Contact Information */}
+        <div className="mb-12">
           <div className="inline-block bg-positivus-green px-4 py-2 rounded-md mb-6">
             <h3 className="text-xl font-bold text-positivus-dark">Contact us:</h3>
           </div>
@@ -81,7 +63,23 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 mb-4 md:mb-0">© {currentYear} Mosivant. All Rights Reserved.</p>
           
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap gap-6 items-center">
+            {/* Navigation links moved here */}
+            <Link to="/about" className="text-gray-400 hover:text-positivus-green transition-colors">
+              About us
+            </Link>
+            <Link to="/services" className="text-gray-400 hover:text-positivus-green transition-colors">
+              Services
+            </Link>
+            <Link to="/use-cases" className="text-gray-400 hover:text-positivus-green transition-colors">
+              Use Cases
+            </Link>
+            <Link to="/pricing" className="text-gray-400 hover:text-positivus-green transition-colors">
+              Pricing
+            </Link>
+            <Link to="/blog" className="text-gray-400 hover:text-positivus-green transition-colors">
+              Blog
+            </Link>
             <Link to="/privacy-policy" className="text-gray-400 hover:text-positivus-green transition-colors">
               Privacy Policy
             </Link>

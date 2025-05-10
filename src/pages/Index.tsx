@@ -13,6 +13,7 @@ import InsightsSection from "@/components/home/InsightsSection";
 import WorkingProcess from "@/components/home/WorkingProcess";
 import LiveChat from "@/components/services/LiveChat";
 import SEOMetaTags from "@/components/common/SEOMetaTags";
+import ScaleRatingTool from "@/components/feedback/ScaleRatingTool";
 
 const Index = () => {
   // Adds observer for scroll animations
@@ -74,6 +75,7 @@ const Index = () => {
           <ConsultationForm />
         </div>
         <LiveChat />
+        <ScaleRatingTool />
       </main>
       <Footer />
     </div>
