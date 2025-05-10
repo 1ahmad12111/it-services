@@ -65,6 +65,11 @@ const LiveChat = () => {
       .dark .voiceflow-chat-subtitle {
         color: #FFFFFF !important;
       }
+
+      /* Ensure button text is visible in dark mode */
+      .dark .voiceflow-chat-button-text {
+        color: #191A23 !important;
+      }
     `;
     document.head.appendChild(style);
     

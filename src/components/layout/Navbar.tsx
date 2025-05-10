@@ -41,7 +41,7 @@ const Navbar = () => {
             <DesktopMenuItems />
             <div className="flex items-center gap-4">
               <Button 
-                className="bg-positivus-green text-positivus-dark hover:bg-positivus-green/90 hover:text-positivus-dark font-bold shadow-md" 
+                className="bg-positivus-green text-positivus-dark hover:bg-positivus-green/90 hover:text-positivus-dark font-bold shadow-md dark:text-positivus-dark" 
                 size="sm"
                 asChild
               >
