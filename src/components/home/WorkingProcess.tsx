@@ -53,7 +53,7 @@ const WorkingProcess = () => {
   const [openStep, setOpenStep] = useState<string>("step-1");
 
   return (
-    <section className="py-24 bg-positivus-light">
+    <section className="py-16 bg-positivus-light">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">

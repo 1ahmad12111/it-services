@@ -6,7 +6,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative bg-gradient-to-r from-consulting-950 via-consulting-900 to-consulting-800 text-white py-24 pb-48 overflow-hidden">
+    <div className="relative bg-gradient-to-r from-consulting-950 via-consulting-900 to-consulting-800 text-white py-24 overflow-hidden">
       {/* Enhanced abstract background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
         <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-consulting-500 blur-[120px] animate-pulse-slow" />
@@ -89,6 +89,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
+      {/* Enhanced gradient overlay */}
+      <div className="absolute left-0 right-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent"></div>
     </div>
   );
 };

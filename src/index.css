@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -94,65 +95,6 @@
       font-size: 16px !important;
     }
   }
-}
-
-/* Enhanced animation styles for section dividers */
-.section-divider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  margin-top: -1px;
-  margin-bottom: -1px;
-}
-
-/* Gradient transitions */
-.gradient-fade {
-  transition: background 0.5s ease-in-out;
-}
-
-/* Section transitions */
-.section-transition {
-  position: relative;
-  overflow: hidden;
-}
-
-.section-transition::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-}
-
-/* Enhanced wave animation */
-@keyframes wave {
-  0% {
-    transform: translateX(0) translateZ(0) scaleY(1);
-  }
-  50% {
-    transform: translateX(-25%) translateZ(0) scaleY(0.95);
-  }
-  100% {
-    transform: translateX(-50%) translateZ(0) scaleY(1);
-  }
-}
-
-.animate-wave {
-  animation: wave 15s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-}
-
-/* Additional styles for seamless dividers */
-.section-divider svg {
-  display: block;
-}
-
-.section-divider-overlap {
-  margin-top: -100px;
-  padding-top: 100px;
-  position: relative;
-  z-index: 10;
 }
 
 /* Enhanced animation styles */

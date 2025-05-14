@@ -13,7 +13,6 @@ import InsightsSection from "@/components/home/InsightsSection";
 import WorkingProcess from "@/components/home/WorkingProcess";
 import LiveChat from "@/components/services/LiveChat";
 import SEOMetaTags from "@/components/common/SEOMetaTags";
-import SectionDivider from "@/components/common/SectionDivider";
 
 const Index = () => {
   // Adds observer for scroll animations
@@ -53,38 +52,24 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <ClientsSection />
-        
-        <SectionDivider type="slant" fromColor="from-gray-50" toColor="to-white" />
         <div className="animate-on-scroll opacity-0">
           <ServiceOverview />
         </div>
-        
-        <SectionDivider type="curve" fromColor="from-white" toColor="to-positivus-light" />
         <div className="animate-on-scroll opacity-0">
           <WorkingProcess />
         </div>
-        
-        <SectionDivider type="wave" fromColor="from-positivus-light" toColor="to-white" />
         <div className="animate-on-scroll opacity-0">
           <WhyChooseUs />
         </div>
-        
-        <SectionDivider type="slant" fromColor="from-white" toColor="to-gray-50" />
         <div className="animate-on-scroll opacity-0">
           <InsightsSection />
         </div>
-        
-        <SectionDivider type="curve" fromColor="from-gray-50" toColor="to-consulting-950" />
         <div className="animate-on-scroll opacity-0">
           <Testimonials />
         </div>
-        
-        <SectionDivider type="wave" fromColor="from-consulting-950" toColor="to-white" />
         <div className="animate-on-scroll opacity-0">
           <CtaSection />
         </div>
-        
-        <SectionDivider type="slant" fromColor="from-white" toColor="to-gray-50" />
         <div className="animate-on-scroll opacity-0">
           <ConsultationForm />
         </div>
