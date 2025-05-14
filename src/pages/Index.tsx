@@ -52,26 +52,24 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        
-        <SectionDivider type="wave" fromColor="from-consulting-800" toColor="to-white" />
         <ClientsSection />
         
-        <SectionDivider type="slant" fromColor="from-white" toColor="to-gray-50" />
+        <SectionDivider type="slant" fromColor="from-gray-50" toColor="to-white" />
         <div className="animate-on-scroll opacity-0">
           <ServiceOverview />
         </div>
         
-        <SectionDivider type="curve" fromColor="from-gray-50" toColor="to-white" />
+        <SectionDivider type="curve" fromColor="from-white" toColor="to-positivus-light" />
         <div className="animate-on-scroll opacity-0">
           <WorkingProcess />
         </div>
         
-        <SectionDivider type="wave" fromColor="from-white" toColor="to-positivus-light" />
+        <SectionDivider type="wave" fromColor="from-positivus-light" toColor="to-white" />
         <div className="animate-on-scroll opacity-0">
           <WhyChooseUs />
         </div>
         
-        <SectionDivider type="slant" fromColor="from-positivus-light" toColor="to-gray-50" />
+        <SectionDivider type="slant" fromColor="from-white" toColor="to-gray-50" />
         <div className="animate-on-scroll opacity-0">
           <InsightsSection />
         </div>

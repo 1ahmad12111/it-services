@@ -63,7 +63,7 @@ const achievements = [
 
 const ClientsSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-24 bg-gradient-to-b from-consulting-800 to-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block bg-consulting-50 text-consulting-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4 border border-consulting-100">Our Partners</div>

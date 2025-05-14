@@ -12,9 +12,9 @@ const SectionDivider = ({ type, fromColor, toColor }: SectionDividerProps) => {
     switch (type) {
       case "wave":
         return (
-          <div className={`h-24 relative overflow-hidden bg-gradient-to-b ${fromColor} ${toColor}`}>
+          <div className={`h-24 relative -mt-24 bg-gradient-to-b ${fromColor} ${toColor}`}>
             <svg
-              className="absolute bottom-0 left-0 w-full"
+              className="absolute bottom-0 left-0 w-full h-full"
               viewBox="0 0 1200 120"
               preserveAspectRatio="none"
             >
@@ -36,7 +36,7 @@ const SectionDivider = ({ type, fromColor, toColor }: SectionDividerProps) => {
         
       case "slant":
         return (
-          <div className={`h-24 relative bg-gradient-to-b ${fromColor} ${toColor}`}>
+          <div className={`h-24 relative -mt-24 bg-gradient-to-b ${fromColor} ${toColor}`}>
             <svg
               className="absolute bottom-0 left-0 w-full h-full"
               viewBox="0 0 100 100"
@@ -50,9 +50,9 @@ const SectionDivider = ({ type, fromColor, toColor }: SectionDividerProps) => {
         
       case "curve":
         return (
-          <div className={`h-24 relative overflow-hidden bg-gradient-to-b ${fromColor} ${toColor}`}>
+          <div className={`h-24 relative -mt-24 bg-gradient-to-b ${fromColor} ${toColor}`}>
             <svg
-              className="absolute bottom-0 left-0 w-full"
+              className="absolute bottom-0 left-0 w-full h-full"
               viewBox="0 0 1200 120"
               preserveAspectRatio="none"
             >

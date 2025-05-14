@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight, LineChart, ShieldCheck, Cpu } from "lucide-react";
@@ -5,7 +6,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative bg-gradient-to-r from-consulting-950 via-consulting-900 to-consulting-800 text-white py-24 overflow-hidden">
+    <div className="relative bg-gradient-to-r from-consulting-950 via-consulting-900 to-consulting-800 text-white py-24 pb-48 overflow-hidden">
       {/* Enhanced abstract background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
         <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-consulting-500 blur-[120px] animate-pulse-slow" />
@@ -88,8 +89,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      
-      {/* Remove the gradient overlay since we'll use the SectionDivider component instead */}
     </div>
   );
 };
