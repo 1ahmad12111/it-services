@@ -22,8 +22,14 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-positivus-dark text-white">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-positivus-dark text-white relative overflow-hidden">
+      {/* Add subtle animated background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-consulting-800 blur-[120px] animate-pulse-slow opacity-30" />
+        <div className="absolute bottom-10 right-10 w-[500px] h-[500px] rounded-full bg-consulting-700 blur-[150px] animate-pulse-slow opacity-20" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-positivus-green">What Our Clients Say</h2>
           <p className="text-xl text-white max-w-2xl mx-auto">
@@ -33,7 +39,10 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-positivus-dark border border-gray-800 rounded-lg p-8 shadow-lg">
+            <div 
+              key={index} 
+              className="bg-positivus-dark border border-gray-800 rounded-lg p-8 shadow-lg backdrop-blur-sm bg-opacity-70 hover:bg-opacity-90 transition-all"
+            >
               <svg 
                 className="h-8 w-8 text-positivus-green mb-4" 
                 fill="currentColor" 

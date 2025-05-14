@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronRight, LineChart, ShieldCheck, Cpu } from "lucide-react";
@@ -90,8 +89,7 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Enhanced gradient overlay */}
-      <div className="absolute left-0 right-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent"></div>
+      {/* Remove the gradient overlay since we'll use the SectionDivider component instead */}
     </div>
   );
 };
