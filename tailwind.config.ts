@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,11 +62,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                // Using exact colors from the reference image
+                // Using exact colors from the Mosivant logo
                 coral: {
-                    DEFAULT: '#ff6666',
-                    light: '#ff8080',
-                    dark: '#e65c5c',
+                    DEFAULT: '#ea384c', // Main coral color from logo
+                    light: '#f05a6c',
+                    dark: '#d42e40',
                 },
                 lemon: {
                     DEFAULT: '#ffff33',
@@ -75,8 +74,8 @@ export default {
                     dark: '#e6e62e',
                 },
                 red: {
-                    500: '#ea384c',  // Updated to match reference image
-                    600: '#d73246',  // Darker shade for hover
+                    500: '#ea384c',  // Same as coral default for consistency
+                    600: '#d42e40',  // Darker shade for hover (same as coral.dark)
                 },
                 // Keeping these for backward compatibility
                 positivus: {

@@ -72,11 +72,11 @@
 
 /* New color utility classes based on the updated colors */
 .bg-coral {
-  background-color: #ff6666;
+  background-color: #ea384c;
 }
 
 .text-coral {
-  color: #ff6666;
+  color: #ea384c;
 }
 
 .bg-lemon {
@@ -88,7 +88,7 @@
 }
 
 .border-coral {
-  border-color: #ff6666;
+  border-color: #ea384c;
 }
 
 .border-lemon {
@@ -96,11 +96,11 @@
 }
 
 .hover\:bg-coral:hover {
-  background-color: #ff6666;
+  background-color: #ea384c;
 }
 
 .hover\:text-coral:hover {
-  color: #ff6666;
+  color: #ea384c;
 }
 
 .hover\:bg-lemon:hover {
@@ -123,7 +123,7 @@
 }
 
 .button-new-style:hover {
-  background-color: #d73246;
+  background-color: #d42e40;
 }
 
 /* Keeping existing Positivus Style Overrides */
