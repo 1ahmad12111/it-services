@@ -5,8 +5,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import CalendlyWidget from "@/components/services/CalendlyWidget";
 const ConsultationForm = () => {
   const [activeTab, setActiveTab] = useState("details");
-  return <section id="consultation" className="py-16 bg-gray-50">
-      
-    </section>;
+  return;
 };
 export default ConsultationForm;
