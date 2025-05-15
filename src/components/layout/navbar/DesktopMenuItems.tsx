@@ -15,6 +15,7 @@ const DesktopMenuItems = () => {
               isActive ? "text-coral font-semibold" : "text-foreground"
             }`
           }
+          end
         >
           {item.label}
         </NavLink>

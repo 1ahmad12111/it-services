@@ -35,6 +35,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                   isActive ? "text-coral font-semibold" : "text-foreground"
                 }`
               }
+              end
             >
               {item.label}
             </NavLink>

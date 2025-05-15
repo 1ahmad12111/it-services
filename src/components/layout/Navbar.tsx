@@ -6,7 +6,7 @@ import MobileMenu from "./navbar/MobileMenu";
 import DesktopMenuItems from "./navbar/DesktopMenuItems";
 import ThemeToggle from "@/components/theme/ThemeToggle";
 import { Button } from "@/components/ui/button";
-import { Link as RouterLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -45,9 +45,9 @@ const Navbar = () => {
                 size="sm"
                 asChild
               >
-                <RouterLink to="/booking">
+                <Link to="/booking">
                   Schedule Consultation
-                </RouterLink>
+                </Link>
               </Button>
               <ThemeToggle />
             </div>
