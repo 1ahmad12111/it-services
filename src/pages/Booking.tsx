@@ -22,10 +22,10 @@ const Booking = () => {
             </div>
             
             <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
-              <div className="aspect-auto min-h-[600px] md:min-h-[750px]">
+              <div className="min-h-[650px] md:min-h-[750px]">
                 <CalendlyWidget 
                   url="https://cal.com/faisal-qureshi-k3bw4r/15min" 
-                  styles={{ height: isMobile ? "600px" : "750px" }} 
+                  styles={{ height: isMobile ? "650px" : "750px" }} 
                 />
               </div>
             </div>

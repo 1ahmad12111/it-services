@@ -20,11 +20,11 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
   const calLink = url.replace(/https?:\/\/(cal\.com\/)?/i, '');
   
   useEffect(() => {
-    (async function initCal() {
-      const cal = await getCalApi();
+    (async function() {
+      const cal = await getCalApi({"namespace":"15min"});
       cal("ui", {
-        hideEventTypeDetails: false,
-        layout: "month_view"
+        "hideEventTypeDetails": true,
+        "layout": "month_view"
       });
     })();
   }, []);
@@ -33,7 +33,12 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
     <Cal
       namespace="15min"
       calLink={calLink}
-      style={{ width: "100%", height: styles.height || "100%", overflow: "scroll" }}
+      style={{
+        width: "100%", 
+        height: styles.height || "100%", 
+        overflow: "scroll",
+        borderRadius: "8px"
+      }}
       config={{
         layout: "month_view",
         name: prefill?.name,
