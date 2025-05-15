@@ -1,7 +1,8 @@
 
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { navItems } from "./NavbarData";
 import { X } from "lucide-react";
 
 interface MobileMenuProps {
@@ -10,98 +11,45 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
-  // Close mobile menu when clicking outside or pressing Escape
-  useEffect(() => {
-    if (!isOpen) return;
-    
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    
-    const handleClickOutside = (e: MouseEvent) => {
-      // This will be handled by the parent component's click handler
-      // Just adding it here for completeness
-    };
-    
-    document.addEventListener("keydown", handleEscape);
-    document.addEventListener("mousedown", handleClickOutside);
-    
-    // Prevent scrolling when menu is open
-    document.body.style.overflow = "hidden";
-    
-    return () => {
-      document.removeEventListener("keydown", handleEscape);
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.body.style.overflow = "";
-    };
-  }, [isOpen, onClose]);
-
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 lg:hidden bg-white">
-      <div className="h-full flex flex-col p-6">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-xl font-semibold">Menu</h2>
-          <button 
-            onClick={onClose}
-            className="p-2 rounded-full hover:bg-gray-100"
-            aria-label="Close menu"
-          >
-            <X className="h-6 w-6" />
-          </button>
-        </div>
+    <div className="lg:hidden fixed inset-0 z-50 bg-white">
+      <div className="flex flex-col h-full overflow-y-auto pt-16 pb-20 px-4">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-foreground hover:text-coral"
+          aria-label="Close menu"
+        >
+          <X size={24} />
+        </button>
         
-        <nav className="flex-1">
-          <ul className="space-y-6 text-xl">
-            <li>
-              <Link
-                to="/services"
-                className="block font-medium text-gray-800 hover:text-consulting-600 py-2"
-                onClick={onClose}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className="block font-medium text-gray-800 hover:text-consulting-600 py-2"
-                onClick={onClose}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/blog"
-                className="block font-medium text-gray-800 hover:text-consulting-600 py-2"
-                onClick={onClose}
-              >
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/contact"
-                className="block font-medium text-gray-800 hover:text-consulting-600 py-2"
-                onClick={onClose}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        
-        <div className="mt-auto pt-6 border-t border-gray-100">
-          <Button 
-            className="w-full py-6 bg-consulting-600 hover:bg-consulting-700 text-lg" 
-            asChild
-          >
-            <Link to="/booking" onClick={onClose}>
-              Schedule Consultation
-            </Link>
-          </Button>
+        <div className="flex flex-col space-y-4 mt-8">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              onClick={onClose}
+              className={({ isActive }) =>
+                `px-4 py-3 text-lg font-medium border-b border-gray-100 ${
+                  isActive ? "text-coral font-semibold" : "text-foreground"
+                }`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          <div className="mt-6 pt-6">
+            <Button 
+              className="w-full bg-coral text-black hover:bg-coral/90"
+              onClick={onClose}
+              asChild
+            >
+              <NavLink to="/booking">
+                Schedule Consultation
+              </NavLink>
+            </Button>
+          </div>
         </div>
       </div>
     </div>

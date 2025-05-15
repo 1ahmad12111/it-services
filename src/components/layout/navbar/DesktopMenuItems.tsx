@@ -1,15 +1,24 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { navItems } from "./NavbarData";
 
 const DesktopMenuItems = () => {
   return (
-    <div className="flex space-x-6">
-      <Link to="/" className="text-gray-700 hover:text-consulting-600 font-medium">Home</Link>
-      <Link to="/services" className="text-gray-700 hover:text-consulting-600 font-medium">Services</Link>
-      <Link to="/blog" className="text-gray-700 hover:text-consulting-600 font-medium">Blog</Link>
-      <Link to="/about" className="text-gray-700 hover:text-consulting-600 font-medium">About</Link>
-      <Link to="/contact" className="text-gray-700 hover:text-consulting-600 font-medium">Contact</Link>
+    <div className="flex items-center">
+      {navItems.map((item) => (
+        <NavLink
+          key={item.path}
+          to={item.path}
+          className={({ isActive }) =>
+            `mx-3 py-2 text-base font-medium transition-colors hover:text-coral ${
+              isActive ? "text-coral font-semibold" : "text-foreground"
+            }`
+          }
+        >
+          {item.label}
+        </NavLink>
+      ))}
     </div>
   );
 };

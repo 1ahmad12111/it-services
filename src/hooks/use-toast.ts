@@ -17,18 +17,18 @@ type ToastOptions = {
 
 export const useToast = () => {
   return {
-    toast,
-    dismiss: sonnerToast.dismiss,
-    error: (message: string) => 
-      sonnerToast.error(message, {
-        className: "bg-white border-coral",
+    toast: (props: ToastProps | string) => {
+      if (typeof props === "string") {
+        return sonnerToast(props);
+      }
+
+      const { title, description, variant } = props;
+      return sonnerToast(title || "", {
+        description,
+        className: variant === 'destructive' ? "bg-white border-coral" : "bg-white border-gray-200",
         style: { color: "black" },
-      }),
-    success: (message: string) => 
-      sonnerToast.success(message, {
-        className: "bg-white border-lemon",
-        style: { color: "black" },
-      }),
+      });
+    },
   };
 };
 

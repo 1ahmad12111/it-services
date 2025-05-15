@@ -24,17 +24,17 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
   const IconComponent = () => {
     switch (service.icon) {
       case "Globe":
-        return <Globe className="h-12 w-12 text-consulting-600" />;
+        return <Globe className="h-12 w-12 text-black" />;
       case "Code":
-        return <Code className="h-12 w-12 text-consulting-600" />;
+        return <Code className="h-12 w-12 text-black" />;
       case "Database":
-        return <Database className="h-12 w-12 text-consulting-600" />;
+        return <Database className="h-12 w-12 text-black" />;
       case "ShieldCheck":
-        return <ShieldCheck className="h-12 w-12 text-consulting-600" />;
+        return <ShieldCheck className="h-12 w-12 text-black" />;
       case "Server":
-        return <Server className="h-12 w-12 text-consulting-600" />;
+        return <Server className="h-12 w-12 text-black" />;
       default:
-        return <Globe className="h-12 w-12 text-consulting-600" />;
+        return <Globe className="h-12 w-12 text-black" />;
     }
   };
 
@@ -47,7 +47,7 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
     >
       {/* For mobile, always show content first, then image */}
       <div className={isReversed && !isMobile ? "md:col-start-2" : ""}>
-        <div className="bg-consulting-50 p-4 rounded-full w-20 h-20 flex items-center justify-center mb-6">
+        <div className="bg-lemon p-4 rounded-full w-20 h-20 flex items-center justify-center mb-6">
           <IconComponent />
         </div>
         <h2 className="text-2xl md:text-3xl font-bold mb-3">{service.title}</h2>
@@ -59,7 +59,7 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {service.features.map((feature, index) => (
               <li key={index} className="flex items-start">
-                <div className="mr-2 mt-1 text-consulting-500">
+                <div className="mr-2 mt-1 text-coral">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -83,14 +83,13 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
         
         <div className="flex flex-col sm:flex-row gap-4">
           <Button
-            className="bg-consulting-600 hover:bg-consulting-700 text-white"
+            className="bg-coral hover:bg-coral/90 text-black"
             asChild
           >
             <RouterLink to={`/booking`}>
               Learn More <ArrowRight className="ml-2 h-4 w-4" />
             </RouterLink>
           </Button>
-          {/* Removed "Request a Consultation" button */}
         </div>
       </div>
       
