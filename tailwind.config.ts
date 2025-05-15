@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -156,10 +157,10 @@ export default {
                 'pulse-slow': 'pulse-slow 3s infinite'
 			},
             fontFamily: {
-                sans: ['DM Sans', 'sans-serif'],
+                sans: ['Oxanium', 'sans-serif'],
                 mono: ['Space Mono', 'monospace'],
                 serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-                heading: ['DM Sans', 'sans-serif'],
+                heading: ['Oxanium', 'sans-serif'],
                 positivus: ['Space Grotesk', 'sans-serif'], // Keeping for backward compatibility
             }
 		}
