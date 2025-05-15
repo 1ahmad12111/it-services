@@ -31,6 +31,7 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
 
   return (
     <Cal
+      namespace="15min"
       calLink={calLink}
       style={{ width: "100%", height: styles.height || "100%", overflow: "scroll" }}
       config={{
