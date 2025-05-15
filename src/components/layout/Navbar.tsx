@@ -40,7 +40,7 @@ const Navbar = () => {
             <DesktopMenuItems />
             <div className="flex items-center gap-4">
               <Button 
-                className="bg-red-500 text-black hover:bg-red-600 rounded-none" 
+                className="bg-coral text-black hover:bg-coral/90 rounded-md" 
                 size="sm"
                 asChild
               >
@@ -55,7 +55,9 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMobileMenu}
-              className="ml-4 text-foreground hover:text-red-500 focus:outline-none"
+              className="ml-4 text-foreground hover:text-coral focus:outline-none"
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
             >
               {isMobileMenuOpen ? (
                 <X size={24} />
@@ -66,7 +68,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Render outside the flow to prevent layout issues */}
         <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
       </div>
     </nav>
