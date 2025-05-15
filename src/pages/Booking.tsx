@@ -13,7 +13,7 @@ const Booking = () => {
       <Navbar />
       <main className="flex-grow py-8 md:py-12 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center mb-6 md:mb-8">
               <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-consulting-800">Schedule a Consultation</h1>
               <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
@@ -22,7 +22,7 @@ const Booking = () => {
             </div>
             
             <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
-              <div className="min-h-[650px] md:min-h-[750px]">
+              <div className="w-full min-h-[650px] md:min-h-[750px]">
                 <CalendlyWidget 
                   url="https://cal.com/faisal-qureshi-k3bw4r/15min" 
                   styles={{ height: isMobile ? "650px" : "750px" }} 

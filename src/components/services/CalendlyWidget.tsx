@@ -30,22 +30,25 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
   }, []);
 
   return (
-    <Cal
-      namespace="15min"
-      calLink={calLink}
-      style={{
-        width: "100%", 
-        height: styles.height || "100%", 
-        overflow: "scroll",
-        borderRadius: "8px"
-      }}
-      config={{
-        layout: "month_view",
-        name: prefill?.name,
-        email: prefill?.email,
-        ...prefill?.customAnswers
-      }}
-    />
+    <div className="w-full scrollbar-hide">
+      <Cal
+        namespace="15min"
+        calLink={calLink}
+        style={{
+          width: "100%",
+          height: styles.height || "100%",
+          minHeight: "650px",
+          overflow: "auto",
+          borderRadius: "8px"
+        }}
+        config={{
+          layout: "month_view",
+          name: prefill?.name,
+          email: prefill?.email,
+          ...prefill?.customAnswers
+        }}
+      />
+    </div>
   );
 };
 

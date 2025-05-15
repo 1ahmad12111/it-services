@@ -64,7 +64,7 @@ const ConsultationForm = () => {
                     <TabsTrigger value="details">Book Your Consultation</TabsTrigger>
                   </TabsList>
                   <TabsContent value="details" className="space-y-4">
-                    <div className="min-h-[650px]">
+                    <div className="w-full min-h-[650px]">
                       <CalendlyWidget 
                         url="https://cal.com/faisal-qureshi-k3bw4r/15min" 
                         styles={{ height: "650px" }}
