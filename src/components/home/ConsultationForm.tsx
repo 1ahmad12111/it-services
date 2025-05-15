@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -6,17 +7,6 @@ import CalendlyWidget from "@/components/services/CalendlyWidget";
 
 const ConsultationForm = () => {
   const [activeTab, setActiveTab] = useState("details");
-  
-  useEffect(() => {
-    // Help ensure Cal.com widget initializes when tab is displayed
-    if (activeTab === "details") {
-      const timer = setTimeout(() => {
-        window.dispatchEvent(new Event('resize'));
-      }, 500);
-      
-      return () => clearTimeout(timer);
-    }
-  }, [activeTab]);
 
   return (
     <section id="consultation" className="py-16 bg-gray-50">

@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CalendlyWidget from "@/components/services/CalendlyWidget";
@@ -7,15 +7,6 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const Booking = () => {
   const isMobile = useIsMobile();
-  
-  useEffect(() => {
-    // This helps ensure the Cal widget initializes properly
-    const timer = setTimeout(() => {
-      window.dispatchEvent(new Event('resize'));
-    }, 1000);
-    
-    return () => clearTimeout(timer);
-  }, []);
   
   return (
     <div className="min-h-screen flex flex-col">
