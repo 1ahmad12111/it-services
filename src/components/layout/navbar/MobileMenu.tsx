@@ -14,58 +14,74 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   // Don't render anything if the menu is closed
   if (!isOpen) return null;
 
-  // Prevent body scrolling when menu is open
+  // Lock/unlock body scroll when menu opens/closes
   useEffect(() => {
     if (isOpen) {
+      // Save current scroll position
+      const scrollY = window.scrollY;
+      
+      // Apply styles to lock the body
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
       
-      // Store original position to restore later
-      const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.width = '100%';
-      document.body.style.top = `-${scrollY}px`;
-      
       return () => {
-        document.body.style.overflow = '';
+        // Remove the styles and restore scroll position on cleanup
+        const scrollY = parseInt((document.body.style.top || '0').replace('px', '')) * -1;
         document.body.style.position = '';
-        document.body.style.width = '';
         document.body.style.top = '';
-        // Restore scroll position
-        window.scrollTo(0, scrollY);
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        
+        // Use setTimeout to ensure styles are applied before scrolling
+        setTimeout(() => {
+          window.scrollTo(0, scrollY);
+        }, 0);
       };
     }
   }, [isOpen]);
 
   return (
-    <div className="lg:hidden fixed inset-0 z-[999] bg-white dark:bg-gray-900">
-      <div className="flex flex-col h-full overflow-y-auto pt-16 pb-20 px-4">
-        <button
-          onClick={onClose}
-          className="absolute top-4 right-4 text-foreground hover:text-coral"
-          aria-label="Close menu"
-        >
-          <X size={24} />
-        </button>
+    <>
+      {/* Backdrop for menu */}
+      <div className="fixed inset-0 bg-black/50 z-[998] lg:hidden" onClick={onClose} aria-hidden="true"></div>
+      
+      {/* Menu content */}
+      <div className="lg:hidden fixed inset-0 z-[999] bg-white dark:bg-gray-900 flex flex-col">
+        <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100 dark:border-gray-800">
+          <div className="text-lg font-semibold">Menu</div>
+          <button
+            onClick={onClose}
+            className="p-2 text-foreground hover:text-coral"
+            aria-label="Close menu"
+          >
+            <X size={24} />
+          </button>
+        </div>
         
-        <div className="flex flex-col space-y-4 mt-8">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              onClick={onClose}
-              className={({ isActive }) =>
-                `px-4 py-3 text-lg font-medium border-b border-gray-100 ${
-                  isActive ? "text-coral font-semibold" : "text-foreground"
-                }`
-              }
-              end
-            >
-              {item.label}
-            </NavLink>
-          ))}
-          <div className="mt-6 pt-6">
+        <div className="flex flex-col flex-1 overflow-y-auto">
+          <nav className="flex flex-col space-y-1 p-4">
+            {navItems.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                onClick={onClose}
+                className={({ isActive }) =>
+                  `px-4 py-4 text-lg font-medium border-b border-gray-100 dark:border-gray-800 ${
+                    isActive ? "text-coral font-semibold" : "text-foreground"
+                  }`
+                }
+                end
+              >
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+          
+          <div className="mt-auto p-4">
             <Button 
-              className="w-full bg-coral text-black hover:bg-coral/90"
+              className="w-full bg-coral text-black hover:bg-coral/90 py-6 text-lg"
               onClick={onClose}
               asChild
             >
@@ -76,7 +92,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

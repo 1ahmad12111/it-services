@@ -8,14 +8,23 @@
 @import './styles/animations.css';
 @import './styles/utilities.css';
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
+  body {
+    height: 100%;
+    overflow-x: hidden;
+    /* Prevent Chrome pull-to-refresh */
+    overscroll-behavior-y: none;
+  }
+}
+
 @layer components {
   /* Custom classes */
   .animate-fade-in {
     @apply opacity-100 translate-y-0 duration-700;
-  }
-  
-  /* Custom utility for hamburger menu */
-  .fixed-important {
-    position: fixed !important;
   }
 }
