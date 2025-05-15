@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -65,14 +64,18 @@ export default {
 				},
                 // Using exact colors from the screenshot
                 coral: {
-                    DEFAULT: '#ff6666',  // Primary color from screenshot
+                    DEFAULT: '#ff6666',
                     light: '#ff8080',
                     dark: '#e65c5c',
                 },
                 lemon: {
-                    DEFAULT: '#ffff33',  // Secondary color from screenshot
+                    DEFAULT: '#ffff33',
                     light: '#ffff66',
                     dark: '#e6e62e',
+                },
+                red: {
+                    500: '#ff3b30',  // Primary button color from image
+                    600: '#e5352d',  // Darker shade for hover
                 },
                 // Keeping these for backward compatibility
                 positivus: {

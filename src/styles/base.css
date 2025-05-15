@@ -177,6 +177,18 @@
     @apply text-xl md:text-2xl;
   }
 
+  /* Button styles to match the reference image */
+  button, .button {
+    @apply rounded-none;
+  }
+
+  /* Button styles for form submit buttons */
+  [type="submit"], 
+  [type="button"], 
+  button[type="submit"] {
+    @apply bg-red-500 text-black hover:bg-red-600 rounded-none;
+  }
+
   /* Smoother scrolling experience */
   html {
     scroll-behavior: smooth;
@@ -184,7 +196,7 @@
   
   /* Better form controls for mobile */
   input, select, textarea {
-    @apply text-base;
+    @apply text-base rounded-none;
     font-size: 16px; /* Prevents iOS zoom on focus */
   }
   
@@ -209,6 +221,7 @@ textarea {
   color: var(--color-foreground);
   background-color: var(--color-background);
   border-color: var(--color-border);
+  @apply rounded-none;
 }
 
 input::placeholder,

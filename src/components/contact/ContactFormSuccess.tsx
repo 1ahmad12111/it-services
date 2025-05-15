@@ -73,6 +73,7 @@ This message was generated from the contact form on your website.`;
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button 
           variant="outline"
+          className="rounded-none"
           onClick={onReset}
         >
           Send Another Message
@@ -80,17 +81,17 @@ This message was generated from the contact form on your website.`;
         <Button
           variant="default"
           onClick={() => window.location.href = generateMailtoLink()}
-          className="flex items-center gap-2 bg-coral text-white hover:bg-coral/90"
+          className="bg-red-500 text-black hover:bg-red-600 rounded-none"
         >
-          <Mail size={16} />
+          <Mail size={16} className="mr-2" />
           Open in Email App
         </Button>
         <Button 
           variant="secondary"
           onClick={generateTextFile}
-          className="flex items-center gap-2 bg-lemon text-black hover:bg-lemon/90"
+          className="bg-red-500 text-black hover:bg-red-600 rounded-none"
         >
-          <Download size={16} />
+          <Download size={16} className="mr-2" />
           Download as Text
         </Button>
       </div>

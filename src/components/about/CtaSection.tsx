@@ -13,7 +13,7 @@ const CtaSection = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
-            className="bg-coral text-black hover:bg-coral/90"
+            className="bg-red-500 text-black hover:bg-red-600 rounded-none"
             size="lg"
             asChild
           >
@@ -22,7 +22,7 @@ const CtaSection = () => {
             </Link>
           </Button>
           <Button
-            className="bg-lemon text-black hover:bg-lemon/90 border-2 border-white"
+            className="bg-red-500 text-black hover:bg-red-600 rounded-none"
             size="lg"
             asChild
           >
