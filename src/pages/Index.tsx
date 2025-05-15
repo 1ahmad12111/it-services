@@ -17,28 +17,41 @@ import SEOMetaTags from "@/components/common/SEOMetaTags";
 const Index = () => {
   // Adds observer for scroll animations
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-in");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    // Use a small timeout to ensure DOM is fully ready
+    const timeoutId = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Add a small delay to make animations smoother
+              requestAnimationFrame(() => {
+                entry.target.classList.add("animate-fade-in");
+              });
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { 
+          threshold: 0.1,
+          // Add rootMargin to start animation slightly before element comes into view
+          rootMargin: '10px'
+        }
+      );
 
-    // Select elements to animate on scroll
-    document.querySelectorAll(".animate-on-scroll").forEach((element) => {
-      observer.observe(element);
-    });
-
-    return () => {
+      // Select elements to animate on scroll
       document.querySelectorAll(".animate-on-scroll").forEach((element) => {
-        observer.unobserve(element);
+        observer.observe(element);
       });
-    };
+
+      return () => {
+        document.querySelectorAll(".animate-on-scroll").forEach((element) => {
+          observer.unobserve(element);
+        });
+        observer.disconnect();
+      };
+    }, 100); // Small timeout to ensure DOM is ready
+
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (
