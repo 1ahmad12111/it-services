@@ -43,7 +43,7 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
       <div className="bg-gradient-to-r from-coral to-coral/80 text-white p-6 rounded-xl shadow-md">
         <h3 className="text-xl font-bold mb-3">Need Expert IT Advice?</h3>
         <p className="mb-4 text-white">Schedule a free consultation with our experienced IT consultants.</p>
-        <Button className="w-full bg-lemon text-black hover:bg-lemon/90 font-medium">
+        <Button className="w-full bg-[#ea384c] text-white hover:bg-[#d73246] rounded-none">
           <Link to="/booking">Book a Consultation</Link>
         </Button>
       </div>

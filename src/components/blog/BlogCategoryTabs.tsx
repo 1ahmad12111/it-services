@@ -22,10 +22,10 @@ const BlogCategoryTabs = ({
 
   return (
     <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8">
-      <TabsList className="bg-white border shadow-sm overflow-auto flex w-full h-auto p-1">
+      <TabsList className="bg-white border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-auto flex w-full h-auto p-1">
         <TabsTrigger 
           value="all" 
-          className="data-[state=active]:bg-coral/10 data-[state=active]:text-coral"
+          className="data-[state=active]:bg-[#ea384c] data-[state=active]:text-white rounded-none"
         >
           All Posts
         </TabsTrigger>
@@ -33,7 +33,7 @@ const BlogCategoryTabs = ({
           <TabsTrigger 
             key={category} 
             value={category}
-            className="data-[state=active]:bg-coral/10 data-[state=active]:text-coral whitespace-nowrap"
+            className="data-[state=active]:bg-[#ea384c] data-[state=active]:text-white whitespace-nowrap rounded-none"
           >
             {category}
           </TabsTrigger>
