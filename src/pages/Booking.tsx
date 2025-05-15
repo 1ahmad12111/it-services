@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CalendlyWidget from "@/components/services/CalendlyWidget";
@@ -7,6 +7,15 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const Booking = () => {
   const isMobile = useIsMobile();
+  
+  useEffect(() => {
+    // This helps ensure the Cal widget initializes properly
+    const timer = setTimeout(() => {
+      window.dispatchEvent(new Event('resize'));
+    }, 1000);
+    
+    return () => clearTimeout(timer);
+  }, []);
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -23,7 +32,7 @@ const Booking = () => {
             
             <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
               <CalendlyWidget 
-                url="https://cal.com/faisal-qureshi-k3bw4r/15min?overlayCalendar=true&date=2025-05-20" 
+                url="https://cal.com/faisal-qureshi-k3bw4r/15min" 
                 styles={{ height: isMobile ? "600px" : "750px" }} 
               />
             </div>
