@@ -12,14 +12,14 @@ const Logo = () => {
             alt="MOSIVANT logo"
             className="h-10 w-auto"
           />
-          {/* Add a subtle glow effect with our teal color */}
-          <div className="absolute -inset-1 rounded-lg bg-consulting-400 opacity-20 blur-sm"></div>
+          {/* Add a subtle glow effect with our primary color */}
+          <div className="absolute -inset-1 rounded-lg bg-coral opacity-20 blur-sm"></div>
         </div>
         <div className="flex flex-col">
-          <span className="font-heading text-xl font-bold text-gray-800 leading-tight">
+          <span className="font-heading text-xl font-bold text-coral leading-tight">
             MOSIVANT
           </span>
-          <span className="text-[9px] font-medium text-gray-500 leading-none tracking-wider uppercase">
+          <span className="text-[9px] font-medium text-lemon leading-none tracking-wider uppercase">
             CONSULTING (OPC) PRIVATE LIMITED
           </span>
         </div>
