@@ -62,7 +62,7 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                // Using exact colors from the screenshot
+                // Using exact colors from the reference image
                 coral: {
                     DEFAULT: '#ff6666',
                     light: '#ff8080',
@@ -74,8 +74,8 @@ export default {
                     dark: '#e6e62e',
                 },
                 red: {
-                    500: '#ff3b30',  // Primary button color from image
-                    600: '#e5352d',  // Darker shade for hover
+                    500: '#ea384c',  // Updated to match reference image
+                    600: '#d73246',  // Darker shade for hover
                 },
                 // Keeping these for backward compatibility
                 positivus: {
@@ -106,6 +106,7 @@ export default {
                 'lg': 'var(--shadow-lg)',
                 'xl': 'var(--shadow-xl)',
                 '2xl': 'var(--shadow-2xl)',
+                'button': '4px 4px 0px 0px rgba(0, 0, 0, 1)',  // Added shadow for buttons
             },
 			borderRadius: {
 				lg: 'var(--radius)',

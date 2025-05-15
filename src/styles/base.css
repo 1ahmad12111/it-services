@@ -177,16 +177,16 @@
     @apply text-xl md:text-2xl;
   }
 
-  /* Button styles to match the reference image */
+  /* Updated Button styles to match the reference image */
   button, .button {
-    @apply rounded-none;
+    @apply rounded-none border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
   }
 
   /* Button styles for form submit buttons */
   [type="submit"], 
   [type="button"], 
   button[type="submit"] {
-    @apply bg-red-500 text-black hover:bg-red-600 rounded-none;
+    @apply bg-[#ea384c] text-white hover:bg-[#d73246] rounded-none border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)];
   }
 
   /* Smoother scrolling experience */

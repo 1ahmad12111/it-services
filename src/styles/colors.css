@@ -112,16 +112,18 @@
 }
 
 /* New button styles matching the reference image */
-.bg-button-red {
-  background-color: #ff3b30;
+.button-new-style {
+  background-color: #ea384c;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border: 1px solid #000000;
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  transition: all 0.2s ease-in-out;
 }
 
-.text-button-black {
-  color: #000000;
-}
-
-.button-red {
-  @apply bg-red-500 text-black font-medium py-3 px-6 rounded-none hover:bg-red-600 transition-all;
+.button-new-style:hover {
+  background-color: #d73246;
 }
 
 /* Keeping existing Positivus Style Overrides */
