@@ -12,10 +12,10 @@ const Logo = () => {
           <div className="absolute -inset-1 rounded-lg bg-coral opacity-20 blur-sm"></div>
         </div>
         <div className="flex flex-col">
-          <span className="font-heading text-coral leading-tight font-extrabold text-5xl">
+          <span className="font-heading text-coral leading-tight font-extrabold text-5xl drop-shadow-md">
             MOSIVANT
           </span>
-          <span className="leading-none tracking-wider uppercase text-slate-950 text-center font-semibold text-xs">
+          <span className="leading-none tracking-wider uppercase bg-slate-900/80 text-white px-1 text-center font-semibold text-xs rounded">
             CONSULTING (OPC) PRIVATE LIMITED
           </span>
         </div>

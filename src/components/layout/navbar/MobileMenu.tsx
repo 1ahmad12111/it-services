@@ -57,19 +57,19 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
     <>
       {/* Overlay backdrop */}
       <div 
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] touch-none lg:hidden" 
+        className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[998] touch-none lg:hidden" 
         onClick={onClose} 
         aria-hidden="true"
       />
       
       {/* Menu container */}
-      <div className="lg:hidden fixed inset-0 z-[999] bg-background flex flex-col overflow-hidden">
+      <div className="lg:hidden fixed inset-0 z-[999] bg-slate-900 flex flex-col overflow-hidden">
         {/* Menu header */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 dark:border-gray-800 bg-background/90 backdrop-blur-sm">
-          <div className="text-lg font-semibold">Menu</div>
+        <div className="flex items-center justify-between px-5 py-4 border-b border-slate-800 bg-slate-900/95 backdrop-blur-sm">
+          <div className="text-lg font-semibold text-white">Menu</div>
           <button
             onClick={onClose}
-            className="p-2 text-foreground hover:text-coral rounded-full focus:outline-none focus:ring-2 focus:ring-coral"
+            className="p-2 text-white hover:text-coral rounded-full focus:outline-none focus:ring-2 focus:ring-coral"
             aria-label="Close menu"
           >
             <X size={24} />
@@ -85,8 +85,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 to={item.path}
                 onClick={onClose}
                 className={({ isActive }) =>
-                  `px-4 py-5 text-lg font-medium border-b border-gray-100 dark:border-gray-800 ${
-                    isActive ? "text-coral font-semibold" : "text-foreground"
+                  `px-4 py-5 text-lg font-medium border-b border-slate-800 ${
+                    isActive ? "text-coral font-semibold" : "text-white"
                   }`
                 }
                 end
@@ -97,9 +97,9 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           </nav>
           
           {/* Call to action button - sticky to bottom */}
-          <div className="mt-auto p-5 sticky bottom-0 bg-background/95 backdrop-blur-sm border-t border-gray-100 dark:border-gray-800">
+          <div className="mt-auto p-5 sticky bottom-0 bg-slate-900/95 backdrop-blur-sm border-t border-slate-800">
             <Button 
-              className="w-full bg-coral text-black hover:bg-coral/90 py-6 text-lg"
+              className="w-full bg-coral text-black hover:bg-coral/90 py-6 text-lg font-bold"
               onClick={onClose}
               asChild
             >
