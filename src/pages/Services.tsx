@@ -1,3 +1,4 @@
+
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -8,6 +9,7 @@ import ConsultationForm from "@/components/home/ConsultationForm";
 import LiveChat from "@/components/services/LiveChat";
 import PaymentInfo from "@/components/services/PaymentInfo";
 import { Toaster } from "@/components/ui/toaster";
+
 const Services = () => {
   // Data for detailed service offerings
   const servicesData = [{
@@ -39,21 +41,23 @@ const Services = () => {
     features: ["IT strategy development", "Digital transformation planning", "Technology roadmap creation", "IT audit and assessment", "Vendor selection and management", "Project management and implementation"],
     icon: "Database"
   }];
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth"
     });
   };
+  
   return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow bg-black">
-        {/* Services Hero Section */}
-        <section id="services-top" className="bg-gradient-to-r from-coral to-coral/80 text-black py-20 bg-black">
+        {/* Services Hero Section - Updated to match About page hero styling */}
+        <section id="services-top" className="py-20 bg-black text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Our IT Consulting Services</h1>
-              <p className="text-xl text-gray-800 mb-8">
+              <p className="text-xl text-lemon mb-8 leading-relaxed">
                 End-to-end digital solutions designed to drive growth, innovation, and operational excellence
               </p>
             </div>
@@ -88,4 +92,5 @@ const Services = () => {
       <Toaster />
     </div>;
 };
+
 export default Services;
