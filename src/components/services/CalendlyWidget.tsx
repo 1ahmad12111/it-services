@@ -23,14 +23,20 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
     (async function() {
       const cal = await getCalApi({"namespace":"15min"});
       cal("ui", {
-        "hideEventTypeDetails": true,
-        "layout": "month_view"
+        "hideEventTypeDetails": false,
+        "layout": "month_view",
+        "styles": {
+          "branding": {
+            "brandColor": "#ea384c",
+          },
+        },
+        "theme": "light"
       });
     })();
   }, []);
 
   return (
-    <div className="w-full scrollbar-hide">
+    <div className="w-full scrollbar-hide rounded-lg overflow-hidden bg-white shadow-inner">
       <Cal
         namespace="15min"
         calLink={calLink}
@@ -39,7 +45,8 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
           height: styles.height || "100%",
           minHeight: "650px",
           overflow: "auto",
-          borderRadius: "8px"
+          borderRadius: styles.borderRadius || "8px",
+          border: "none",
         }}
         config={{
           layout: "month_view",
