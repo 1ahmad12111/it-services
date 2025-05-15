@@ -27,7 +27,7 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
         "layout": "month_view",
         "styles": {
           "branding": {
-            "brandColor": "#ea384c",
+            "brandColor": "#ea384c", // Using the coral color from the palette
           },
         },
         "theme": "light"
@@ -36,7 +36,7 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
   }, []);
 
   return (
-    <div className="w-full scrollbar-hide rounded-lg overflow-hidden bg-white shadow-inner">
+    <div className="w-full scrollbar-hide rounded-xl overflow-hidden bg-white shadow-inner border border-gray-50">
       <Cal
         namespace="15min"
         calLink={calLink}
@@ -45,8 +45,9 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
           height: styles.height || "100%",
           minHeight: "650px",
           overflow: "auto",
-          borderRadius: styles.borderRadius || "8px",
+          borderRadius: styles.borderRadius || "12px",
           border: "none",
+          boxShadow: "inset 0 2px 4px rgba(0, 0, 0, 0.05)",
         }}
         config={{
           layout: "month_view",
