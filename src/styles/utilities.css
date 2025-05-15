@@ -1,104 +1,15 @@
 
-/* Hover animations */
-.hover-lift {
-  @apply transition-transform duration-300;
+@import './base.css';
+@import './animations.css';
+@import './colors.css';
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
-@media (hover: hover) {
-  .hover-lift:hover {
-    @apply -translate-y-1;
-  }
-}
-
-/* Custom utilities */
-.text-balance {
-  text-wrap: balance;
-}
-
-.text-pretty {
-  text-wrap: pretty;
-}
-
-/* Glass morphism effects */
-.glass {
-  @apply backdrop-blur-md bg-white/70 border border-white/20 shadow-lg;
-}
-
-/* Gradient text */
-.text-gradient {
-  @apply bg-clip-text text-transparent;
-}
-
-/* Button hover effects */
-.button-hover-grow {
-  @apply transition-all duration-300;
-}
-
-@media (hover: hover) {
-  .button-hover-grow:hover {
-    @apply scale-105;
-  }
-}
-
-/* Card hover effects */
-.card-hover {
-  @apply transition-all duration-300;
-}
-
-@media (hover: hover) {
-  .card-hover:hover {
-    @apply shadow-lg -translate-y-1;
-  }
-}
-
-/* Enhanced link underline animation */
-.link-underline {
-  position: relative;
-}
-
-.link-underline::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-  @apply bg-positivus-green;
-}
-
-@media (hover: hover) {
-  .link-underline:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-}
-
-/* Mobile-specific styles */
-@media (max-width: 640px) {
-  .container {
-    @apply px-4;
-  }
-  
-  .section-padding {
-    @apply py-10 px-4;
-  }
-  
-  .mobile-menu-container {
-    @apply fixed inset-0 z-50 flex flex-col overflow-y-auto bg-white;
-  }
-  
-  .mobile-touch-scroll {
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-/* Safe area for notched mobile devices */
-.safe-area-insets {
-  padding-top: env(safe-area-inset-top);
-  padding-right: env(safe-area-inset-right);
-  padding-bottom: env(safe-area-inset-bottom);
-  padding-left: env(safe-area-inset-left);
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-scrolling: touch;
+  scrollbar-width: none;  /* Firefox */
 }

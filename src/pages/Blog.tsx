@@ -51,13 +51,15 @@ const Blog = () => {
               {/* Main Content */}
               <div className="lg:w-2/3 overflow-hidden">
                 {/* Category Tabs */}
-                <div className="mb-8 overflow-x-auto">
-                  <BlogCategoryTabs 
-                    activeTab={activeTab}
-                    setActiveTab={setActiveTab}
-                    setCurrentPage={setCurrentPage}
-                    categories={categories}
-                  />
+                <div className="mb-8 w-full overflow-x-auto pb-2">
+                  <div className="min-w-full">
+                    <BlogCategoryTabs 
+                      activeTab={activeTab}
+                      setActiveTab={setActiveTab}
+                      setCurrentPage={setCurrentPage}
+                      categories={categories}
+                    />
+                  </div>
                 </div>
                 
                 {/* Blog Posts */}
