@@ -19,9 +19,9 @@ const PaymentInfo = () => {
           </div>
 
           <Card className="border-0 shadow-lg overflow-hidden">
-            <CardHeader className="bg-consulting-800 text-white">
+            <CardHeader className="bg-coral text-black">
               <CardTitle className="text-2xl">Billing & Payment Options</CardTitle>
-              <CardDescription className="text-consulting-100">
+              <CardDescription className="text-gray-800">
                 Our payment process is designed for simplicity and security
               </CardDescription>
             </CardHeader>
@@ -29,7 +29,7 @@ const PaymentInfo = () => {
               <div className="space-y-8">
                 <div>
                   <h3 className="text-xl font-bold flex items-center mb-3">
-                    <Lock className="mr-2 text-consulting-600" size={20} />
+                    <Lock className="mr-2 text-coral" size={20} />
                     Secure Payment Process
                   </h3>
                   <p className="text-gray-600">
@@ -42,7 +42,7 @@ const PaymentInfo = () => {
 
                 <div>
                   <h3 className="text-xl font-bold flex items-center mb-3">
-                    <CreditCard className="mr-2 text-consulting-600" size={20} />
+                    <CreditCard className="mr-2 text-coral" size={20} />
                     Available Payment Methods
                   </h3>
                   <p className="text-gray-600 mb-4">
@@ -68,7 +68,7 @@ const PaymentInfo = () => {
 
                 <div>
                   <h3 className="text-xl font-bold flex items-center mb-3">
-                    <HelpCircle className="mr-2 text-consulting-600" size={20} />
+                    <HelpCircle className="mr-2 text-coral" size={20} />
                     Payment Questions?
                   </h3>
                   <p className="text-gray-600 mb-4">

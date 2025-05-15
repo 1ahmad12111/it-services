@@ -87,11 +87,11 @@ const Services = () => {
       <Navbar />
       <main className="flex-grow">
         {/* Services Hero Section */}
-        <section id="services-top" className="bg-gradient-to-r from-consulting-900 to-consulting-800 text-white py-20">
+        <section id="services-top" className="bg-gradient-to-r from-coral to-coral/80 text-black py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Our IT Consulting Services</h1>
-              <p className="text-xl text-consulting-100 mb-8">
+              <p className="text-xl text-gray-800 mb-8">
                 End-to-end digital solutions designed to drive growth, innovation, and operational excellence
               </p>
             </div>
@@ -113,7 +113,7 @@ const Services = () => {
 
             <div className="mt-16 text-center">
               <Button 
-                className="bg-consulting-600 hover:bg-consulting-700 text-white px-8 py-6 text-lg flex items-center gap-2 mx-auto"
+                className="bg-coral hover:bg-coral/90 text-black px-8 py-6 text-lg flex items-center gap-2 mx-auto"
                 onClick={scrollToTop}
               >
                 Back to Top <ArrowUp size={20} />
