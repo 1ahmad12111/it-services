@@ -20,7 +20,7 @@ const Booking = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8 md:mb-12">
-              <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-consulting-800">
+              <h1 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-coral">
                 Schedule a Free Consultation
               </h1>
               <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">

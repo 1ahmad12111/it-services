@@ -27,7 +27,7 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
         "layout": "month_view",
         "styles": {
           "branding": {
-            "brandColor": "#ea384c", // Using the coral color from the palette
+            "brandColor": "#ff3333", // Using the primary red color from the palette
           },
         },
         "theme": "light"
