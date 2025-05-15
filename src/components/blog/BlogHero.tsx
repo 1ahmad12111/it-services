@@ -13,6 +13,11 @@ const BlogHero = ({ searchQuery, setSearchQuery }: BlogHeroProps) => {
     setSearchQuery(e.target.value);
   };
 
+  // Function to handle search form submission and prevent page reload
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+  };
+
   return (
     <section className="bg-black text-white py-20">
       <div className="container mx-auto px-4">
@@ -22,7 +27,7 @@ const BlogHero = ({ searchQuery, setSearchQuery }: BlogHeroProps) => {
             Stay informed with the latest technology trends, best practices, and industry insights
           </p>
           
-          <div className="relative max-w-xl mx-auto">
+          <form onSubmit={handleSubmit} className="relative max-w-xl mx-auto">
             <Input
               value={searchQuery}
               onChange={handleSearchChange}
@@ -31,7 +36,7 @@ const BlogHero = ({ searchQuery, setSearchQuery }: BlogHeroProps) => {
               aria-label="Search for articles"
             />
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300" size={20} aria-hidden="true" />
-          </div>
+          </form>
         </div>
       </div>
     </section>

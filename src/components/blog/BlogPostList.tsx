@@ -25,7 +25,7 @@ const BlogPostList = ({
         ))
       ) : (
         <div className="text-center py-10">
-          <p className="text-gray-500 text-lg">No articles found matching your search criteria.</p>
+          <p className="text-gray-500 text-lg mb-2">No articles found matching "{searchQuery}"</p>
           <Button 
             variant="outline" 
             className="mt-4 border-coral text-coral hover:bg-coral/5"

@@ -1,5 +1,5 @@
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { blogPosts } from "@/data/blogPosts";
 import { BlogPost } from "@/types/blog";
 
@@ -28,12 +28,20 @@ export const useBlogFilters = () => {
       .slice(0, 12);
   }, []);
   
+  // Reset to first page when search query or active tab changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery, activeTab]);
+
   // Filter posts based on search query and active category
   const filteredPosts = useMemo(() => {
+    console.log("Filtering posts with query:", searchQuery);
     return blogPosts.filter(post => {
-      const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      const matchesSearch = searchQuery.trim() === "" || 
+                          post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
                           post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+                          post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
+                          post.category.toLowerCase().includes(searchQuery.toLowerCase());
       
       const matchesCategory = activeTab === "all" || post.category.toLowerCase() === activeTab.toLowerCase();
       
