@@ -49,14 +49,16 @@ const Blog = () => {
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row gap-8">
               {/* Main Content */}
-              <div className="lg:w-2/3">
+              <div className="lg:w-2/3 overflow-hidden">
                 {/* Category Tabs */}
-                <BlogCategoryTabs 
-                  activeTab={activeTab}
-                  setActiveTab={setActiveTab}
-                  setCurrentPage={setCurrentPage}
-                  categories={categories}
-                />
+                <div className="mb-8 overflow-x-auto">
+                  <BlogCategoryTabs 
+                    activeTab={activeTab}
+                    setActiveTab={setActiveTab}
+                    setCurrentPage={setCurrentPage}
+                    categories={categories}
+                  />
+                </div>
                 
                 {/* Blog Posts */}
                 <BlogPostList 
