@@ -19,10 +19,13 @@ const BlogCategoryTabs = ({
   const [secondRowCategories, setSecondRowCategories] = useState<string[]>([]);
 
   useEffect(() => {
-    // Split categories into two roughly equal rows
-    const midpoint = Math.ceil(categories.length / 2);
-    setFirstRowCategories(categories.slice(0, midpoint));
-    setSecondRowCategories(categories.slice(midpoint));
+    // Limit categories to a maximum of 10
+    const limitedCategories = categories.slice(0, 10);
+    
+    // Split limited categories into two roughly equal rows
+    const midpoint = Math.ceil(limitedCategories.length / 2);
+    setFirstRowCategories(limitedCategories.slice(0, midpoint));
+    setSecondRowCategories(limitedCategories.slice(midpoint));
   }, [categories]);
 
   const handleTabChange = (value: string) => {

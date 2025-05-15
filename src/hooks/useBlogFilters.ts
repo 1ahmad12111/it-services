@@ -9,9 +9,10 @@ export const useBlogFilters = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 5;
   
-  // Get unique categories from blog posts
+  // Get unique categories from blog posts (limited to 10)
   const categories = useMemo(() => {
-    return Array.from(new Set(blogPosts.map(post => post.category)));
+    const allCategories = Array.from(new Set(blogPosts.map(post => post.category)));
+    return allCategories.slice(0, 10);
   }, []);
 
   // Popular tags extraction
