@@ -6,7 +6,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative bg-slate-900 text-white py-24 overflow-hidden">
+    <div className="relative bg-slate-900 text-white pt-28 pb-24 overflow-hidden">
       {/* Enhanced abstract background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-40">
         <div className="absolute top-20 left-10 w-96 h-96 rounded-full bg-coral/30 blur-[120px] animate-pulse-slow" />

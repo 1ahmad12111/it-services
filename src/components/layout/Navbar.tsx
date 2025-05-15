@@ -65,9 +65,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Add spacing to prevent content from being hidden under fixed navbar */}
-      <div className="h-16"></div>
-
       {/* Mobile Menu - Completely separate from the flow */}
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </>
