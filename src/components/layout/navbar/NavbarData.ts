@@ -31,3 +31,12 @@ export const industries = [
   { name: "Retail", href: "/industries/retail" },
   { name: "Technology", href: "/industries/technology" },
 ];
+
+// Navigation items for the main menu
+export const navItems = [
+  { label: "Home", path: "/" },
+  { label: "Services", path: "/services" },
+  { label: "About", path: "/about" },
+  { label: "Blog", path: "/blog" },
+  { label: "Contact", path: "/contact" },
+];
