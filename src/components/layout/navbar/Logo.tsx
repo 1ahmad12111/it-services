@@ -12,7 +12,7 @@ const Logo = () => {
           <span className="font-heading text-coral leading-tight font-extrabold text-4xl">
             MOSIVANT
           </span>
-          <span className="text-[9px] font-medium leading-none tracking-wider uppercase text-slate-950">
+          <span className="leading-none tracking-wider uppercase text-slate-950 text-[[9px]] font-extrabold text-center">
             CONSULTING (OPC) PRIVATE LIMITED
           </span>
         </div>
