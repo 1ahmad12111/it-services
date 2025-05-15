@@ -53,14 +53,14 @@ const WorkingProcess = () => {
   const [openStep, setOpenStep] = useState<string>("step-1");
 
   return (
-    <section className="py-16 bg-positivus-light">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12">
-            <div className="inline-block bg-positivus-green px-4 py-2 rounded-md mb-4">
-              <h2 className="text-2xl md:text-3xl font-bold text-positivus-dark">Our Working Process</h2>
+            <div className="inline-block bg-lemon px-4 py-2 rounded-md mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-black">Our Working Process</h2>
             </div>
-            <p className="text-lg text-positivus-dark">Step-by-Step Guide to Achieving Your Business Goals</p>
+            <p className="text-lg text-black">Step-by-Step Guide to Achieving Your Business Goals</p>
           </div>
 
           <Accordion
@@ -76,7 +76,7 @@ const WorkingProcess = () => {
                 value={step.id}
                 className={`rounded-xl border ${
                   openStep === step.id
-                    ? "bg-positivus-green border-positivus-green"
+                    ? "bg-lemon border-lemon"
                     : "bg-white border-gray-200"
                 } overflow-hidden`}
               >
@@ -90,7 +90,7 @@ const WorkingProcess = () => {
                         {step.title}
                       </h3>
                     </div>
-                    <div className="rounded-full w-10 h-10 flex items-center justify-center border border-positivus-dark">
+                    <div className="rounded-full w-10 h-10 flex items-center justify-center border border-black">
                       {openStep === step.id ? (
                         <Minus className="h-5 w-5" />
                       ) : (
@@ -100,7 +100,7 @@ const WorkingProcess = () => {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-8 pb-6 pt-0 text-base">
-                  <div className="ml-16 border-t border-positivus-dark/20 pt-4">
+                  <div className="ml-16 border-t border-black/20 pt-4">
                     <p>{step.description}</p>
                   </div>
                 </AccordionContent>

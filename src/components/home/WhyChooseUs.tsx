@@ -31,12 +31,12 @@ const features = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-16 bg-positivus-light">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-positivus-dark">Why Choose Mosivant</h2>
-            <p className="text-xl text-positivus-dark">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">Why Choose Mosivant</h2>
+            <p className="text-xl text-black">
               We combine technology expertise with industry insights to deliver impactful business outcomes.
             </p>
           </div>
@@ -47,11 +47,11 @@ const WhyChooseUs = () => {
                 key={index} 
                 className="flex items-start p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="p-2 bg-positivus-green rounded-full mr-4 flex-shrink-0">
-                  <CheckCircle className="text-positivus-dark h-6 w-6" />
+                <div className="p-2 bg-coral rounded-full mr-4 flex-shrink-0">
+                  <CheckCircle className="text-black h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 text-positivus-dark">{feature.title}</h3>
+                  <h3 className="font-bold text-lg mb-2 text-black">{feature.title}</h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </div>
               </div>

@@ -15,16 +15,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 6% 12%;
 
-    --primary: 0 100% 70%;  /* Updated to match the ff6666 coral */
-    --primary-foreground: 0 0% 0%;  /* Updated to black #000000 */
+    --primary: 0 100% 70%;  /* #ff6666 */
+    --primary-foreground: 0 0% 0%;  /* #000000 */
 
-    --secondary: 60 100% 60%;  /* Updated to match the ffff33 yellow */
-    --secondary-foreground: 0 0% 0%;  /* Updated to black #000000 */
+    --secondary: 60 100% 60%;  /* #ffff33 */
+    --secondary-foreground: 0 0% 0%;  /* #000000 */
 
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 60 100% 60%;  /* Updated to match the secondary color */
+    --accent: 60 100% 60%;  /* Using secondary color for accent */
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
@@ -37,13 +37,13 @@
     --radius: 0.5rem;
 
     --sidebar-background: 240 6% 12%;
-    --sidebar-foreground: 90 100% 70%;
-    --sidebar-primary: 90 100% 70%;
+    --sidebar-foreground: 60 100% 60%; /* Updated to match secondary color */
+    --sidebar-primary: 60 100% 60%; /* Updated to match secondary color */
     --sidebar-primary-foreground: 240 6% 12%;
     --sidebar-accent: 240 5.9% 18%;
     --sidebar-accent-foreground: 0 0% 95%;
     --sidebar-border: 240 5.9% 18%;
-    --sidebar-ring: 90 100% 70%;
+    --sidebar-ring: 60 100% 60%; /* Updated to match secondary color */
   }
 }
 

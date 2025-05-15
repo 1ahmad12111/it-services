@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,7 +62,18 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated color palette based on the design reference
+                // Using exact colors from the screenshot
+                coral: {
+                    DEFAULT: '#ff6666',  // Primary color from screenshot
+                    light: '#ff8080',
+                    dark: '#e65c5c',
+                },
+                lemon: {
+                    DEFAULT: '#ffff33',  // Secondary color from screenshot
+                    light: '#ffff66',
+                    dark: '#e6e62e',
+                },
+                // Keeping these for backward compatibility
                 positivus: {
                     green: '#B9FF66',
                     dark: '#191A23',
@@ -72,7 +82,7 @@ export default {
                 consulting: {
                     50: '#f0fce6',
                     100: '#ddfacc',
-                    200: '#b9ff66',  // Main accent green
+                    200: '#b9ff66',  
                     300: '#9ae756',
                     400: '#7dd630',
                     500: '#5fb31b',
@@ -80,19 +90,8 @@ export default {
                     700: '#3a6910',
                     800: '#2c4a0b',
                     900: '#1d2e07',
-                    950: '#191A23',  // Dark background
+                    950: '#191A23',
                 },
-                // Adding the new color palette from the image
-                coral: {
-                    DEFAULT: '#ff6666',  // Primary color from image
-                    light: '#ff8080',
-                    dark: '#e65c5c',
-                },
-                lemon: {
-                    DEFAULT: '#ffff33',  // Secondary color from image
-                    light: '#ffff66',
-                    dark: '#e6e62e',
-                }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
