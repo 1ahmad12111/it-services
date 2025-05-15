@@ -1,0 +1,102 @@
+
+/* New color utility classes based on the updated colors */
+.bg-coral {
+  background-color: #ff6666;
+}
+
+.text-coral {
+  color: #ff6666;
+}
+
+.bg-lemon {
+  background-color: #ffff33;
+}
+
+.text-lemon {
+  color: #ffff33;
+}
+
+.border-coral {
+  border-color: #ff6666;
+}
+
+.border-lemon {
+  border-color: #ffff33;
+}
+
+.hover\:bg-coral:hover {
+  background-color: #ff6666;
+}
+
+.hover\:text-coral:hover {
+  color: #ff6666;
+}
+
+.hover\:bg-lemon:hover {
+  background-color: #ffff33;
+}
+
+.hover\:text-lemon:hover {
+  color: #ffff33;
+}
+
+.button-coral {
+  @apply bg-coral text-black font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition-all;
+}
+
+.button-lemon {
+  @apply bg-lemon text-black font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition-all;
+}
+
+/* Keeping existing Positivus Style Overrides */
+.bg-positivus-green {
+  background-color: #B9FF66;
+}
+
+.text-positivus-dark {
+  color: #191A23;
+}
+
+.bg-positivus-dark {
+  background-color: #191A23;
+}
+
+.text-positivus-green {
+  color: #B9FF66;
+}
+
+.bg-positivus-light {
+  background-color: #F3F3F3;
+}
+
+.text-positivus-light {
+  color: #F3F3F3;
+}
+
+.border-positivus-green {
+  border-color: #B9FF66;
+}
+
+.border-positivus-dark {
+  border-color: #191A23;
+}
+
+.hover\:bg-positivus-green:hover {
+  background-color: #B9FF66;
+}
+
+.hover\:text-positivus-dark:hover {
+  color: #191A23;
+}
+
+.button-positivus {
+  @apply bg-positivus-green text-positivus-dark font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition-all;
+}
+
+.section-positivus {
+  @apply bg-positivus-light py-16;
+}
+
+.card-positivus {
+  @apply bg-white border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-all;
+}
