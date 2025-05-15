@@ -9,7 +9,7 @@ const Logo = () => {
           <div className="absolute -inset-1 rounded-lg bg-coral opacity-20 blur-sm"></div>
         </div>
         <div className="flex flex-col">
-          <span className="font-heading text-xl font-bold text-coral leading-tight">
+          <span className="font-heading text-coral leading-tight font-extrabold text-4xl">
             MOSIVANT
           </span>
           <span className="text-[9px] font-medium leading-none tracking-wider uppercase text-slate-950">
