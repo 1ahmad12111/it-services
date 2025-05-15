@@ -27,18 +27,24 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
       bodyRef.current.style.top = `-${scrollY.current}px`;
       bodyRef.current.style.width = '100%';
       bodyRef.current.style.overflow = 'hidden';
+    } else if (!isOpen && bodyRef.current) {
+      // Reset body styles
+      bodyRef.current.style.position = '';
+      bodyRef.current.style.top = '';
+      bodyRef.current.style.width = '';
+      bodyRef.current.style.overflow = '';
+      
+      // Restore scroll position
+      window.scrollTo(0, scrollY.current);
     }
     
-    // Cleanup function - always runs when component unmounts or when isOpen changes
+    // Cleanup function - runs when component unmounts
     return () => {
       if (bodyRef.current && bodyRef.current.style.position === 'fixed') {
-        // Reset body styles
         bodyRef.current.style.position = '';
         bodyRef.current.style.top = '';
         bodyRef.current.style.width = '';
         bodyRef.current.style.overflow = '';
-        
-        // Restore scroll position
         window.scrollTo(0, scrollY.current);
       }
     };

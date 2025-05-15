@@ -22,6 +22,8 @@
     overscroll-behavior-y: none;
     /* Improve touch scrolling */
     touch-action: pan-y;
+    /* Reset position to ensure proper scrolling */
+    position: relative !important;
   }
   
   /* Add safe area insets for modern iOS devices */
