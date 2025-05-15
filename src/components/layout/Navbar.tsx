@@ -4,7 +4,6 @@ import { MenuIcon, X } from "lucide-react";
 import Logo from "./navbar/Logo";
 import MobileMenu from "./navbar/MobileMenu";
 import DesktopMenuItems from "./navbar/DesktopMenuItems";
-import ThemeToggle from "@/components/theme/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -49,13 +48,11 @@ const Navbar = () => {
                   Schedule Consultation
                 </Link>
               </Button>
-              <ThemeToggle />
             </div>
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center">
-            <ThemeToggle />
             <button
               onClick={toggleMobileMenu}
               className="ml-4 text-foreground hover:text-red-500 focus:outline-none"
