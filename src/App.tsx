@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import NotFound from "./pages/NotFound";
@@ -17,12 +18,30 @@ import useSmoothScroll from "./hooks/use-smooth-scroll";
 
 const queryClient = new QueryClient();
 
+// Theme initialization component
+const ThemeInitializer = () => {
+  useEffect(() => {
+    // Check for user preference
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+  
+  return null;
+};
+
 const AppContent = () => {
   // Apply smooth scrolling behavior app-wide
   useSmoothScroll();
   
   return (
     <>
+      <ThemeInitializer />
       <ScrollToTop />
       <Toaster />
       <Sonner position="top-center" />

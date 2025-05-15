@@ -1,7 +1,8 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
-	darkMode: false,
+	darkMode: "class",
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
@@ -25,12 +26,12 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#ff6666',
-					foreground: '#000000'
+					DEFAULT: 'hsl(var(--primary))',
+					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
-					DEFAULT: '#ffff33',
-					foreground: '#000000'
+					DEFAULT: 'hsl(var(--secondary))',
+					foreground: 'hsl(var(--secondary-foreground))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -93,6 +94,16 @@ export default {
                     950: '#191A23',
                 },
 			},
+			boxShadow: {
+                '2xs': 'var(--shadow-2xs)',
+                'xs': 'var(--shadow-xs)',
+                'sm': 'var(--shadow-sm)',
+                'DEFAULT': 'var(--shadow)',
+                'md': 'var(--shadow-md)',
+                'lg': 'var(--shadow-lg)',
+                'xl': 'var(--shadow-xl)',
+                '2xl': 'var(--shadow-2xl)',
+            },
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
@@ -141,9 +152,11 @@ export default {
                 'pulse-slow': 'pulse-slow 3s infinite'
 			},
             fontFamily: {
-                sans: ['Space Grotesk', 'sans-serif'],
-                heading: ['Space Grotesk', 'sans-serif'], // Using Space Grotesk as a substitute for Positivus
-                positivus: ['Space Grotesk', 'sans-serif'], // Specific class for Positivus font
+                sans: ['DM Sans', 'sans-serif'],
+                mono: ['Space Mono', 'monospace'],
+                serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+                heading: ['DM Sans', 'sans-serif'],
+                positivus: ['Space Grotesk', 'sans-serif'], // Keeping for backward compatibility
             }
 		}
 	},

@@ -8,7 +8,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-black text-white py-12 mt-12">
+    <footer className="bg-black text-white py-12 mt-12 dark:bg-gray-950">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex justify-between items-start mb-12">
           {/* Logo */}
