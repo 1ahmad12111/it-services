@@ -1,12 +1,21 @@
 
-/* Import base styles with Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles/colors.css';
 @import './styles/base.css';
-
-/* Import animations */
 @import './styles/animations.css';
-
-/* Import utilities */
 @import './styles/utilities.css';
 
-/* Import color utilities */
-@import './styles/colors.css';
+@layer components {
+  /* Custom classes */
+  .animate-fade-in {
+    @apply opacity-100 translate-y-0 duration-700;
+  }
+  
+  /* Custom utility for hamburger menu */
+  .fixed-important {
+    position: fixed !important;
+  }
+}

@@ -18,15 +18,26 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      
+      // Store original position to restore later
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.top = `-${scrollY}px`;
+      
+      return () => {
+        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.width = '';
+        document.body.style.top = '';
+        // Restore scroll position
+        window.scrollTo(0, scrollY);
+      };
     }
-    
-    return () => {
-      document.body.style.overflow = '';
-    };
   }, [isOpen]);
 
   return (
-    <div className="lg:hidden fixed inset-0 z-50 bg-white dark:bg-gray-900">
+    <div className="lg:hidden fixed inset-0 z-[999] bg-white dark:bg-gray-900">
       <div className="flex flex-col h-full overflow-y-auto pt-16 pb-20 px-4">
         <button
           onClick={onClose}

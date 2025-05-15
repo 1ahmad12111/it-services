@@ -26,9 +26,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`py-4 sticky top-0 z-50 transition-all duration-300 ${
+    <nav className={`py-4 sticky top-0 z-[100] transition-all duration-300 ${
       scrolled 
-        ? "bg-background/90 backdrop-blur-md shadow-md dark:bg-background/95" 
+        ? "bg-background/95 backdrop-blur-md shadow-md dark:bg-background/95" 
         : "bg-transparent border-b border-gray-100 dark:border-gray-800"
     }`}>
       <div className="container mx-auto px-4 md:px-6">
@@ -51,11 +51,11 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - Always visible regardless of scroll */}
           <div className="lg:hidden flex items-center">
             <button
               onClick={toggleMobileMenu}
-              className="ml-4 text-foreground hover:text-coral focus:outline-none"
+              className="ml-4 text-foreground hover:text-coral focus:outline-none fixed-important z-[999] right-4 top-4"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={isMobileMenuOpen}
             >
