@@ -47,7 +47,7 @@ const Services = () => {
   };
   return <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow bg-black">
         {/* Services Hero Section */}
         <section id="services-top" className="bg-gradient-to-r from-coral to-coral/80 text-black py-20 bg-black">
           <div className="container mx-auto px-4">
