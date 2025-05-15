@@ -23,7 +23,7 @@ const CertificationsSection = () => {
             {certifications.map((cert, index) => (
               <div key={index} className="flex flex-col items-center">
                 <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-3">
-                  <CheckCircle className="w-8 h-8 text-consulting-500" />
+                  <CheckCircle className="w-8 h-8 text-coral" />
                 </div>
                 <p className="text-center font-medium text-gray-800">{cert}</p>
               </div>

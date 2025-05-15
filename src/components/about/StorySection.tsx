@@ -7,7 +7,7 @@ const StorySection = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="flex justify-center mb-8">
-            <div className="w-20 h-1 bg-consulting-500 rounded-full"></div>
+            <div className="w-20 h-1 bg-coral rounded-full"></div>
           </div>
           <h2 className="text-3xl font-bold mb-6 text-center">Our Story</h2>
           <div className="text-lg text-gray-700 space-y-4">

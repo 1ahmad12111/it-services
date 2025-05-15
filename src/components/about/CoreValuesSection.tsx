@@ -28,7 +28,7 @@ const CoreValuesSection = () => {
         <h2 className="text-3xl font-bold mb-12 text-center">Our Core Values</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {coreValues.map((value, index) => (
-            <div key={index} className="bg-consulting-50 p-6 rounded-lg border-l-4 border-consulting-500">
+            <div key={index} className="bg-gray-50 p-6 rounded-lg border-l-4 border-coral">
               <h3 className="text-xl font-bold mb-3">{value.title}</h3>
               <p className="text-gray-700">{value.description}</p>
             </div>
