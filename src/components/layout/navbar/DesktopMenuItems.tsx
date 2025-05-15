@@ -11,8 +11,8 @@ const DesktopMenuItems = () => {
           key={item.path}
           to={item.path}
           className={({ isActive }) =>
-            `mx-3 py-2 text-base font-medium transition-colors ${
-              isActive ? "text-coral font-semibold" : "text-white hover:text-coral"
+            `mx-4 py-2 text-base font-medium transition-colors ${
+              isActive ? "text-coral font-semibold" : "text-white hover:text-coral/80"
             }`
           }
           end

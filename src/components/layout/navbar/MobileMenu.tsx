@@ -86,7 +86,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                 onClick={onClose}
                 className={({ isActive }) =>
                   `px-4 py-5 text-lg font-medium border-b border-slate-800 ${
-                    isActive ? "text-coral font-semibold" : "text-white hover:text-coral"
+                    isActive ? "text-coral font-semibold" : "text-white hover:text-coral/80"
                   }`
                 }
                 end
@@ -99,7 +99,7 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
           {/* Call to action button - sticky to bottom */}
           <div className="mt-auto p-5 sticky bottom-0 bg-slate-900/95 backdrop-blur-sm border-t border-slate-800">
             <Button 
-              className="w-full bg-coral text-white hover:bg-coral/90 py-6 text-lg font-bold border border-black shadow-custom-xs"
+              className="w-full bg-coral text-white hover:bg-coral/90 py-6 text-lg font-bold border border-black shadow-button"
               onClick={onClose}
               asChild
             >
