@@ -32,7 +32,8 @@ const Hero = () => {
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-lemon to-lemon/80">
                   Intelligent Technology
                 </span>
-                <span className="absolute bottom-1 left-0 w-full h-1 bg-coral/40 rounded-full"></span>
+                <span className="absolute bottom-1 left-0 w-full h-1.5 bg-gradient-to-r from-lemon via-coral to-lemon rounded-full shadow-sm blur-[1px]"></span>
+                <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-gradient-to-r from-coral/80 to-lemon/80 rounded-full"></span>
               </span>
             </h1>
             
