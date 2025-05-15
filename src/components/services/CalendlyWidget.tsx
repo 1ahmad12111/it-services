@@ -16,9 +16,9 @@ interface CalendlyWidgetProps {
 
 const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefill }) => {
   useEffect(() => {
-    // Add Calendly script to the document
+    // Add Cal.com script to the document
     const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.src = "https://cal.com/embed.js";
     script.async = true;
     document.body.appendChild(script);
 
@@ -31,7 +31,7 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
   }, []);
 
   // Create URL with prefill data if provided
-  const getCalendlyUrl = () => {
+  const getCalUrl = () => {
     if (!prefill) return url;
     
     const queryParams = new URLSearchParams();
@@ -52,18 +52,19 @@ const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url, styles = {}, prefi
     
     const paramString = queryParams.toString();
     if (paramString) {
-      return `${url}?${paramString}`;
+      return `${url}&${paramString}`;
     }
     
     return url;
   };
 
-  const finalUrl = getCalendlyUrl();
+  const finalUrl = getCalUrl();
 
   return (
     <div
-      className="calendly-inline-widget w-full"
-      data-url={finalUrl}
+      className="cal-inline-widget w-full"
+      data-cal-link={finalUrl}
+      data-cal-ui-embed="true"
       style={{ minWidth: "320px", ...styles }}
     ></div>
   );

@@ -65,7 +65,7 @@ const ConsultationForm = () => {
                   </TabsList>
                   <TabsContent value="details" className="space-y-4">
                     <CalendlyWidget 
-                      url="https://calendly.com/ahmad-mkandsonsllc/30min" 
+                      url="https://cal.com/faisal-qureshi-k3bw4r/15min?overlayCalendar=true&date=2025-05-20" 
                       styles={{ height: "650px" }}
                     />
                   </TabsContent>

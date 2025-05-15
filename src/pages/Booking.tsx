@@ -23,7 +23,7 @@ const Booking = () => {
             
             <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
               <CalendlyWidget 
-                url="https://calendly.com/ahmad-mkandsonsllc/30min" 
+                url="https://cal.com/faisal-qureshi-k3bw4r/15min?overlayCalendar=true&date=2025-05-20" 
                 styles={{ height: isMobile ? "600px" : "750px" }} 
               />
             </div>
