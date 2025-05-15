@@ -6,7 +6,9 @@ import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  return <footer className="bg-positivus-dark text-white rounded-lg px-0 my-0 py-0 mx-[80px]">
+  
+  return (
+    <footer className="bg-black text-white rounded-lg px-0 my-0 py-0 mx-[80px]">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="flex justify-between items-start mb-12">
           {/* Logo */}
@@ -20,19 +22,19 @@ const Footer = () => {
         
         {/* Contact Information */}
         <div className="mb-8">
-          <div className="inline-block bg-positivus-green px-4 py-2 rounded-md mb-6">
-            <h3 className="text-xl font-bold text-positivus-dark">Contact us:</h3>
+          <div className="inline-block bg-coral px-4 py-2 rounded-md mb-6">
+            <h3 className="text-xl font-bold text-black">Contact us:</h3>
           </div>
           
           <div className="space-y-3">
             <div className="flex items-center">
               <Mail className="mr-3 text-white flex-shrink-0" size={16} />
-              <p className="text-white">Email: <a href="mailto:info@gomosivant.com" className="hover:text-positivus-green transition-colors">info@gomosivant.com</a></p>
+              <p className="text-white">Email: <a href="mailto:info@gomosivant.com" className="hover:text-coral transition-colors">info@gomosivant.com</a></p>
             </div>
             
             <div className="flex items-center">
               <Phone className="mr-3 text-white flex-shrink-0" size={16} />
-              <p className="text-white">Phone: <a href="tel:+18189257116" className="hover:text-positivus-green transition-colors">+1 (818)-925-7116</a></p>
+              <p className="text-white">Phone: <a href="tel:+18189257116" className="hover:text-coral transition-colors">+1 (818)-925-7116</a></p>
             </div>
             
             <div className="flex items-start">
@@ -45,8 +47,8 @@ const Footer = () => {
             
             {/* LinkedIn icon below the address */}
             <div className="flex items-center mt-3 pl-6">
-              <a href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full p-1 hover:bg-positivus-green transition-colors">
-                <Linkedin size={12} className="text-positivus-dark" />
+              <a href="https://www.linkedin.com/company/mosivant-consulting-opc-private-limited" target="_blank" rel="noopener noreferrer" className="bg-white rounded-full p-1 hover:bg-lemon transition-colors">
+                <Linkedin size={12} className="text-black" />
               </a>
             </div>
           </div>
@@ -58,18 +60,20 @@ const Footer = () => {
           <p className="text-gray-400 mb-4 md:mb-0">© {currentYear} Mosivant. All Rights Reserved.</p>
           
           <div className="flex flex-wrap gap-6 items-center">
-            <Link to="/about" className="text-gray-400 hover:text-positivus-green transition-colors">
+            <Link to="/about" className="text-gray-400 hover:text-coral transition-colors">
               About us
             </Link>
-            <Link to="/services" className="text-gray-400 hover:text-positivus-green transition-colors">
+            <Link to="/services" className="text-gray-400 hover:text-coral transition-colors">
               Services
             </Link>
-            <Link to="/blog" className="text-gray-400 hover:text-positivus-green transition-colors">
+            <Link to="/blog" className="text-gray-400 hover:text-coral transition-colors">
               Blog
             </Link>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
+
 export default Footer;

@@ -26,12 +26,12 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#ff6666',
+					foreground: '#000000'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#ffff33',
+					foreground: '#000000'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -81,6 +81,17 @@ export default {
                     800: '#2c4a0b',
                     900: '#1d2e07',
                     950: '#191A23',  // Dark background
+                },
+                // Adding the new color palette from the image
+                coral: {
+                    DEFAULT: '#ff6666',  // Primary color from image
+                    light: '#ff8080',
+                    dark: '#e65c5c',
+                },
+                lemon: {
+                    DEFAULT: '#ffff33',  // Secondary color from image
+                    light: '#ffff66',
+                    dark: '#e6e62e',
                 }
 			},
 			borderRadius: {

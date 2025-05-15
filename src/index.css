@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -16,17 +15,17 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 6% 12%;
 
-    --primary: 90 100% 70%;
-    --primary-foreground: 240 6% 12%;
+    --primary: 0 100% 70%;  /* Updated to match the ff6666 coral */
+    --primary-foreground: 0 0% 0%;  /* Updated to black #000000 */
 
-    --secondary: 240 6% 12%;
-    --secondary-foreground: 90 100% 70%;
+    --secondary: 60 100% 60%;  /* Updated to match the ffff33 yellow */
+    --secondary-foreground: 0 0% 0%;  /* Updated to black #000000 */
 
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
 
-    --accent: 90 100% 70%;
-    --accent-foreground: 240 6% 12%;
+    --accent: 60 100% 60%;  /* Updated to match the secondary color */
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -304,7 +303,56 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Positivus Style Overrides */
+/* New color utility classes based on the updated colors */
+.bg-coral {
+  background-color: #ff6666;
+}
+
+.text-coral {
+  color: #ff6666;
+}
+
+.bg-lemon {
+  background-color: #ffff33;
+}
+
+.text-lemon {
+  color: #ffff33;
+}
+
+.border-coral {
+  border-color: #ff6666;
+}
+
+.border-lemon {
+  border-color: #ffff33;
+}
+
+.hover\:bg-coral:hover {
+  background-color: #ff6666;
+}
+
+.hover\:text-coral:hover {
+  color: #ff6666;
+}
+
+.hover\:bg-lemon:hover {
+  background-color: #ffff33;
+}
+
+.hover\:text-lemon:hover {
+  color: #ffff33;
+}
+
+.button-coral {
+  @apply bg-coral text-black font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition-all;
+}
+
+.button-lemon {
+  @apply bg-lemon text-black font-bold py-3 px-6 rounded-md hover:bg-opacity-90 transition-all;
+}
+
+/* Keeping existing Positivus Style Overrides */
 .bg-positivus-green {
   background-color: #B9FF66;
 }

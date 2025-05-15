@@ -41,7 +41,7 @@ const Navbar = () => {
             <DesktopMenuItems />
             <div className="flex items-center gap-4">
               <Button 
-                className="bg-positivus-green text-positivus-dark hover:bg-positivus-green/90 hover:text-positivus-dark font-bold shadow-md" 
+                className="bg-coral text-black hover:bg-coral/90 hover:text-black font-bold shadow-md" 
                 size="sm"
                 asChild
               >
@@ -58,7 +58,7 @@ const Navbar = () => {
             <ThemeToggle />
             <button
               onClick={toggleMobileMenu}
-              className="ml-4 text-positivus-dark hover:text-positivus-green focus:outline-none"
+              className="ml-4 text-foreground hover:text-coral focus:outline-none"
             >
               {isMobileMenuOpen ? (
                 <X size={24} />

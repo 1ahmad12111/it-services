@@ -22,10 +22,10 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-positivus-dark text-white">
+    <section className="py-16 bg-black text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-positivus-green">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-lemon">What Our Clients Say</h2>
           <p className="text-xl text-white max-w-2xl mx-auto">
             Hear from businesses who have experienced tangible results from our IT consultancy services.
           </p>
@@ -33,9 +33,9 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-positivus-dark border border-gray-800 rounded-lg p-8 shadow-lg">
+            <div key={index} className="bg-black border border-gray-800 rounded-lg p-8 shadow-lg">
               <svg 
-                className="h-8 w-8 text-positivus-green mb-4" 
+                className="h-8 w-8 text-coral mb-4" 
                 fill="currentColor" 
                 viewBox="0 0 24 24"
               >
