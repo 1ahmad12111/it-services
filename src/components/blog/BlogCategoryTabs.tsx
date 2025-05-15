@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface BlogCategoryTabsProps {
@@ -15,6 +15,16 @@ const BlogCategoryTabs = ({
   setCurrentPage, 
   categories 
 }: BlogCategoryTabsProps) => {
+  const [firstRowCategories, setFirstRowCategories] = useState<string[]>([]);
+  const [secondRowCategories, setSecondRowCategories] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Split categories into two roughly equal rows
+    const midpoint = Math.ceil(categories.length / 2);
+    setFirstRowCategories(categories.slice(0, midpoint));
+    setSecondRowCategories(categories.slice(midpoint));
+  }, [categories]);
+
   const handleTabChange = (value: string) => {
     setActiveTab(value);
     setCurrentPage(1);
@@ -22,23 +32,41 @@ const BlogCategoryTabs = ({
 
   return (
     <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8">
-      <TabsList className="bg-white border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] overflow-x-auto flex w-full h-auto p-1 pb-2 scrollbar-hide">
-        <TabsTrigger 
-          value="all" 
-          className="data-[state=active]:bg-[#ea384c] data-[state=active]:text-white rounded-none px-6 py-2 mx-1"
-        >
-          All Posts
-        </TabsTrigger>
-        {categories.map(category => (
+      <div className="flex flex-col gap-2">
+        {/* First row with "All Posts" and first half of categories */}
+        <TabsList className="bg-white border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex w-full h-auto p-1">
           <TabsTrigger 
-            key={category} 
-            value={category}
-            className="data-[state=active]:bg-[#ea384c] data-[state=active]:text-white whitespace-nowrap rounded-none px-6 py-2 mx-1"
+            value="all" 
+            className="data-[state=active]:bg-[#ea384c] data-[state=active]:text-white rounded-none px-6 py-2 mx-1"
           >
-            {category}
+            All Posts
           </TabsTrigger>
-        ))}
-      </TabsList>
+          {firstRowCategories.map(category => (
+            <TabsTrigger 
+              key={category} 
+              value={category}
+              className="data-[state=active]:bg-[#ea384c] data-[state=active]:text-white rounded-none px-6 py-2 mx-1"
+            >
+              {category}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        
+        {/* Second row with remaining categories */}
+        {secondRowCategories.length > 0 && (
+          <TabsList className="bg-white border border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex w-full h-auto p-1">
+            {secondRowCategories.map(category => (
+              <TabsTrigger 
+                key={category} 
+                value={category}
+                className="data-[state=active]:bg-[#ea384c] data-[state=active]:text-white rounded-none px-6 py-2 mx-1"
+              >
+                {category}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        )}
+      </div>
     </Tabs>
   );
 };
