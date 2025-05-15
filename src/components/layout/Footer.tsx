@@ -22,8 +22,8 @@ const Footer = () => {
         
         {/* Contact Information */}
         <div className="mb-8">
-          <div className="inline-block bg-coral px-4 py-2 rounded-md mb-6">
-            <h3 className="text-xl font-bold text-black">Contact us:</h3>
+          <div className="inline-block bg-[#ea384c] px-4 py-2 rounded-none mb-6">
+            <h3 className="text-xl font-bold text-white">Contact us:</h3>
           </div>
           
           <div className="space-y-3">
