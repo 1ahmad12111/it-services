@@ -80,7 +80,7 @@ This message was generated from the contact form on your website.`;
         <Button
           variant="default"
           onClick={() => window.location.href = generateMailtoLink()}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 bg-coral text-white hover:bg-coral/90"
         >
           <Mail size={16} />
           Open in Email App
@@ -88,7 +88,7 @@ This message was generated from the contact form on your website.`;
         <Button 
           variant="secondary"
           onClick={generateTextFile}
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 bg-lemon text-black hover:bg-lemon/90"
         >
           <Download size={16} />
           Download as Text

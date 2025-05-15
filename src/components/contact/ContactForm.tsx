@@ -78,8 +78,8 @@ const ContactForm = () => {
     <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
       <div className="p-8">
         <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
-        <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 flex items-start">
-          <Info className="text-blue-500 mr-2 mt-0.5 shrink-0" size={16} />
+        <div className="bg-blue-50 border-l-4 border-coral p-4 mb-6 flex items-start">
+          <Info className="text-coral mr-2 mt-0.5 shrink-0" size={16} />
           <p className="text-sm text-blue-700">
             This form will help you prepare your message. After completing the form, 
             you'll need to select one of the provided options to send your message directly.
@@ -163,7 +163,7 @@ const ContactForm = () => {
             <div>
               <Button 
                 type="submit" 
-                className="w-full bg-consulting-600 hover:bg-consulting-700"
+                className="w-full bg-coral text-white hover:bg-coral/90"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
