@@ -1,8 +1,19 @@
 
-import { Toast, toast as sonnerToast } from "sonner";
+import { toast as sonnerToast } from "sonner";
 
-type ToastProps = React.ComponentProps<typeof Toast>;
-type ToastActionElement = React.ReactElement<typeof Toast>;
+type ToastProps = {
+  title?: string;
+  description?: React.ReactNode;
+  action?: React.ReactNode;
+  variant?: "default" | "destructive";
+};
+
+type ToastOptions = {
+  action?: React.ReactNode;
+  description?: React.ReactNode;
+  duration?: number;
+  icon?: React.ReactNode;
+};
 
 export const useToast = () => {
   return {
@@ -21,25 +32,28 @@ export const useToast = () => {
   };
 };
 
-type ToastOptions = {
-  action?: ToastActionElement;
-  description?: React.ReactNode;
-  duration?: number;
-  icon?: React.ReactNode;
-};
-
 export const toast = (
-  message: string,
+  message: string | ToastProps,
   options: ToastOptions = {}
 ) => {
-  const { action, description, duration = 5000, icon } = options;
+  if (typeof message === 'string') {
+    const { action, description, duration = 5000, icon } = options;
 
-  return sonnerToast(message, {
-    duration,
-    icon,
-    description,
-    action,
-    className: "bg-white border-gray-200",
-    style: { color: "black" },
-  });
+    return sonnerToast(message, {
+      duration,
+      icon,
+      description,
+      action,
+      className: "bg-white border-gray-200",
+      style: { color: "black" },
+    });
+  } else {
+    // Handle object form
+    const { title, description, variant } = message;
+    return sonnerToast(title || "", {
+      description,
+      className: variant === 'destructive' ? "bg-white border-coral" : "bg-white border-gray-200",
+      style: { color: "black" },
+    });
+  }
 };
