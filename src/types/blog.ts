@@ -8,4 +8,5 @@ export interface BlogPost {
   date: string;
   category: string;
   tags: string[];
+  readTime?: number; // Adding the readTime property as optional
 }
