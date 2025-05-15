@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <div className="flex items-center">
       <Link to="/" className="flex items-center gap-3">
-        <img src="/lovable-uploads/4347267f-1b7e-4e60-acaa-8e92a9c788c3.png" alt="MOSIVANT logo" className="h-14 w-auto" />
+        <img src="/lovable-uploads/9b98a8a8-3091-4a3c-95ad-08032283f696.png" alt="MOSIVANT logo" className="h-14 w-auto" />
       </Link>
     </div>
   );
