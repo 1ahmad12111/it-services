@@ -8,7 +8,6 @@ import ServiceOverview from "@/components/home/ServiceOverview";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import CtaSection from "@/components/home/CtaSection";
-import ConsultationForm from "@/components/home/ConsultationForm";
 import InsightsSection from "@/components/home/InsightsSection";
 import WorkingProcess from "@/components/home/WorkingProcess";
 import LiveChat from "@/components/services/LiveChat";
@@ -82,9 +81,6 @@ const Index = () => {
         </div>
         <div className="animate-on-scroll opacity-0">
           <CtaSection />
-        </div>
-        <div className="animate-on-scroll opacity-0">
-          <ConsultationForm />
         </div>
         <LiveChat />
       </main>
