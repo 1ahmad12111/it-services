@@ -12,6 +12,7 @@
   html {
     scroll-behavior: smooth;
     height: 100%;
+    -webkit-overflow-scrolling: touch;
   }
 
   body {
@@ -19,6 +20,18 @@
     overflow-x: hidden;
     /* Prevent Chrome pull-to-refresh */
     overscroll-behavior-y: none;
+    /* Improve touch scrolling */
+    touch-action: pan-y;
+  }
+  
+  /* Add safe area insets for modern iOS devices */
+  @supports (padding-top: env(safe-area-inset-top)) {
+    body {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
   }
 }
 
@@ -26,5 +39,9 @@
   /* Custom classes */
   .animate-fade-in {
     @apply opacity-100 translate-y-0 duration-700;
+  }
+  
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
   }
 }

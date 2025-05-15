@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`py-4 sticky top-0 z-[100] transition-all duration-300 ${
+      <nav className={`py-4 fixed top-0 left-0 right-0 w-full z-[100] transition-all duration-300 ${
         scrolled 
           ? "bg-background/95 backdrop-blur-md shadow-md dark:bg-background/95" 
           : "bg-transparent border-b border-gray-100 dark:border-gray-800"
@@ -56,7 +56,7 @@ const Navbar = () => {
             <div className="lg:hidden flex items-center">
               <button
                 onClick={toggleMobileMenu}
-                className="text-foreground hover:text-coral focus:outline-none"
+                className="text-foreground hover:text-coral focus:outline-none focus:ring-2 focus:ring-coral rounded-full p-2"
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMobileMenuOpen}
               >
@@ -66,6 +66,9 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      {/* Add spacing to prevent content from being hidden under fixed navbar */}
+      <div className="h-16"></div>
 
       {/* Mobile Menu - Completely separate from the flow */}
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />

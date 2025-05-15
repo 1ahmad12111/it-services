@@ -1,5 +1,5 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { navItems } from "./NavbarData";
@@ -11,64 +11,75 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
-  // Don't render anything if the menu is closed
-  if (!isOpen) return null;
+  const bodyRef = useRef<HTMLElement | null>(null);
+  const scrollY = useRef(0);
 
-  // Lock/unlock body scroll when menu opens/closes
+  // Handle body scroll locking
   useEffect(() => {
-    if (isOpen) {
-      // Save current scroll position
-      const scrollY = window.scrollY;
+    bodyRef.current = document.body;
+    
+    if (isOpen && bodyRef.current) {
+      // Store current scroll position
+      scrollY.current = window.scrollY;
       
-      // Apply styles to lock the body
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
-      
-      return () => {
-        // Remove the styles and restore scroll position on cleanup
-        const scrollY = parseInt((document.body.style.top || '0').replace('px', '')) * -1;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        document.body.style.overflow = '';
-        
-        // Use setTimeout to ensure styles are applied before scrolling
-        setTimeout(() => {
-          window.scrollTo(0, scrollY);
-        }, 0);
-      };
+      // Apply fixed position to body to prevent scrolling
+      bodyRef.current.style.position = 'fixed';
+      bodyRef.current.style.top = `-${scrollY.current}px`;
+      bodyRef.current.style.width = '100%';
+      bodyRef.current.style.overflow = 'hidden';
     }
+    
+    // Cleanup function - always runs when component unmounts or when isOpen changes
+    return () => {
+      if (bodyRef.current && bodyRef.current.style.position === 'fixed') {
+        // Reset body styles
+        bodyRef.current.style.position = '';
+        bodyRef.current.style.top = '';
+        bodyRef.current.style.width = '';
+        bodyRef.current.style.overflow = '';
+        
+        // Restore scroll position
+        window.scrollTo(0, scrollY.current);
+      }
+    };
   }, [isOpen]);
+
+  // Don't render anything if menu is closed
+  if (!isOpen) return null;
 
   return (
     <>
-      {/* Backdrop for menu */}
-      <div className="fixed inset-0 bg-black/50 z-[998] lg:hidden" onClick={onClose} aria-hidden="true"></div>
+      {/* Overlay backdrop */}
+      <div 
+        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[998] touch-none lg:hidden" 
+        onClick={onClose} 
+        aria-hidden="true"
+      />
       
-      {/* Menu content */}
-      <div className="lg:hidden fixed inset-0 z-[999] bg-white dark:bg-gray-900 flex flex-col">
-        <div className="flex items-center justify-between px-4 py-4 border-b border-gray-100 dark:border-gray-800">
+      {/* Menu container */}
+      <div className="lg:hidden fixed inset-0 z-[999] bg-background flex flex-col overflow-hidden">
+        {/* Menu header */}
+        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 dark:border-gray-800 bg-background/90 backdrop-blur-sm">
           <div className="text-lg font-semibold">Menu</div>
           <button
             onClick={onClose}
-            className="p-2 text-foreground hover:text-coral"
+            className="p-2 text-foreground hover:text-coral rounded-full focus:outline-none focus:ring-2 focus:ring-coral"
             aria-label="Close menu"
           >
             <X size={24} />
           </button>
         </div>
         
-        <div className="flex flex-col flex-1 overflow-y-auto">
-          <nav className="flex flex-col space-y-1 p-4">
+        {/* Menu content - scrollable area */}
+        <div className="flex flex-col flex-1 overflow-y-auto touch-pan-y overscroll-contain pb-safe">
+          <nav className="flex flex-col p-4">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
                 onClick={onClose}
                 className={({ isActive }) =>
-                  `px-4 py-4 text-lg font-medium border-b border-gray-100 dark:border-gray-800 ${
+                  `px-4 py-5 text-lg font-medium border-b border-gray-100 dark:border-gray-800 ${
                     isActive ? "text-coral font-semibold" : "text-foreground"
                   }`
                 }
@@ -79,7 +90,8 @@ const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
             ))}
           </nav>
           
-          <div className="mt-auto p-4">
+          {/* Call to action button - sticky to bottom */}
+          <div className="mt-auto p-5 sticky bottom-0 bg-background/95 backdrop-blur-sm border-t border-gray-100 dark:border-gray-800">
             <Button 
               className="w-full bg-coral text-black hover:bg-coral/90 py-6 text-lg"
               onClick={onClose}
