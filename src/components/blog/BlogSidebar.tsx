@@ -14,7 +14,7 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
   return (
     <div className="lg:w-1/3">
       {/* Subscribe Card */}
-      <div className="bg-consulting-800 text-white p-6 rounded-xl mb-8">
+      <div className="bg-black text-white p-6 rounded-xl mb-8">
         <h3 className="text-xl font-bold mb-4">Subscribe to Our Newsletter</h3>
         <p className="text-white mb-4">Get the latest insights delivered directly to your inbox.</p>
         <NewsletterSubscribe darkMode={true} />
@@ -22,7 +22,7 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
       
       {/* Popular Tags */}
       <div className="bg-white p-6 rounded-xl shadow-md mb-8">
-        <h3 className="text-xl font-bold mb-4 flex items-center">
+        <h3 className="text-xl font-bold mb-4 flex items-center text-coral">
           <Tag className="mr-2" size={18} />
           Popular Tags
         </h3>
@@ -40,10 +40,10 @@ const BlogSidebar = ({ popularTags, setSearchQuery }: BlogSidebarProps) => {
       </div>
       
       {/* Call to Action */}
-      <div className="bg-gradient-to-r from-consulting-600 to-consulting-700 text-white p-6 rounded-xl shadow-md">
+      <div className="bg-gradient-to-r from-coral to-coral/80 text-white p-6 rounded-xl shadow-md">
         <h3 className="text-xl font-bold mb-3">Need Expert IT Advice?</h3>
         <p className="mb-4 text-white">Schedule a free consultation with our experienced IT consultants.</p>
-        <Button className="w-full bg-white text-consulting-800 hover:bg-gray-100 font-medium">
+        <Button className="w-full bg-lemon text-black hover:bg-lemon/90 font-medium">
           <Link to="/booking">Book a Consultation</Link>
         </Button>
       </div>

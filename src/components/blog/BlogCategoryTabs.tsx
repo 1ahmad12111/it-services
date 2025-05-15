@@ -25,7 +25,7 @@ const BlogCategoryTabs = ({
       <TabsList className="bg-white border shadow-sm overflow-auto flex w-full h-auto p-1">
         <TabsTrigger 
           value="all" 
-          className="data-[state=active]:bg-consulting-50 data-[state=active]:text-consulting-700"
+          className="data-[state=active]:bg-coral/10 data-[state=active]:text-coral"
         >
           All Posts
         </TabsTrigger>
@@ -33,7 +33,7 @@ const BlogCategoryTabs = ({
           <TabsTrigger 
             key={category} 
             value={category}
-            className="data-[state=active]:bg-consulting-50 data-[state=active]:text-consulting-700 whitespace-nowrap"
+            className="data-[state=active]:bg-coral/10 data-[state=active]:text-coral whitespace-nowrap"
           >
             {category}
           </TabsTrigger>

@@ -27,7 +27,7 @@ const BlogPagination = ({
         <PaginationItem>
           <PaginationPrevious 
             onClick={() => currentPage > 1 && handlePageChange(currentPage - 1)}
-            className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+            className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer hover:text-coral"}
           />
         </PaginationItem>
         
@@ -50,6 +50,7 @@ const BlogPagination = ({
               <PaginationLink 
                 onClick={() => handlePageChange(pageNumber)}
                 isActive={pageNumber === currentPage}
+                className={pageNumber === currentPage ? "bg-coral text-white" : "hover:text-coral"}
               >
                 {pageNumber}
               </PaginationLink>
@@ -63,7 +64,7 @@ const BlogPagination = ({
               <PaginationEllipsis />
             </PaginationItem>
             <PaginationItem>
-              <PaginationLink onClick={() => handlePageChange(totalPages)}>
+              <PaginationLink onClick={() => handlePageChange(totalPages)} className="hover:text-coral">
                 {totalPages}
               </PaginationLink>
             </PaginationItem>
@@ -73,7 +74,7 @@ const BlogPagination = ({
         <PaginationItem>
           <PaginationNext 
             onClick={() => currentPage < totalPages && handlePageChange(currentPage + 1)}
-            className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+            className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer hover:text-coral"}
           />
         </PaginationItem>
       </PaginationContent>

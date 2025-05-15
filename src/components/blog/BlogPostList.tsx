@@ -28,7 +28,7 @@ const BlogPostList = ({
           <p className="text-gray-500 text-lg">No articles found matching your search criteria.</p>
           <Button 
             variant="outline" 
-            className="mt-4"
+            className="mt-4 border-coral text-coral hover:bg-coral/5"
             onClick={() => {
               setSearchQuery("");
               setActiveTab("all");

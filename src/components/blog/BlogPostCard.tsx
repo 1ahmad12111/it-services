@@ -22,7 +22,7 @@ const BlogPostCard = ({ post }: BlogPostCardProps) => {
         </div>
         <div className="p-6 md:w-2/3">
           <div className="flex items-center text-sm text-gray-500 mb-3">
-            <span className="inline-flex items-center bg-consulting-50 text-consulting-700 px-2.5 py-0.5 rounded-full text-xs font-medium mr-2">
+            <span className="inline-flex items-center bg-coral/10 text-coral px-2.5 py-0.5 rounded-full text-xs font-medium mr-2">
               {post.category}
             </span>
             <div className="flex items-center">
@@ -36,7 +36,7 @@ const BlogPostCard = ({ post }: BlogPostCardProps) => {
           </div>
           
           <h2 className="text-xl md:text-2xl font-bold mb-3">
-            <Link to={`/blog/${post.id}`} className="text-gray-800 hover:text-consulting-700">
+            <Link to={`/blog/${post.id}`} className="text-gray-800 hover:text-coral">
               {post.title}
             </Link>
           </h2>
@@ -47,7 +47,7 @@ const BlogPostCard = ({ post }: BlogPostCardProps) => {
           
           <Button 
             variant="ghost" 
-            className="text-consulting-600 hover:text-consulting-800 hover:bg-consulting-50 pl-0 flex items-center"
+            className="text-coral hover:text-coral/80 hover:bg-coral/5 pl-0 flex items-center"
             asChild
           >
             <Link to={`/blog/${post.id}`}>

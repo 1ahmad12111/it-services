@@ -22,7 +22,7 @@ const InsightsSection = () => {
           </div>
           <Button 
             variant="outline" 
-            className="mt-4 md:mt-0 border-consulting-600 text-consulting-600 hover:bg-consulting-50"
+            className="mt-4 md:mt-0 border-coral text-coral hover:bg-coral/5"
             asChild
           >
             <Link to="/blog">
@@ -43,7 +43,7 @@ const InsightsSection = () => {
               </div>
               <CardHeader>
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-consulting-600 font-medium">{post.category}</span>
+                  <span className="text-sm text-coral font-medium">{post.category}</span>
                   <span className="text-xs text-gray-500">{post.date}</span>
                 </div>
                 <CardTitle className="text-xl">{post.title}</CardTitle>
@@ -54,7 +54,7 @@ const InsightsSection = () => {
               <CardFooter>
                 <Button 
                   variant="ghost" 
-                  className="p-0 text-consulting-600 hover:text-consulting-800 hover:bg-transparent"
+                  className="p-0 text-coral hover:text-coral/80 hover:bg-transparent"
                   asChild
                 >
                   <Link to={`/blog/${post.id}`}>
