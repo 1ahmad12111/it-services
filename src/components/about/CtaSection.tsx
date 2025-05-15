@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const CtaSection = () => {
   return (
-    <section className="py-16 bg-consulting-800 text-white">
+    <section className="py-16 bg-black text-white">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -13,7 +13,7 @@ const CtaSection = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
-            className="bg-white text-consulting-800 hover:bg-gray-100"
+            className="bg-coral text-black hover:bg-coral/90"
             size="lg"
             asChild
           >
@@ -22,7 +22,7 @@ const CtaSection = () => {
             </Link>
           </Button>
           <Button
-            className="bg-consulting-400 text-white hover:bg-consulting-500 border-2 border-white"
+            className="bg-lemon text-black hover:bg-lemon/90 border-2 border-white"
             size="lg"
             asChild
           >

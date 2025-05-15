@@ -14,11 +14,11 @@ const BlogHero = ({ searchQuery, setSearchQuery }: BlogHeroProps) => {
   };
 
   return (
-    <section className="bg-gradient-to-r from-consulting-900 to-consulting-800 text-white py-20">
+    <section className="bg-black text-white py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">IT Insights & Expertise</h1>
-          <p className="text-xl text-consulting-100 mb-8">
+          <p className="text-xl text-lemon mb-8">
             Stay informed with the latest technology trends, best practices, and industry insights
           </p>
           
