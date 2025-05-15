@@ -32,8 +32,10 @@ const Hero = () => {
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-lemon to-lemon/80">
                   Intelligent Technology
                 </span>
-                <span className="absolute bottom-1 left-0 w-full h-1.5 bg-gradient-to-r from-lemon via-coral to-lemon rounded-full shadow-sm blur-[1px]"></span>
-                <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-gradient-to-r from-coral/80 to-lemon/80 rounded-full"></span>
+                {/* 3D curved underline effect */}
+                <span className="absolute -bottom-1 left-0 w-full h-2 bg-gradient-to-r from-lemon via-coral to-lemon rounded-full shadow-lg transform-gpu scale-x-[0.97] origin-left skew-x-3 rotate-[-1deg]" style={{ filter: "blur(1px)" }}></span>
+                <span className="absolute -bottom-0.5 left-0 w-full h-1 bg-gradient-to-r from-coral/80 to-lemon/80 rounded-full transform-gpu scale-x-[0.95] origin-right skew-x-2 rotate-[-1deg]"></span>
+                <span className="absolute -bottom-3 left-5 w-[90%] h-0.5 bg-lemon/40 rounded-full transform-gpu blur-[2px] scale-x-[0.7] origin-center skew-x-6 rotate-[-2deg]"></span>
               </span>
             </h1>
             
