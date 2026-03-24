@@ -9,6 +9,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { blogPosts } from "@/data/blogPosts";
 import { BlogPost } from "@/types/blog";
 import { ArrowLeft, Calendar, User, Tag, Clock } from "lucide-react";
+import { ContentSection } from "@/types/blog";
 import NewsletterSubscribe from "@/components/common/NewsletterSubscribe";
 import { Button } from "@/components/ui/button";
 
@@ -113,48 +114,67 @@ const BlogDetail = () => {
                     className="w-full h-auto object-cover rounded-lg mb-8 shadow-md"
                   />
                   
-                  {/* Article Content (in real app, this would be from CMS) */}
+                  {/* Article Content */}
                   <div className="space-y-6">
                     <p className="text-xl text-gray-700 font-medium leading-relaxed">
                       {post.excerpt}
                     </p>
                     
-                    <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">The Importance of Professional Website Development</h2>
-                    <p>
-                      In today's digital age, a professional website is essential for businesses of all sizes. 
-                      Your website is often the first interaction potential customers have with your brand, 
-                      making it crucial to make a strong first impression.
-                    </p>
-                    
-                    <h3 className="text-xl font-bold text-gray-800 mt-6 mb-3">Key Benefits of Professional Website Development:</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      <li>Enhanced credibility and brand trust</li>
-                      <li>Improved user experience leading to higher conversion rates</li>
-                      <li>Better search engine visibility and rankings</li>
-                      <li>Mobile responsiveness for the growing number of mobile users</li>
-                      <li>Integration capabilities with other business systems</li>
-                    </ul>
-                    
-                    <p>
-                      Professional website development goes beyond just creating an attractive design. 
-                      It involves strategic planning, user experience optimization, and technical 
-                      implementation that ensures your website not only looks good but also performs well.
-                    </p>
-                    
-                    <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Why DIY Website Solutions Often Fall Short</h2>
-                    <p>
-                      While DIY website builders offer an accessible way to get online, they often lack the 
-                      customization, scalability, and performance optimizations that professional development provides. 
-                      These limitations can hamper your business growth and digital marketing efforts in the long run.
-                    </p>
-                    
-                    <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Conclusion</h2>
-                    <p>
-                      Investing in professional website development is not just about having an online presence—it's 
-                      about creating a powerful business tool that drives growth and supports your marketing efforts. 
-                      The initial investment pays dividends through improved user engagement, higher conversion rates, 
-                      and a stronger online brand presence.
-                    </p>
+                    {post.content ? (
+                      post.content.map((section: ContentSection, idx: number) => {
+                        switch (section.type) {
+                          case "heading2":
+                            return <h2 key={idx} className="text-2xl font-bold text-gray-800 mt-8 mb-4">{section.text}</h2>;
+                          case "heading3":
+                            return <h3 key={idx} className="text-xl font-bold text-gray-800 mt-6 mb-3">{section.text}</h3>;
+                          case "paragraph":
+                            return <p key={idx}>{section.text}</p>;
+                          case "list":
+                            return (
+                              <ul key={idx} className="list-disc pl-6 space-y-2">
+                                {section.items?.map((item, i) => <li key={i}>{item}</li>)}
+                              </ul>
+                            );
+                          case "quote":
+                            return (
+                              <blockquote key={idx} className="border-l-4 border-coral pl-4 italic text-gray-600 my-6">
+                                {section.text}
+                              </blockquote>
+                            );
+                          case "callout":
+                            return (
+                              <div key={idx} className="bg-lemon/10 border border-lemon/30 rounded-xl p-6 my-8">
+                                <p className="text-gray-800 font-medium">{section.text}</p>
+                              </div>
+                            );
+                          default:
+                            return null;
+                        }
+                      })
+                    ) : (
+                      <>
+                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Overview</h2>
+                        <p>
+                          This article explores key aspects of {post.category} and how businesses 
+                          can leverage these insights for better outcomes. Professional guidance 
+                          ensures your approach is strategic and effective.
+                        </p>
+                        
+                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Key Takeaways</h2>
+                        <ul className="list-disc pl-6 space-y-2">
+                          <li>Understanding the fundamentals drives better decision-making</li>
+                          <li>Professional expertise reduces risk and accelerates results</li>
+                          <li>Strategic planning is essential for long-term success</li>
+                          <li>The right technology choices compound over time</li>
+                        </ul>
+                        
+                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Conclusion</h2>
+                        <p>
+                          Investing in professional {post.category.toLowerCase()} solutions pays dividends 
+                          through improved efficiency, reduced risk, and sustainable competitive advantage.
+                        </p>
+                      </>
+                    )}
                   </div>
                   
                   {/* Tags */}

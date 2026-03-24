@@ -1,7 +1,20 @@
 
 import { BlogPost } from "../types/blog";
+import { blogContent } from "./blogContent";
 
 export const blogPosts: BlogPost[] = [
+  {
+    id: "custom-software-development-cost-2026",
+    title: "How Much Does Custom Software Development Cost in 2026? A Realistic Guide",
+    excerpt: "From MVPs to enterprise platforms, we break down the real cost factors behind custom software development in 2026 — including team models, tech stacks, AI features, and how to avoid budget blowouts.",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    author: "Faisal Ahmad",
+    date: "March 25, 2026",
+    category: "Software Development",
+    tags: ["custom software", "development cost", "software budget", "MVP", "outsourcing"],
+    readTime: 9,
+    content: blogContent["custom-software-development-cost-2026"]
+  },
   {
     id: "why-professional-website",
     title: "Why Your Business Needs Professional Website Development",
