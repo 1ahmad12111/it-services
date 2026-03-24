@@ -2,71 +2,78 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { CheckCircle, Trophy, Award, Shield } from "lucide-react";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { CheckCircle, Award } from "lucide-react";
 
 const clients = [
   {
     name: "TechForward",
-    logo: "/lovable-uploads/444132e7-126c-4118-b764-039c0a9c9548.png",
+    initials: "TF",
+    color: "bg-coral",
     industry: "Technology"
   },
   {
     name: "Global Finance Partners",
-    logo: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=180&h=90&q=80",
+    initials: "GF",
+    color: "bg-blue-500",
     industry: "Finance"
   },
   {
     name: "MediHealth Solutions",
-    logo: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=180&h=90&q=80",
+    initials: "MH",
+    color: "bg-green-500",
     industry: "Healthcare"
   },
   {
     name: "EcoSustain",
-    logo: "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?auto=format&fit=crop&w=180&h=90&q=80",
+    initials: "ES",
+    color: "bg-emerald-500",
     industry: "Energy"
   },
   {
     name: "IndustriaX",
-    logo: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=180&h=90&q=80",
+    initials: "IX",
+    color: "bg-gray-700",
     industry: "Manufacturing"
   },
   {
     name: "EduSphere",
-    logo: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=180&h=90&q=80",
+    initials: "ED",
+    color: "bg-purple-500",
     industry: "Education"
   },
   {
     name: "LogiTech Express",
-    logo: "/lovable-uploads/444132e7-126c-4118-b764-039c0a9c9548.png",
+    initials: "LE",
+    color: "bg-orange-500",
     industry: "Logistics"
   },
   {
     name: "RetailNext",
-    logo: "https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=180&h=90&q=80",
+    initials: "RN",
+    color: "bg-pink-500",
     industry: "Retail"
   }
 ];
 
 const achievements = [
   {
-    number: "250+",
-    label: "Enterprise Clients",
+    number: "50+",
+    label: "Projects Delivered",
     icon: "users"
   },
   {
-    number: "45+",
-    label: "Countries Served",
+    number: "15+",
+    label: "Technologies Mastered",
     icon: "globe"
   },
   {
-    number: "500+",
-    label: "IT Consultants",
+    number: "4+",
+    label: "Years of Excellence",
     icon: "briefcase"
   },
   {
-    number: "98%",
-    label: "Client Retention",
+    number: "100%",
+    label: "Project Completion",
     icon: "heart"
   }
 ];
@@ -100,9 +107,9 @@ const ClientsSection = () => {
                 <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 pl-4">
                   <div className="bg-white border-0 p-8 rounded-2xl h-full flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px] group">
                     <div className="h-20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300">
-                      <Avatar className="h-20 w-40 rounded-none">
-                        <AvatarImage src={client.logo} alt={`${client.name} logo`} className="object-contain" />
-                      </Avatar>
+                      <div className={`h-16 w-16 ${client.color} rounded-full flex items-center justify-center`}>
+                        <span className="text-white text-xl font-bold">{client.initials}</span>
+                      </div>
                     </div>
                     <h3 className="font-semibold text-lg text-gray-800">{client.name}</h3>
                     <p className="text-sm text-coral font-medium mt-1">{client.industry}</p>
@@ -133,30 +140,30 @@ const ClientsSection = () => {
 
         <div className="mt-16 text-center">
           <Separator className="mb-16" />
-          <p className="text-xl font-medium text-gray-700 mb-10">Industry Recognition and Certifications</p>
+          <p className="text-xl font-medium text-gray-700 mb-10">Certifications & Expertise</p>
           <div className="flex flex-wrap justify-center gap-10 items-center">
             <div className="p-4 flex items-center">
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-0 transform hover:translate-y-[-5px] transition-all duration-300">
-                <Trophy className="h-10 w-10 text-coral mb-3 mx-auto" />
-                <div className="text-sm font-medium text-gray-600">Innovation Award</div>
-              </div>
-            </div>
-            <div className="p-4 flex items-center">
-              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-0 transform hover:translate-y-[-5px] transition-all duration-300">
-                <Shield className="h-10 w-10 text-coral mb-3 mx-auto" />
-                <div className="text-sm font-medium text-gray-600">Security Excellence</div>
+                <Award className="h-10 w-10 text-coral mb-3 mx-auto" />
+                <div className="text-sm font-medium text-gray-600">React Certified</div>
               </div>
             </div>
             <div className="p-4 flex items-center">
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-0 transform hover:translate-y-[-5px] transition-all duration-300">
                 <Award className="h-10 w-10 text-coral mb-3 mx-auto" />
-                <div className="text-sm font-medium text-gray-600">Industry Leader</div>
+                <div className="text-sm font-medium text-gray-600">TypeScript Expert</div>
               </div>
             </div>
             <div className="p-4 flex items-center">
               <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-0 transform hover:translate-y-[-5px] transition-all duration-300">
                 <Award className="h-10 w-10 text-coral mb-3 mx-auto" />
-                <div className="text-sm font-medium text-gray-600">Best in Class</div>
+                <div className="text-sm font-medium text-gray-600">AWS Cloud Practitioner</div>
+              </div>
+            </div>
+            <div className="p-4 flex items-center">
+              <div className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow border-0 transform hover:translate-y-[-5px] transition-all duration-300">
+                <Award className="h-10 w-10 text-coral mb-3 mx-auto" />
+                <div className="text-sm font-medium text-gray-600">JavaScript Certified</div>
               </div>
             </div>
           </div>
@@ -165,19 +172,19 @@ const ClientsSection = () => {
           <div className="flex flex-wrap justify-center gap-8 mt-16">
             <div className="flex items-center text-black bg-lemon px-4 py-2 rounded-full shadow-sm">
               <CheckCircle className="h-5 w-5 mr-2 text-black" />
-              <span className="font-medium">ISO 27001 Certified</span>
+              <span className="font-medium">React Certified</span>
             </div>
             <div className="flex items-center text-black bg-lemon px-4 py-2 rounded-full shadow-sm">
               <CheckCircle className="h-5 w-5 mr-2 text-black" />
-              <span className="font-medium">CMMI Level 5</span>
+              <span className="font-medium">TypeScript Expert</span>
             </div>
             <div className="flex items-center text-black bg-lemon px-4 py-2 rounded-full shadow-sm">
               <CheckCircle className="h-5 w-5 mr-2 text-black" />
-              <span className="font-medium">SOC 2 Compliant</span>
+              <span className="font-medium">AWS Cloud Practitioner</span>
             </div>
             <div className="flex items-center text-black bg-lemon px-4 py-2 rounded-full shadow-sm">
               <CheckCircle className="h-5 w-5 mr-2 text-black" />
-              <span className="font-medium">GDPR Compliant</span>
+              <span className="font-medium">JavaScript Certified</span>
             </div>
           </div>
         </div>

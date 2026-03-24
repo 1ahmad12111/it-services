@@ -4,19 +4,19 @@ import { Separator } from "@/components/ui/separator";
 
 const testimonials = [
   {
-    quote: "Mosivant transformed our outdated systems, significantly improving our operational efficiency. Their expertise and dedication were invaluable.",
+    quote: "Faisal rebuilt our entire booking platform in React and it cut our page load time in half. Our customers actually complete checkouts now.",
     author: "Sarah Johnson",
-    position: "CTO, Nexus Innovations",
+    position: "Owner, Nexus Wellness Studio",
   },
   {
-    quote: "The team at Mosivant delivered our new website ahead of schedule and exceeded our expectations. Their attention to detail is outstanding.",
+    quote: "We needed a new website fast and Mosivant delivered a clean, modern site in under three weeks. Communication was straightforward the whole time.",
     author: "Michael Chen",
-    position: "Marketing Director, GrowthForce",
+    position: "Marketing Lead, GrowthForce Media",
   },
   {
-    quote: "We've been working with Mosivant for over three years now. Their IT support has been consistently excellent, with quick response times.",
+    quote: "Mosivant helped us migrate off a legacy system we'd been stuck on for years. The transition was smooth and our team picked up the new tools quickly.",
     author: "David Rodriguez",
-    position: "Operations Manager, Evolve Systems",
+    position: "Operations Manager, Evolve Logistics",
   },
 ];
 

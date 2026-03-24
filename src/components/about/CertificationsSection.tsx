@@ -3,14 +3,10 @@ import React from "react";
 import { CheckCircle } from "lucide-react";
 
 const certifications = [
-  "Microsoft Gold Partner", 
-  "AWS Advanced Consulting Partner", 
-  "Google Cloud Partner", 
-  "Cisco Premier Partner", 
-  "ISO 27001 Certified", 
-  "CMMI Level 5", 
-  "Apple Consultants Network", 
-  "CompTIA"
+  "React Certified",
+  "TypeScript Expert",
+  "JavaScript Certified",
+  "AWS Cloud Practitioner"
 ];
 
 const CertificationsSection = () => {

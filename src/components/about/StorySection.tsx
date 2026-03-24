@@ -12,13 +12,13 @@ const StorySection = () => {
           <h2 className="text-3xl font-bold mb-6 text-center">Our Story</h2>
           <div className="text-lg text-gray-700 space-y-4">
             <p>
-              Founded in 2010, Mosivant began with a clear mission: to help businesses leverage technology for growth and innovation. Our founder, Alexander Mitchell, recognized that many companies were struggling to keep pace with rapidly evolving digital landscapes.
+              Founded in 2022 by Faisal, Mosivant was born from a lifelong passion for technology and a genuine desire to help businesses succeed. Having written his first lines of code at age 15, Faisal spent years honing his craft before earning a Bachelor of Technology from Amity University in India and later a Master's degree from Ashland University in the USA.
             </p>
             <p>
-              What started as a small team of dedicated consultants has grown into a comprehensive IT solutions provider trusted by businesses across multiple industries. Throughout our journey, we've maintained our commitment to delivering tailored, high-quality solutions that address our clients' unique challenges.
+              That combination of deep technical expertise and real-world experience across industries gave Faisal a clear perspective: many small and medium businesses struggle to find reliable, high-quality tech partners who truly understand their needs. Mosivant was created to fill that gap — offering hands-on consulting, modern web development, and IT solutions tailored to each client's goals.
             </p>
             <p>
-              Today, Mosivant is recognized as a leader in digital transformation, helping organizations navigate complex technological environments and implement solutions that drive real business value. Our team of experts brings diverse skills and experiences, united by a shared passion for technology and client success.
+              Today, Mosivant works with freelance clients across multiple industries, delivering projects built on certified expertise in React, TypeScript, and JavaScript. Based in Columbus, OH, we remain committed to the same mission we started with — turning technology into a real competitive advantage for every business we serve.
             </p>
           </div>
         </div>
