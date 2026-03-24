@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronRight, LineChart, ShieldCheck, Cpu } from "lucide-react";
+import { ChevronRight, LineChart, ShieldCheck, Cpu } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
 
 const Hero = () => {
@@ -26,10 +26,10 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-fade-in">
-              Transform Your Business With 
+              We Build The Software That
               <span className="relative ml-3">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-lemon to-lemon/80">
-                  Intelligent Technology
+                  Grows Your Business
                 </span>
                 {/* Subtle underline effect that doesn't affect readability */}
                 <span className="absolute -bottom-4 left-0 w-full h-1 bg-gradient-to-r from-lemon to-coral rounded-full transform-gpu scale-x-[0.98] opacity-70" style={{ filter: "blur(0.5px)" }}></span>
@@ -38,7 +38,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-200 mb-10 animate-fade-in animate-delay-200 max-w-2xl mx-auto md:mx-0 leading-relaxed">
-              Driving innovation with AI, cloud solutions, and strategic IT consulting for forward-thinking enterprises.
+              React, TypeScript, and modern web apps - built by certified developers who ship on time.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5 animate-fade-in animate-delay-300 justify-center md:justify-start">
@@ -46,8 +46,8 @@ const Hero = () => {
                 className="bg-gradient-to-r from-coral to-coral/90 hover:from-coral/90 hover:to-coral text-black px-8 py-7 text-lg shadow-xl shadow-black/30 transition-all duration-300 hover:translate-y-[-2px] font-medium rounded-xl border border-coral/20"
                 asChild
               >
-                <RouterLink to="/services">
-                  Explore Our Solutions
+                <RouterLink to="/contact">
+                  Get a Free Quote
                 </RouterLink>
               </Button>
               <Button 
@@ -56,10 +56,14 @@ const Hero = () => {
                 asChild
               >
                 <RouterLink to="/booking">
-                  Schedule a Consultation <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  Book a Free 15-Min Call <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </RouterLink>
               </Button>
             </div>
+
+            <p className="mt-8 text-sm md:text-base text-gray-200/90 animate-fade-in animate-delay-300">
+              ✓ 50+ projects delivered &nbsp;&nbsp; ✓ 100% completion rate &nbsp;&nbsp; ✓ Based in Columbus, OH
+            </p>
 
             {/* Feature highlights */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
