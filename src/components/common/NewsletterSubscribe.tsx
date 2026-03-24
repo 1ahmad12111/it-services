@@ -133,6 +133,17 @@ const NewsletterSubscribe = ({
 
   return (
     <div className={`space-y-4 ${className}`}>
+      {!hideTitle && (
+        <div className="space-y-2">
+          <h3 className={`text-2xl font-bold ${darkMode ? "text-white" : "text-gray-900"}`}>
+            Get Dev Insights That Actually Help
+          </h3>
+          <p className={darkMode ? "text-white/85" : "text-gray-600"}>
+            Weekly tips on React, TypeScript, and scaling your tech stack. No spam.
+          </p>
+        </div>
+      )}
+
       <div 
         ref={formContainerRef} 
         className={`hs-form-frame ${darkMode ? "hs-form-dark" : "hs-form-light"} rounded-md overflow-hidden`} 

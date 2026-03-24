@@ -54,6 +54,8 @@ const BlogDetail = () => {
     );
   }
   
+  const ctaTopic = post.category || post.tags?.[0] || "Your Next Project";
+  
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
@@ -168,6 +170,21 @@ const BlogDetail = () => {
                         </Link>
                       ))}
                     </div>
+                  </div>
+                </div>
+
+                <div className="bg-coral/10 border border-coral/20 rounded-xl p-8 mt-10">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Need Help With {ctaTopic}?</h3>
+                  <p className="text-gray-700 mb-6">
+                    Our team specializes in turning ideas into production-ready software.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Button asChild className="bg-coral hover:bg-coral/90 text-white">
+                      <Link to="/contact">Get a Free Quote</Link>
+                    </Button>
+                    <Button asChild variant="outline" className="border-coral text-coral hover:bg-coral/5">
+                      <Link to="/booking">Book a Call</Link>
+                    </Button>
                   </div>
                 </div>
               </div>

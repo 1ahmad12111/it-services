@@ -65,6 +65,15 @@ const InsightsSection = () => {
             </Card>
           ))}
         </div>
+
+        <div className="mt-10 text-center bg-white/70 border border-coral/20 rounded-xl p-6 max-w-3xl mx-auto">
+          <p className="text-gray-700 mb-4">
+            Want to discuss how these insights apply to your business?
+          </p>
+          <Button asChild variant="outline" className="border-coral text-coral hover:bg-coral/5">
+            <Link to="/booking">Talk to an Expert</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );
