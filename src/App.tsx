@@ -4,21 +4,21 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
-import Index from "./pages/Index";
-import Services from "./pages/Services";
-import NotFound from "./pages/NotFound";
-import AboutPage from "./pages/AboutPage";
-import Blog from "./pages/Blog";
-import BlogDetail from "./pages/BlogDetail";
-import Contact from "./pages/Contact";
-import Booking from "./pages/Booking";
-import CaseStudies from "./pages/CaseStudies";
-import Pricing from "./pages/Pricing";
+import { lazy, Suspense, useEffect } from "react";
 import ScrollToTop from "./components/common/ScrollToTop";
 import useSmoothScroll from "./hooks/use-smooth-scroll";
 
 const queryClient = new QueryClient();
+const Index = lazy(() => import("./pages/Index"));
+const Services = lazy(() => import("./pages/Services"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Booking = lazy(() => import("./pages/Booking"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const Pricing = lazy(() => import("./pages/Pricing"));
 
 // Theme initialization component
 const ThemeInitializer = () => {
@@ -47,19 +47,25 @@ const AppContent = () => {
       <ScrollToTop />
       <Toaster />
       <Sonner position="top-center" />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/case-studies" element={<CaseStudies />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:postId" element={<BlogDetail />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/booking" element={<Booking />} />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense
+        fallback={
+          <div className="flex min-h-screen items-center justify-center">Loading...</div>
+        }
+      >
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/case-studies" element={<CaseStudies />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:postId" element={<BlogDetail />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/booking" element={<Booking />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </>
   );
 };
