@@ -10,9 +10,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Send, Info } from "lucide-react";
+import { Send, CheckCircle } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
-import ContactFormSuccess from "./ContactFormSuccess";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -21,10 +20,10 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Form validation
     if (!name.trim() || !email.trim() || !message.trim()) {
       toast({
@@ -36,28 +35,28 @@ const ContactForm = () => {
     }
 
     setIsSubmitting(true);
-    
+
     try {
-      // Log form data for development purposes
-      console.log("Contact form submitted:", {
-        name,
-        email,
-        subject: subject || "General Inquiry",
-        message,
-        timestamp: new Date().toISOString()
+      const response = await fetch("https://formspree.io/f/xwpkgjqn", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          subject: subject || "General Inquiry",
+          message,
+        }),
       });
-      
-      // Show next steps message
-      toast({
-        title: "Form completed",
-        description: "Please choose an option below to send your message.",
-      });
-      
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
       setSubmitted(true);
     } catch (error) {
-      console.error("Error processing form:", error);
+      console.error("Error submitting form:", error);
       toast({
-        title: "Error processing form",
+        title: "Error sending message",
         description: "Please try again or contact us directly via phone.",
         variant: "destructive",
       });
@@ -65,7 +64,7 @@ const ContactForm = () => {
       setIsSubmitting(false);
     }
   };
-  
+
   const resetForm = () => {
     setSubmitted(false);
     setName("");
@@ -73,27 +72,28 @@ const ContactForm = () => {
     setSubject("");
     setMessage("");
   };
-  
+
   return (
     <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
       <div className="p-8">
         <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
-        <div className="bg-blue-50 border-l-4 border-coral p-4 mb-6 flex items-start">
-          <Info className="text-coral mr-2 mt-0.5 shrink-0" size={16} />
-          <p className="text-sm text-blue-700">
-            This form will help you prepare your message. After completing the form, 
-            you'll need to select one of the provided options to send your message directly.
-          </p>
-        </div>
-        
+
         {submitted ? (
-          <ContactFormSuccess 
-            name={name}
-            email={email}
-            subject={subject}
-            message={message}
-            onReset={resetForm}
-          />
+          <div className="text-center py-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-50 text-green-500 mb-6">
+              <CheckCircle size={32} />
+            </div>
+            <h3 className="text-2xl font-bold mb-2">Thank you for reaching out!</h3>
+            <p className="text-gray-600 mb-6">
+              We will get back to you within 24 hours.
+            </p>
+            <Button
+              variant="outline"
+              onClick={resetForm}
+            >
+              Send Another Message
+            </Button>
+          </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
@@ -128,8 +128,8 @@ const ContactForm = () => {
               <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
                 Subject *
               </label>
-              <Select 
-                value={subject} 
+              <Select
+                value={subject}
                 onValueChange={setSubject}
                 required
               >
@@ -161,8 +161,8 @@ const ContactForm = () => {
             </div>
 
             <div>
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full bg-coral text-white hover:bg-coral/90"
                 disabled={isSubmitting}
               >
@@ -172,12 +172,12 @@ const ContactForm = () => {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    Processing...
+                    Sending...
                   </span>
                 ) : (
                   <span className="flex items-center">
                     <Send className="mr-2 h-5 w-5" />
-                    Continue
+                    Send Message
                   </span>
                 )}
               </Button>
