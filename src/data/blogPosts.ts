@@ -4,6 +4,18 @@ import { blogContent } from "./blogContent";
 
 export const blogPosts: BlogPost[] = [
   {
+    id: "react-development-cost-2026",
+    title: "React Development Cost for Small Businesses in 2026 (Full Breakdown)",
+    excerpt: "Planning a React project this year? Here is a practical breakdown of react development cost in 2026, including hourly rates, project pricing tiers, budgeting tips, and how small businesses can maximize value.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60",
+    author: "Mosivant Team",
+    date: "2026-03-25",
+    category: "Web Development",
+    tags: ["React", "Cost Guide", "Small Business", "Web Development", "TypeScript"],
+    readTime: 12,
+    content: blogContent["react-development-cost-2026"]
+  },
+  {
     id: "custom-software-development-cost-2026",
     title: "How Much Does Custom Software Development Cost in 2026? A Realistic Guide",
     excerpt: "From MVPs to enterprise platforms, we break down the real cost factors behind custom software development in 2026 — including team models, tech stacks, AI features, and how to avoid budget blowouts.",
@@ -508,4 +520,3 @@ export const blogPosts: BlogPost[] = [
 ];
 
 export default blogPosts;
-
