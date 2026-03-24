@@ -1,0 +1,202 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { Check, Clock3 } from "lucide-react";
+import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
+import SEOMetaTags from "@/components/common/SEOMetaTags";
+import { Button } from "@/components/ui/button";
+
+type PricingTier = {
+  name: string;
+  price: string;
+  bestFor: string;
+  includes: string[];
+  timeline: string;
+  ctaLabel: string;
+  ctaLink: string;
+  isRecommended?: boolean;
+};
+
+const tiers: PricingTier[] = [
+  {
+    name: "Starter",
+    price: "Starting from $2,500",
+    bestFor: "Small businesses needing a web presence",
+    includes: [
+      "Single page website or landing page",
+      "Responsive design",
+      "Basic SEO setup",
+      "2 rounds of revisions",
+    ],
+    timeline: "1-2 weeks",
+    ctaLabel: "Get Started",
+    ctaLink: "/contact",
+  },
+  {
+    name: "Growth",
+    price: "Starting from $5,000",
+    bestFor: "Growing businesses needing custom web apps",
+    includes: [
+      "Multi-page React/TypeScript app",
+      "CMS integration",
+      "Analytics setup",
+      "API integrations",
+      "3 rounds of revisions",
+    ],
+    timeline: "4-6 weeks",
+    ctaLabel: "Get a Quote",
+    ctaLink: "/contact",
+    isRecommended: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Custom pricing",
+    bestFor: "Complex projects, SaaS platforms, enterprise apps",
+    includes: [
+      "Full-stack development",
+      "Database design",
+      "Authentication",
+      "Cloud deployment",
+      "Ongoing support",
+      "Dedicated project manager",
+    ],
+    timeline: "8-12+ weeks",
+    ctaLabel: "Book a Consultation",
+    ctaLink: "/booking",
+  },
+];
+
+const faqs = [
+  {
+    question: "Do you offer payment plans?",
+    answer: "Yes, we offer flexible payment terms for projects over $5,000.",
+  },
+  {
+    question: "What if I need changes after delivery?",
+    answer:
+      "All tiers include revision rounds. Additional changes are billed at our hourly rate.",
+  },
+  {
+    question: "Do you provide ongoing maintenance?",
+    answer: "Yes, we offer monthly retainer plans starting at $500/month.",
+  },
+  {
+    question: "Can I start small and scale up?",
+    answer:
+      "Absolutely. Many clients start with a Starter project and upgrade as their needs grow.",
+  },
+];
+
+const Pricing = () => {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <SEOMetaTags
+        title="Pricing | Mosivant"
+        description="Explore transparent starting points for web development engagements with Mosivant, from Starter websites to Enterprise platforms."
+        keywords="mosivant pricing, web development pricing, react app pricing, enterprise software pricing"
+        canonicalUrl="https://gomosivant.com/pricing"
+      />
+      <Navbar />
+
+      <main className="flex-grow">
+        <section className="relative bg-slate-900 text-white pt-28 pb-20 overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+            <div className="absolute top-10 left-10 h-72 w-72 rounded-full bg-coral/20 blur-[90px]" />
+            <div className="absolute bottom-10 right-10 h-64 w-64 rounded-full bg-coral/15 blur-[80px]" />
+          </div>
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="inline-flex items-center px-4 py-1.5 rounded-full bg-coral text-black text-sm font-semibold mb-6">
+                Flexible Engagements
+              </p>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">Pricing</h1>
+              <p className="text-lg md:text-xl text-lemon leading-relaxed">
+                Clear starting points for common project scopes, with room to tailor each engagement around your exact business goals.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="grid gap-8 md:grid-cols-3 items-stretch">
+              {tiers.map((tier) => (
+                <article
+                  key={tier.name}
+                  className={`relative bg-white rounded-xl shadow-sm transition-shadow hover:shadow-md p-6 md:p-8 flex flex-col ${
+                    tier.isRecommended
+                      ? "border-2 border-coral"
+                      : "border border-gray-200"
+                  }`}
+                >
+                  {tier.isRecommended && (
+                    <span className="absolute -top-3 left-6 inline-flex rounded-full bg-coral px-3 py-1 text-xs font-semibold text-black">
+                      Most Popular
+                    </span>
+                  )}
+
+                  <h2 className="text-2xl font-bold text-gray-900 mb-3">{tier.name}</h2>
+                  <p className="text-2xl font-semibold text-coral mb-2">{tier.price}</p>
+                  <p className="text-gray-700 mb-6">
+                    <span className="font-semibold text-gray-900">Best for:</span> {tier.bestFor}
+                  </p>
+
+                  <div className="mb-6">
+                    <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-900 mb-3">Includes</h3>
+                    <ul className="space-y-2 text-gray-700">
+                      {tier.includes.map((item) => (
+                        <li key={item} className="flex items-start gap-2">
+                          <Check className="h-4 w-4 mt-1 text-coral shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="flex items-center gap-2 text-sm font-medium text-gray-700 bg-gray-100 px-3 py-2 rounded-lg w-fit mb-6">
+                    <Clock3 className="h-4 w-4 text-coral" />
+                    Timeline: {tier.timeline}
+                  </div>
+
+                  <Button
+                    asChild
+                    className="mt-auto bg-coral hover:bg-coral/90 text-black"
+                  >
+                    <Link to={tier.ctaLink}>{tier.ctaLabel}</Link>
+                  </Button>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                <p className="text-lg text-gray-600">
+                  Answers to common pricing and engagement questions.
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                {faqs.map((faq) => (
+                  <div key={faq.question} className="bg-gray-50 border border-gray-200 p-6 rounded-xl">
+                    <h3 className="text-xl font-bold mb-3 text-coral">{faq.question}</h3>
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Pricing;

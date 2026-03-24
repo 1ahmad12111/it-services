@@ -38,6 +38,7 @@ export const navItems = [
   { label: "Services", path: "/services" },
   { label: "About", path: "/about" },
   { label: "Case Studies", path: "/case-studies" },
+  { label: "Pricing", path: "/pricing" },
   { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
 ];

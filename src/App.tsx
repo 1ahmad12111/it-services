@@ -14,6 +14,7 @@ import BlogDetail from "./pages/BlogDetail";
 import Contact from "./pages/Contact";
 import Booking from "./pages/Booking";
 import CaseStudies from "./pages/CaseStudies";
+import Pricing from "./pages/Pricing";
 import ScrollToTop from "./components/common/ScrollToTop";
 import useSmoothScroll from "./hooks/use-smooth-scroll";
 
@@ -50,6 +51,7 @@ const AppContent = () => {
         <Route path="/" element={<Index />} />
         <Route path="/services" element={<Services />} />
         <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:postId" element={<BlogDetail />} />
