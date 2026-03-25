@@ -5,6 +5,17 @@ import { generateBlogImage } from "../utils/blogImages";
 
 const rawBlogPosts: Omit<BlogPost, "image">[] = [
   {
+    id: "custom-dashboard-5-signs",
+    title: "5 Signs Your Business Needs a Custom Dashboard (And How to Build One Fast)",
+    excerpt: "Most founders don't realize they need a custom dashboard until manual reporting eats their week. Here are five signs it's time — plus a fast build plan that doesn't drag on for six months.",
+    author: "Faisal Ahmad",
+    date: "2026-03-25",
+    category: "Web Development",
+    tags: ["custom dashboard", "business dashboard", "React", "SMB", "data visualization", "web app"],
+    readTime: 12,
+    content: blogContent["custom-dashboard-5-signs"]
+  },
+  {
     id: "react-development-cost-2026",
     title: "React Development Cost for Small Businesses in 2026 (Full Breakdown)",
     excerpt: "Planning a React project this year? Here is a practical breakdown of react development cost in 2026, including hourly rates, project pricing tiers, budgeting tips, and how small businesses can maximize value.",
