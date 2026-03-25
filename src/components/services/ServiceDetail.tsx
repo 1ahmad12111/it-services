@@ -13,6 +13,8 @@ interface ServiceDetailProps {
     subtitle: string;
     description: string;
     features: string[];
+    ctaLabel: string;
+    ctaLink: string;
     icon: string;
   };
   isReversed?: boolean;
@@ -56,7 +58,7 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
         <p className="text-gray-700 mb-6">{service.description}</p>
         
         <div className="mb-8">
-          <h3 className="text-lg md:text-xl font-semibold mb-4">Key Features</h3>
+          <h3 className="text-lg md:text-xl font-semibold mb-4">What You Get</h3>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {service.features.map((feature, index) => (
               <li key={index} className="flex items-start">
@@ -87,8 +89,8 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
             className="bg-coral hover:bg-coral/90 text-black"
             asChild
           >
-            <RouterLink to={`/booking`}>
-              Learn More <ArrowRight className="ml-2 h-4 w-4" />
+            <RouterLink to={service.ctaLink}>
+              {service.ctaLabel} <ArrowRight className="ml-2 h-4 w-4" />
             </RouterLink>
           </Button>
         </div>

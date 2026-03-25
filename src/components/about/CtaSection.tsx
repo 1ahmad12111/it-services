@@ -7,9 +7,9 @@ const CtaSection = () => {
   return (
     <section className="py-16 bg-black text-white">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
+        <h2 className="text-3xl font-bold mb-6">Ready to Ship, Not Just Plan?</h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
-          Partner with Mosivant for innovative technology solutions that drive growth and efficiency.
+          Tell us your goal, timeline, and budget range. We will send a clear execution plan, not a generic proposal.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
@@ -18,7 +18,7 @@ const CtaSection = () => {
             asChild
           >
             <Link to="/services">
-              Explore Our Services
+              View Services
             </Link>
           </Button>
           <Button
@@ -27,7 +27,7 @@ const CtaSection = () => {
             asChild
           >
             <Link to="/booking">
-              Schedule a Consultation
+              Book a Free 15-Minute Call
             </Link>
           </Button>
         </div>
