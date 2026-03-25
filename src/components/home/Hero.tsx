@@ -21,15 +21,15 @@ const Hero = () => {
           <div className="text-center md:text-left">
             <div className="flex flex-col md:flex-row items-center md:items-start mb-6">
               <span className="bg-gradient-to-r from-coral to-coral/70 px-4 py-1.5 rounded-full text-black text-sm font-medium mb-4 md:mb-0 shadow-lg">
-                Next-Gen Digital Solutions
+                50+ Projects Shipped Since 2022
               </span>
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight animate-fade-in">
-              We Build The Software That
+              Ship Your Next Web App
               <span className="relative ml-3">
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-lemon to-lemon/80">
-                  Grows Your Business
+                  In 3 To 6 Weeks
                 </span>
                 {/* Subtle underline effect that doesn't affect readability */}
                 <span className="absolute -bottom-4 left-0 w-full h-1 bg-gradient-to-r from-lemon to-coral rounded-full transform-gpu scale-x-[0.98] opacity-70" style={{ filter: "blur(0.5px)" }}></span>
@@ -38,7 +38,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-200 mb-10 animate-fade-in animate-delay-200 max-w-2xl mx-auto md:mx-0 leading-relaxed">
-              React, TypeScript, and modern web apps - built by certified developers who ship on time.
+              We build dashboards, portals, and internal tools that save hours every week. You get fixed milestones, weekly demos, and a team that finishes what it starts.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-5 animate-fade-in animate-delay-300 justify-center md:justify-start">
@@ -47,7 +47,7 @@ const Hero = () => {
                 asChild
               >
                 <RouterLink to="/contact">
-                  Get a Free Quote
+                  Get Your Build Plan
                 </RouterLink>
               </Button>
               <Button 
@@ -56,7 +56,7 @@ const Hero = () => {
                 asChild
               >
                 <RouterLink to="/booking">
-                  Book a Free 15-Min Call <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  Book a Free 15-Minute Call <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </RouterLink>
               </Button>
             </div>
@@ -71,24 +71,24 @@ const Hero = () => {
                 <div className="bg-coral/20 p-3 rounded-lg w-fit mb-4">
                   <ShieldCheck className="h-6 w-6 text-coral" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Enterprise Security</h3>
-                <p className="text-gray-300">Advanced protection for your critical business assets and data</p>
+                <h3 className="text-xl font-bold mb-2">Fewer Manual Tasks</h3>
+                <p className="text-gray-300">We replace spreadsheet-heavy workflows with tools your team can use on day one.</p>
               </div>
               
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-lg transform transition-all hover:translate-y-[-5px] hover:bg-white/10">
                 <div className="bg-lemon/20 p-3 rounded-lg w-fit mb-4">
                   <Cpu className="h-6 w-6 text-lemon" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">AI Integration</h3>
-                <p className="text-gray-300">Leverage cutting-edge AI to drive decision-making and automation</p>
+                <h3 className="text-xl font-bold mb-2">Faster Team Decisions</h3>
+                <p className="text-gray-300">Live dashboards give your team one source of truth, instead of chasing updates in chat.</p>
               </div>
               
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-lg transform transition-all hover:translate-y-[-5px] hover:bg-white/10">
                 <div className="bg-coral/20 p-3 rounded-lg w-fit mb-4">
                   <LineChart className="h-6 w-6 text-coral" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Business Analytics</h3>
-                <p className="text-gray-300">Transform raw data into actionable business intelligence</p>
+                <h3 className="text-xl font-bold mb-2">Revenue-Focused Builds</h3>
+                <p className="text-gray-300">Every screen and flow is built to increase booked calls, retention, or repeat sales.</p>
               </div>
             </div>
           </div>

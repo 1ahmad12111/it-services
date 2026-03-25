@@ -1,37 +1,39 @@
 
 import React from "react";
 import { Award, Globe, Users, Briefcase } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 // Company milestones data
 const milestones = [
   {
-    year: "2010",
-    title: "Founded",
-    description: "Mosivant was established with a vision to provide tailored technology solutions.",
+    year: "2022",
+    title: "Mosivant Started",
+    description: "Faisal launched Mosivant in Columbus, OH with a focus on practical web delivery for SMB teams.",
     icon: <Briefcase className="w-6 h-6 text-coral" />,
   },
   {
-    year: "2015",
-    title: "Major Expansion",
-    description: "Expanded services to include cloud solutions and digital transformation consulting.",
+    year: "2023",
+    title: "First 20 Projects Delivered",
+    description: "Early client work validated our model: short scopes, weekly demos, and direct founder communication.",
     icon: <Globe className="w-6 h-6 text-coral" />,
   },
   {
-    year: "2018",
-    title: "50+ Enterprise Clients",
-    description: "Reached a milestone of serving over 50 enterprise clients across multiple industries.",
+    year: "2024",
+    title: "Process Tightened",
+    description: "We standardized delivery checklists and QA flow to protect timeline and handoff quality.",
     icon: <Users className="w-6 h-6 text-coral" />,
   },
   {
-    year: "2022",
-    title: "Industry Recognition",
-    description: "Named as one of the top IT consulting firms by Industry Today magazine.",
+    year: "2025",
+    title: "50+ Projects, 100% Completion Rate",
+    description: "We crossed 50 delivered projects and kept our completion record intact.",
     icon: <Award className="w-6 h-6 text-coral" />,
   },
   {
-    year: "2024",
-    title: "Global Reach",
-    description: "Expanded operations to serve clients across North America, Europe, and Asia.",
+    year: "2026",
+    title: "Growing with Focus",
+    description: "We stayed intentionally small so clients still work with builders, not a sales layer.",
     icon: <Globe className="w-6 h-6 text-coral" />,
   },
 ];
@@ -61,6 +63,11 @@ const JourneySection = () => {
               </div>
             </div>
           ))}
+          <div className="text-center mt-10">
+            <Button className="bg-coral hover:bg-coral/90 text-black" asChild>
+              <Link to="/booking">Talk to the Founder</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

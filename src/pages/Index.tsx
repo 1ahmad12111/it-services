@@ -57,8 +57,8 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags 
-        title="Mosivant — React & TypeScript Web Apps for Growing Businesses"
-        description="Custom dashboards, web apps, and SaaS tools built by a team that ships fast. 50+ projects delivered. React, TypeScript, Node.js specialists."
+        title="Mosivant | Ship Dashboards and Web Apps in 3 to 6 Weeks"
+        description="Need a web app that drives revenue or saves team hours? Mosivant has delivered 50+ projects with a 100% completion rate. Book a free 15-minute call."
         keywords="IT consulting, software development, website development, IT support, digital transformation"
         ogImage="https://www.gomosivant.com/og-home.png"
         canonicalUrl="https://www.gomosivant.com/"

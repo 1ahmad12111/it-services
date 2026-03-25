@@ -21,47 +21,47 @@ const tiers: PricingTier[] = [
   {
     name: "Starter",
     price: "Starting from $2,500",
-    bestFor: "Small businesses needing a web presence",
+    bestFor: "Founders who need a high-converting web presence fast",
     includes: [
-      "Single page website or landing page",
-      "Responsive design",
-      "Basic SEO setup",
-      "2 rounds of revisions",
+      "Conversion-focused landing page or 3-page site",
+      "Mobile-first build and speed optimization",
+      "Core SEO and analytics setup",
+      "2 revision rounds and launch support",
     ],
-    timeline: "1-2 weeks",
-    ctaLabel: "Get Started",
+    timeline: "7 to 14 days",
+    ctaLabel: "Start Starter Plan",
     ctaLink: "/contact",
   },
   {
     name: "Growth",
     price: "Starting from $5,000",
-    bestFor: "Growing businesses needing custom web apps",
+    bestFor: "Teams ready to ship dashboards, portals, or internal tools",
     includes: [
-      "Multi-page React/TypeScript app",
-      "CMS integration",
-      "Analytics setup",
-      "API integrations",
-      "3 rounds of revisions",
+      "Custom React app built around your workflow",
+      "API integrations with your existing stack",
+      "Role-based access and secure auth setup",
+      "Analytics and event tracking",
+      "3 revision rounds with weekly demos",
     ],
-    timeline: "4-6 weeks",
-    ctaLabel: "Get a Quote",
+    timeline: "3 to 6 weeks",
+    ctaLabel: "Book Growth Scope Call",
     ctaLink: "/contact",
     isRecommended: true,
   },
   {
     name: "Enterprise",
     price: "Custom pricing",
-    bestFor: "Complex projects, SaaS platforms, enterprise apps",
+    bestFor: "Complex SaaS products with multiple teams and systems",
     includes: [
-      "Full-stack development",
-      "Database design",
-      "Authentication",
-      "Cloud deployment",
-      "Ongoing support",
-      "Dedicated project manager",
+      "Full product architecture and implementation",
+      "Complex workflows and system integrations",
+      "Security, compliance, and deployment planning",
+      "Dedicated delivery lead and sprint planning",
+      "Ongoing optimization and support options",
+      "Priority response for business-critical issues",
     ],
-    timeline: "8-12+ weeks",
-    ctaLabel: "Book a Consultation",
+    timeline: "8+ weeks",
+    ctaLabel: "Book Enterprise Consultation",
     ctaLink: "/booking",
   },
 ];
@@ -69,21 +69,19 @@ const tiers: PricingTier[] = [
 const faqs = [
   {
     question: "Do you offer payment plans?",
-    answer: "Yes, we offer flexible payment terms for projects over $5,000.",
+    answer: "Yes. Most projects are split into milestone payments, and plans above $5,000 can use staged billing.",
   },
   {
     question: "What if I need changes after delivery?",
-    answer:
-      "All tiers include revision rounds. Additional changes are billed at our hourly rate.",
+    answer: "Each plan includes revision rounds. After that, we scope additional work clearly before any extra billing.",
   },
   {
     question: "Do you provide ongoing maintenance?",
-    answer: "Yes, we offer monthly retainer plans starting at $500/month.",
+    answer: "Yes. Ongoing support starts at $500 per month for maintenance, fixes, and small improvements.",
   },
   {
     question: "Can I start small and scale up?",
-    answer:
-      "Absolutely. Many clients start with a Starter project and upgrade as their needs grow.",
+    answer: "Yes. Many clients begin with Starter, validate ROI, then expand into Growth or Enterprise.",
   },
 ];
 
@@ -92,7 +90,7 @@ const Pricing = () => {
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
         title="Pricing — Transparent Web Development Packages | Mosivant"
-        description="Clear pricing for custom web development. Dashboard builds from $3K, web apps from $5K, SaaS MVPs from $8K. No hidden fees."
+        description="Outcome-focused pricing for websites, dashboards, and SaaS builds. Projects start at $2,500 with clear scope, timeline, and milestones."
         keywords="mosivant pricing, web development pricing, react app pricing, enterprise software pricing"
         canonicalUrl="https://www.gomosivant.com/pricing"
       />
@@ -112,7 +110,7 @@ const Pricing = () => {
               </p>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">Pricing</h1>
               <p className="text-lg md:text-xl text-lemon leading-relaxed">
-                Clear starting points for common project scopes, with room to tailor each engagement around your exact business goals.
+                Choose the speed and scope you need. Every plan includes a clear timeline, direct communication, and defined deliverables.
               </p>
             </div>
           </div>
@@ -177,7 +175,7 @@ const Pricing = () => {
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
                 <p className="text-lg text-gray-600">
-                  Answers to common pricing and engagement questions.
+                  Still deciding? Start here, then book a quick call and we will map your best-fit plan in 15 minutes.
                 </p>
               </div>
 
@@ -188,6 +186,11 @@ const Pricing = () => {
                     <p className="text-gray-700">{faq.answer}</p>
                   </div>
                 ))}
+              </div>
+              <div className="mt-10 text-center">
+                <Button asChild className="bg-coral hover:bg-coral/90 text-black">
+                  <Link to="/booking">Book a Free 15-Minute Pricing Call</Link>
+                </Button>
               </div>
             </div>
           </div>

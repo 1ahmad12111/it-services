@@ -14,8 +14,8 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
-        title="About Mosivant — Founded by Faisal, Shipping Since 2022"
-        description="React/TypeScript specialists with 50+ projects delivered. Founded by Faisal (BTech Amity, Masters Ashland). We finish what we start."
+        title="About Mosivant | Founder-Led Team, 50+ Projects, 100% Completion"
+        description="Mosivant was founded by Faisal in 2022 to help growing businesses ship web products faster. Founder-led delivery, 50+ projects shipped, 100% completion."
         canonicalUrl="https://www.gomosivant.com/about"
       />
       <Navbar />
