@@ -19,6 +19,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Booking = lazy(() => import("./pages/Booking"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
 const Pricing = lazy(() => import("./pages/Pricing"));
+const FreeAudit = lazy(() => import("./pages/FreeAudit"));
 
 // Theme initialization component
 const ThemeInitializer = () => {
@@ -62,6 +63,7 @@ const AppContent = () => {
           <Route path="/blog/:postId" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/free-audit" element={<FreeAudit />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
