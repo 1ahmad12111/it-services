@@ -1018,5 +1018,189 @@ export const blogContent: Record<string, ContentSection[]> = {
       type: "callout",
       text: "Ready to build a practical, no-bloat dashboard tailored to your workflow? Get a free consultation at /contact — we design and ship production-ready dashboard systems for SMB teams that need answers now, not six months from now."
     }
+  ],
+  "custom-web-app-development-cost": [
+    {
+      type: "paragraph",
+      text: "You searched \"custom web app development cost\" because you have a project in mind and need a number. Fair enough."
+    },
+    {
+      type: "paragraph",
+      text: "Most pricing guides give you a range so wide it's useless. \"$5,000 to $500,000.\" Thanks. Very helpful."
+    },
+    {
+      type: "paragraph",
+      text: "I'm going to give you actual numbers based on what we build at Mosivant — React and TypeScript web apps for growing businesses. What drives cost, what each tier looks like, and where most small businesses land."
+    },
+    {
+      type: "paragraph",
+      text: "No agencies quoting $200K for a login page. No offshore shops promising the moon for $2K. Just realistic numbers."
+    },
+    {
+      type: "heading2",
+      text: "The Short Answer"
+    },
+    {
+      type: "paragraph",
+      text: "Most custom web apps for small and mid-size businesses cost between $3,000 and $25,000. The median project we take on is around $6,000 to $10,000 and ships in 3 to 6 weeks."
+    },
+    {
+      type: "paragraph",
+      text: "That's the range where you get something properly built — not a WordPress plugin, not a Retool hack, not a prototype that breaks when real users show up."
+    },
+    {
+      type: "paragraph",
+      text: "Bigger projects (multi-role platforms, complex integrations, real-time data) cost more. But most founders reading this aren't building Salesforce. You need a tool that solves a specific problem and doesn't fall apart."
+    },
+    {
+      type: "heading2",
+      text: "What Actually Drives the Cost"
+    },
+    {
+      type: "paragraph",
+      text: "Four things move the number:"
+    },
+    {
+      type: "paragraph",
+      text: "Complexity of the core feature. A dashboard that displays data from one API is simpler than a platform where users create accounts, manage workflows, and trigger automations. The gap between \"shows data\" and \"handles user logic\" is where cost jumps. Read-heavy apps (dashboards, reports) cost less than write-heavy ones (multi-step forms, approval workflows, role-based editing)."
+    },
+    {
+      type: "paragraph",
+      text: "Number of integrations. Every external service — Stripe, HubSpot, QuickBooks, Shopify, a legacy database — adds time. Clean APIs with good docs might add a day or two. Poorly documented or legacy systems can add a week. Most projects connect to 1-3 services, which is manageable. North of 8, and the timeline stretches."
+    },
+    {
+      type: "paragraph",
+      text: "User roles and permissions. One user type is simpler. Three user types with different views and permissions means more screens, more logic, more testing. An admin dashboard for your team is faster to build than a customer-facing portal with self-service accounts."
+    },
+    {
+      type: "paragraph",
+      text: "Design requirements. Using a solid component library (Shadcn, Material UI) and customizing it for your brand is fast. A fully custom design with unique interactions and animations adds time. Honestly, most businesses don't need full custom — clean, functional, and branded gets you 90% there."
+    },
+    {
+      type: "heading2",
+      text: "What You Get at Each Price Point"
+    },
+    {
+      type: "heading3",
+      text: "$3,000 – $6,000: A Focused Tool"
+    },
+    {
+      type: "paragraph",
+      text: "Single-purpose. Think internal dashboard, customer-facing calculator, intake form system, or a reporting view. Typically 3-5 screens, one or two user roles, a couple integrations, component-library UI. Ships in 2-3 weeks."
+    },
+    {
+      type: "paragraph",
+      text: "We built a dispatch dashboard for a logistics company — pulled data from their fleet API, displayed daily delivery metrics. Five views, one integration, role-based login for ops and leadership. 2.5 weeks, $5,500. That's what this tier looks like."
+    },
+    {
+      type: "heading3",
+      text: "$6,000 – $15,000: A Full Application"
+    },
+    {
+      type: "paragraph",
+      text: "This is where most custom builds land. Multiple features, user roles, integrations. Typically 8-15 screens, 2-3 user roles with permissions, 3-5 integrations, custom-branded UI, auth, notifications, data exports. Ships in 4-6 weeks."
+    },
+    {
+      type: "paragraph",
+      text: "A DTC brand needed a unified analytics platform combining Shopify, Meta Ads, and inventory data. Three user roles (growth, finance, ops), automated weekly reports, LTV and CAC tracking, inventory risk alerts. 5 weeks, $9,000. If you've outgrown spreadsheets and toggling between 4-5 tools, this is your tier."
+    },
+    {
+      type: "heading3",
+      text: "$15,000 – $30,000+: A Platform"
+    },
+    {
+      type: "paragraph",
+      text: "Complex logic, real-time capabilities, or customer-facing functionality. Closer to a SaaS MVP than an internal tool. 15+ screens, granular permissions, WebSockets, production-grade infrastructure (CI/CD, monitoring, error tracking). 6-10 weeks."
+    },
+    {
+      type: "paragraph",
+      text: "A SaaS company needed a custom admin dashboard replacing Retool — team management, billing integration, feature flag controls, real-time user analytics. 8 weeks. If you're building something core to your business and not just a tool, this is where you are."
+    },
+    {
+      type: "heading2",
+      text: "What's Not Included (Because Transparency Matters)"
+    },
+    {
+      type: "paragraph",
+      text: "Ongoing maintenance. Most projects include 2-4 weeks of bug fixes after launch. Long-term maintenance is a separate monthly retainer, typically $500-$2,000/month depending on scope."
+    },
+    {
+      type: "paragraph",
+      text: "Hosting. Cloud hosting for most small apps runs $20-$100/month. We set it up, the bill is yours."
+    },
+    {
+      type: "paragraph",
+      text: "Content and data migration. Moving data from an old system is scoped separately."
+    },
+    {
+      type: "paragraph",
+      text: "Mobile apps. These prices are for web applications. Native iOS/Android is a separate project, though we build responsive — works well on mobile browsers."
+    },
+    {
+      type: "heading2",
+      text: "Why Agencies Quote $100K+ for the Same Work"
+    },
+    {
+      type: "paragraph",
+      text: "Large agencies have overhead. Account managers, project managers, design teams, QA teams, layers of review. They're built for Fortune 500 clients with Fortune 500 budgets."
+    },
+    {
+      type: "paragraph",
+      text: "We operate differently. Senior engineers write the code. You talk to the person building your app, not a middleman relaying messages. We use modern frameworks (React, TypeScript, Node.js) that let us move fast without cutting corners."
+    },
+    {
+      type: "paragraph",
+      text: "Same quality, fraction of the cost, because you're not subsidizing the overhead."
+    },
+    {
+      type: "paragraph",
+      text: "I'm not knocking agencies — if you're a 500-person company with complex compliance requirements, you probably need that structure. If you're a 5 to 50-person team that needs a great web app built fast, you probably don't."
+    },
+    {
+      type: "heading2",
+      text: "The Cost of Doing Nothing"
+    },
+    {
+      type: "paragraph",
+      text: "People frame this as \"should we spend $8K on a custom app?\" Wrong question."
+    },
+    {
+      type: "paragraph",
+      text: "If your team spends 10 hours a week on manual reporting, and their loaded cost is $50/hour, that's $2,000/month. $24,000 a year. A $6,000 dashboard eliminates that."
+    },
+    {
+      type: "paragraph",
+      text: "If your sales team loses 2 deals a quarter because your onboarding process is clunky and manual, and your average deal is $5,000, that's $40,000 a year in revenue you're leaving on the table."
+    },
+    {
+      type: "paragraph",
+      text: "Custom software pays for itself in 2-4 months for most growing businesses. It's not an expense — it's the point where you stop paying the manual-process tax."
+    },
+    {
+      type: "heading2",
+      text: "How to Get an Accurate Estimate"
+    },
+    {
+      type: "paragraph",
+      text: "Here's what we need to give you a real number:"
+    },
+    {
+      type: "list",
+      items: [
+        "What problem are you solving? One paragraph. \"Our ops team wastes 6 hours/week on manual reports\" beats a 20-page requirements doc.",
+        "Who uses it? Internal team, customers, or both? How many user types?",
+        "What tools does it connect to? CRM, payment processor, databases, APIs.",
+        "Timeline? \"We need this yesterday\" costs more than \"3 months from now is fine.\"",
+        "Do you have designs? Mockups or wireframes speed things up. No designs is fine — we handle it."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "Send those five things and we'll send back a fixed-price quote within 48 hours. No discovery calls that go nowhere."
+    },
+    {
+      type: "callout",
+      text: "We build React and TypeScript web applications for growing businesses. Fixed pricing, fast timelines, and you talk directly to the engineers. Get a free estimate at gomosivant.com/#contact — no sales pitch, just a number and a timeline."
+    }
   ]
 };

@@ -27,6 +27,17 @@ const rawBlogPosts: Omit<BlogPost, "image">[] = [
     content: blogContent["react-development-cost-2026"]
   },
   {
+    id: "custom-web-app-development-cost",
+    title: "How Much Does a Custom Web App Cost in 2026? Honest Pricing From a Studio That Builds Them",
+    excerpt: "Custom web app development costs range from $3,000 to $50,000+ depending on scope. Here's a breakdown from a studio that builds them — no fluff, real numbers.",
+    author: "Faisal Ahmad",
+    date: "2026-03-26",
+    category: "Web Development",
+    tags: ["custom web app", "development cost", "pricing", "React", "SMB", "web application"],
+    readTime: 10,
+    content: blogContent["custom-web-app-development-cost"]
+  },
+  {
     id: "custom-software-development-cost-2026",
     title: "How Much Does Custom Software Development Cost in 2026? A Realistic Guide",
     excerpt: "From MVPs to enterprise platforms, we break down the real cost factors behind custom software development in 2026 — including team models, tech stacks, AI features, and how to avoid budget blowouts.",
