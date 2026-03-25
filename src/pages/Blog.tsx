@@ -31,10 +31,11 @@ const Blog = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
-        title="IT Insights & Expertise Blog"
-        description="Stay informed with the latest technology trends, best practices, and industry insights from our expert consultants."
-        keywords="IT consulting, technology trends, digital transformation, cybersecurity, cloud computing"
+        title="Blog — Web Development Insights for Business Owners | Mosivant"
+        description="Practical guides on custom dashboards, web app development, and scaling your business with technology."
+        keywords="Mosivant blog, web development guides, React dashboard insights, business technology growth"
         ogType="website"
+        canonicalUrl="https://www.gomosivant.com/blog"
       />
       <Navbar />
       <main className="flex-grow">
@@ -69,7 +70,7 @@ const Blog = () => {
                 />
                 
                 {/* Pagination */}
-                {filteredPosts.length > 5 && (
+                {totalPages > 1 && (
                   <BlogPagination 
                     currentPage={currentPage}
                     totalPages={totalPages}

@@ -35,7 +35,6 @@ export const useBlogFilters = () => {
 
   // Filter posts based on search query and active category
   const filteredPosts = useMemo(() => {
-    console.log("Filtering posts with query:", searchQuery);
     return blogPosts.filter(post => {
       const matchesSearch = searchQuery.trim() === "" || 
                           post.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
