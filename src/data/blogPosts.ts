@@ -480,8 +480,18 @@ const rawBlogPosts: Omit<BlogPost, "image">[] = [
   }
 ];
 
+const truncateExcerpt = (excerpt: string, maxLength = 155): string => {
+  if (excerpt.length <= maxLength) {
+    return excerpt;
+  }
+
+  const trimmed = excerpt.slice(0, maxLength - 3).trimEnd();
+  return `${trimmed}...`;
+};
+
 export const blogPosts: BlogPost[] = rawBlogPosts.map((post) => ({
   ...post,
+  excerpt: truncateExcerpt(post.excerpt),
   image: generateBlogImage(post.category, post.title)
 }));
 

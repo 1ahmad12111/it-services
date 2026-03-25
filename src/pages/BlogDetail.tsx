@@ -153,25 +153,14 @@ const BlogDetail = () => {
                       })
                     ) : (
                       <>
-                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Overview</h2>
+                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Content Coming Soon</h2>
                         <p>
-                          This article explores key aspects of {post.category} and how businesses 
-                          can leverage these insights for better outcomes. Professional guidance 
-                          ensures your approach is strategic and effective.
+                          We are currently finalizing this article and expanding it with practical guidance,
+                          examples, and implementation details for {post.category.toLowerCase()} teams.
                         </p>
-                        
-                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Key Takeaways</h2>
-                        <ul className="list-disc pl-6 space-y-2">
-                          <li>Understanding the fundamentals drives better decision-making</li>
-                          <li>Professional expertise reduces risk and accelerates results</li>
-                          <li>Strategic planning is essential for long-term success</li>
-                          <li>The right technology choices compound over time</li>
-                        </ul>
-                        
-                        <h2 className="text-2xl font-bold text-gray-800 mt-8 mb-4">Conclusion</h2>
                         <p>
-                          Investing in professional {post.category.toLowerCase()} solutions pays dividends 
-                          through improved efficiency, reduced risk, and sustainable competitive advantage.
+                          Check back soon for the full write-up, or contact us if you want direct guidance on
+                          this topic right now.
                         </p>
                       </>
                     )}

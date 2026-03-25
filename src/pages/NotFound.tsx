@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Home } from "lucide-react";
+import SEOMetaTags from "@/components/common/SEOMetaTags";
 
 const NotFound = () => {
   const location = useLocation();
@@ -19,6 +20,10 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEOMetaTags
+        title="Page Not Found | Mosivant"
+        description="The page you are looking for does not exist."
+      />
       <Navbar />
       <main className="flex-grow flex items-center justify-center bg-gray-50">
         <div className="text-center px-4 py-20">

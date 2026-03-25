@@ -78,7 +78,7 @@ const caseStudies: CaseStudy[] = [
     solution:
       "Delivered a unified analytics dashboard with channel-level CAC payback, cohort LTV, margin-aware reporting, low-stock alerts, and drill-down views from KPI to campaign/SKU. Implemented role-based access for sensitive finance metrics.",
     results: [
-      "Saved $12,000/month by identifying an unprofitable ad channel",
+      "Saved $4,000/month in wasted ad spend",
       "40% reduction in stockouts",
       "Replaced fragmented spreadsheet reporting",
       "Faster weekly planning across growth and operations",
@@ -153,7 +153,7 @@ const CaseStudies = () => {
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
         title="Case Studies — Real Results from Custom Web Development | Mosivant"
-        description="See how we helped a logistics startup save 8h/week, a DTC brand cut $4K in wasted ad spend, and a healthcare clinic drop no-shows by 60%."
+        description="See how we helped a logistics startup save 8h/week, a DTC brand cut $4,000/month in wasted ad spend, and a healthcare clinic drop no-shows by 60%."
         keywords="Mosivant case studies, logistics dashboard, ecommerce analytics dashboard, healthcare scheduling software, React TypeScript agency"
         canonicalUrl="https://www.gomosivant.com/case-studies"
         ogType="article"
