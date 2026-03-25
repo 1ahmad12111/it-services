@@ -91,10 +91,10 @@ const Pricing = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
-        title="Pricing | Mosivant"
-        description="Explore transparent starting points for web development engagements with Mosivant, from Starter websites to Enterprise platforms."
+        title="Pricing — Transparent Web Development Packages | Mosivant"
+        description="Clear pricing for custom web development. Dashboard builds from $3K, web apps from $5K, SaaS MVPs from $8K. No hidden fees."
         keywords="mosivant pricing, web development pricing, react app pricing, enterprise software pricing"
-        canonicalUrl="https://gomosivant.com/pricing"
+        canonicalUrl="https://www.gomosivant.com/pricing"
       />
       <Navbar />
 

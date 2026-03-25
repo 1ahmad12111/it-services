@@ -56,9 +56,11 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags 
-        title="Mosivant - IT Solutions & Consulting"
-        description="Mosivant delivers cutting-edge IT consulting, software development, and digital transformation solutions to help businesses thrive in the digital age."
+        title="Mosivant — React & TypeScript Web Apps for Growing Businesses"
+        description="Custom dashboards, web apps, and SaaS tools built by a team that ships fast. 50+ projects delivered. React, TypeScript, Node.js specialists."
         keywords="IT consulting, software development, website development, IT support, digital transformation"
+        ogImage="https://www.gomosivant.com/og-home.png"
+        canonicalUrl="https://www.gomosivant.com/"
       />
       <Navbar />
       <main className="flex-grow">

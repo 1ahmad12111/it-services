@@ -9,6 +9,7 @@ import ConsultationForm from "@/components/home/ConsultationForm";
 import LiveChat from "@/components/services/LiveChat";
 import PaymentInfo from "@/components/services/PaymentInfo";
 import { Toaster } from "@/components/ui/toaster";
+import SEOMetaTags from "@/components/common/SEOMetaTags";
 
 const Services = () => {
   // Data for detailed service offerings
@@ -50,6 +51,11 @@ const Services = () => {
   };
   
   return <div className="min-h-screen flex flex-col">
+      <SEOMetaTags
+        title="Web Development Services — Dashboards, Web Apps, SaaS | Mosivant"
+        description="Custom React dashboards, internal tools, SaaS MVPs, and web applications. Fixed-scope projects with clear timelines."
+        canonicalUrl="https://www.gomosivant.com/services"
+      />
       <Navbar />
       <main className="flex-grow bg-black">
         {/* Services Hero Section - Updated to match About page hero styling */}

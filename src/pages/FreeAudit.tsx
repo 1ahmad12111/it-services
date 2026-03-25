@@ -75,10 +75,10 @@ const FreeAudit = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
-        title="Free Website Audit | Mosivant"
-        description="Get a free 15-minute website performance audit from Mosivant and uncover speed, mobile, SEO, and conversion issues."
+        title="Free Frontend Audit — Find Performance Issues in 20 Minutes | Mosivant"
+        description="Get a free audit of your web app or dashboard. We check performance, UX, and code quality — no strings attached."
         keywords="free website audit, performance audit, mobile UX audit, SEO health check, conversion optimization"
-        canonicalUrl="https://gomosivant.com/free-audit"
+        canonicalUrl="https://www.gomosivant.com/free-audit"
       />
       <Navbar />
 

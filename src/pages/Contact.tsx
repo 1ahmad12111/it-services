@@ -12,10 +12,10 @@ const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags 
-        title="Contact Us | Mosivant"
-        description="Get in touch with Mosivant Consulting. We're here to help with your technology consulting needs."
+        title="Contact Mosivant — Book a Free 15-Minute Scope Call"
+        description="Get in touch for a free project consultation. We respond within 24 hours."
         keywords="contact, IT consulting, technology services, Mosivant contact"
-        canonicalUrl="https://gomosivant.com/contact"
+        canonicalUrl="https://www.gomosivant.com/contact"
       />
       <Navbar />
       <main className="flex-grow">
@@ -41,4 +41,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
