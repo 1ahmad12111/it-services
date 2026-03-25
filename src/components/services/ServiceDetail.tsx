@@ -98,14 +98,14 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
       
       {/* For mobile, we'll make the image more appropriate for smaller screens */}
       <div 
-        className={`rounded-xl overflow-hidden shadow-xl mt-6 md:mt-0 ${
+        className={`rounded-xl overflow-hidden shadow-xl mt-6 md:mt-0 aspect-[4/3] ${
           isReversed && !isMobile ? "md:col-start-1" : ""
         }`}
       >
         <img
           src={generateServiceImage(service.title, isReversed)}
           alt={service.title}
-          className="w-full h-full object-cover aspect-[3/2] md:aspect-[4/3] rounded-xl"
+          className="w-full h-full object-cover"
         />
       </div>
     </div>
