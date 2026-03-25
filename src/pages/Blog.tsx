@@ -91,6 +91,16 @@ const Blog = () => {
         {/* Live chat component */}
         <LiveChat />
       </main>
+      <div className="fixed inset-x-0 bottom-0 z-40 px-4 pb-4">
+        <div className="mx-auto max-w-4xl rounded-xl border border-coral/30 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/80 shadow-xl">
+          <a
+            href="/#lead-magnet"
+            className="block px-5 py-4 text-center text-white font-semibold hover:text-lemon transition-colors"
+          >
+            Get our free dashboard audit checklist →
+          </a>
+        </div>
+      </div>
       <Footer />
       <Toaster />
     </div>

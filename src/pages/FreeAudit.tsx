@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent, useState } from "react";
 import {
   CheckCircle2,
   Clock3,
@@ -13,6 +13,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SEOMetaTags from "@/components/common/SEOMetaTags";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const auditItems = [
   {
@@ -72,6 +73,41 @@ const faqs = [
 const calLink = "https://cal.com/faisal-qureshi-k3bw4r/15min";
 
 const FreeAudit = () => {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleLeadMagnetSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!email.trim()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mgopwoew", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          source: "free-audit",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Free audit lead magnet form submission failed");
+      }
+
+      setIsSubmitted(true);
+      setEmail("");
+    } catch (error) {
+      console.error("Error submitting free audit lead magnet form:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
@@ -218,6 +254,43 @@ const FreeAudit = () => {
                   Book Free Audit Now
                 </a>
               </Button>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl rounded-2xl bg-gradient-to-r from-coral/80 via-lemon/80 to-coral/80 p-[1px]">
+              <div className="rounded-2xl bg-slate-900 px-6 py-10 md:px-10 md:py-12 text-white text-center">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                  Want the full checklist as a PDF? Drop your email.
+                </h2>
+
+                {isSubmitted ? (
+                  <p className="text-lemon font-semibold text-lg">Check your email!</p>
+                ) : (
+                  <form
+                    onSubmit={handleLeadMagnetSubmit}
+                    className="mt-6 max-w-2xl mx-auto flex flex-col sm:flex-row gap-3"
+                  >
+                    <Input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                      placeholder="you@company.com"
+                      className="h-12 bg-white/10 border-white/20 text-white placeholder:text-gray-300 focus-visible:ring-coral"
+                    />
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="h-12 bg-coral hover:bg-coral/90 text-black font-semibold px-6"
+                    >
+                      {isSubmitting ? "Sending..." : "Get the Checklist"}
+                    </Button>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
         </section>
