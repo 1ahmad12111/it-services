@@ -12,8 +12,8 @@ const ContactCards = () => {
         </div>
         <h3 className="text-xl font-bold mb-2">Call Us</h3>
         <p className="text-gray-600 mb-4">Our team is available to help during business hours</p>
-        <a href="tel:+18189257116" className="text-coral font-medium hover:underline">
-          +1 (818)-925-7116
+        <a href="tel:+16143597464" className="text-coral font-medium hover:underline">
+          +1 (614)-359-7464
         </a>
       </div>
 

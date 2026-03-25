@@ -1,5 +1,6 @@
 
 import React from "react";
+import { generateServiceImage } from "@/utils/blogImages";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Database, Globe, ShieldCheck, Server } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
@@ -100,7 +101,7 @@ const ServiceDetail = ({ service, isReversed = false }: ServiceDetailProps) => {
         }`}
       >
         <img
-          src={`https://images.unsplash.com/photo-${isReversed ? '1486312338219-ce68d2c6f44d' : '1498050108023-c5249f4df085'}?auto=format&fit=crop&q=80&w=800&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+          src={generateServiceImage(service.title, isReversed)}
           alt={service.title}
           className="w-full h-full object-cover aspect-[3/2] md:aspect-[4/3] rounded-xl"
         />

@@ -11,7 +11,7 @@ export const mosivantChatbotData = {
   companyInfo: {
     name: "Mosivant Consulting (OPC) Private Limited",
     address: "1153 Lantern Trail Ave, Unit 101, Columbus, OH 43228",
-    phone: "+1 (818)-925-7116",
+    phone: "+1 (614)-359-7464",
     email: "info@gomosivant.com",
     social: {
       linkedin: "https://www.linkedin.com/company/mosivant-consulting-opc-private-limited"
@@ -140,7 +140,7 @@ export const mosivantChatbotData = {
   conversationFlow: {
     greeting: "Hi there! I'm Morgan from Mosivant. How can I assist you with your IT needs today?",
     fallback: "Thank you for your question. I'd like to make sure you get the most accurate information. Could you please provide a bit more detail about what you're looking for?",
-    closing: "Thank you for chatting with Mosivant today. If you have any other questions, feel free to reach out via phone at +1 (818)-925-7116 or email at info@gomosivant.com. Have a great day!"
+    closing: "Thank you for chatting with Mosivant today. If you have any other questions, feel free to reach out via phone at +1 (614)-359-7464 or email at info@gomosivant.com. Have a great day!"
   },
   
   commonQueries: [
