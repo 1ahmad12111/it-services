@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import ScrollToTop from "./components/common/ScrollToTop";
+import GoogleAnalytics from "./components/common/GoogleAnalytics";
 import useSmoothScroll from "./hooks/use-smooth-scroll";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const AppContent = () => {
   return (
     <>
       <ThemeInitializer />
+      <GoogleAnalytics />
       <ScrollToTop />
       <Toaster />
       <Sonner position="top-center" />
