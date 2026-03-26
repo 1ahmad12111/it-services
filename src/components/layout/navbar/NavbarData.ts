@@ -36,6 +36,7 @@ export const industries = [
 export const navItems = [
   { label: "Home", path: "/" },
   { label: "Services", path: "/services" },
+  { label: "How We Build", path: "/how-we-build" },
   { label: "About", path: "/about" },
   { label: "Case Studies", path: "/case-studies" },
   { label: "Pricing", path: "/pricing" },
