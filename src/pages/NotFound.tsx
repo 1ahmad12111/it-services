@@ -22,7 +22,8 @@ const NotFound = () => {
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
         title="Page Not Found | Mosivant"
-        description="The page you are looking for does not exist."
+        description="The page you are looking for does not exist. Head back to the homepage to explore our services."
+        robots="noindex, nofollow"
       />
       <Navbar />
       <main className="flex-grow flex items-center justify-center bg-gray-50">

@@ -11,9 +11,12 @@ const Booking = () => {
   
   return (
     <div className="min-h-screen flex flex-col">
-      <SEOMetaTags 
-        title="Book a Consultation - Mosivant"
-        description="Schedule a free consultation with our IT experts at Mosivant. Choose a time that works for you."
+      <SEOMetaTags
+        title="Book a Free Consultation Call | Mosivant"
+        description="Schedule a free 15-minute consultation to scope your web app or dashboard project. Pick a time that works — no commitment required."
+        keywords="book consultation, free project call, schedule web dev meeting, Mosivant booking"
+        canonicalUrl="https://www.gomosivant.com/booking"
+        ogImage="https://www.gomosivant.com/og-home.png"
       />
       <Navbar />
       <main className="flex-grow py-12 md:py-20 bg-gradient-to-br from-white via-gray-50 to-gray-100">

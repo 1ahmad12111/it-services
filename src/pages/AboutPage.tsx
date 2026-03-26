@@ -14,9 +14,11 @@ const AboutPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
-        title="About Mosivant | Founder-Led Team, 50+ Projects, 100% Completion"
-        description="Mosivant was founded by Faisal in 2022 to help growing businesses ship web products faster. Founder-led delivery, 50+ projects shipped, 100% completion."
+        title="About Mosivant | Founder-Led Dev Team, 50+ Projects Shipped"
+        description="Founded in 2022, Mosivant helps businesses ship web products faster with founder-led delivery. 50+ projects, 100% completion rate. Meet the team."
+        keywords="about Mosivant, founder-led web agency, Faisal developer, React TypeScript team, web development company"
         canonicalUrl="https://www.gomosivant.com/about"
+        ogImage="https://www.gomosivant.com/og-home.png"
       />
       <Navbar />
       <main className="flex-grow">

@@ -57,12 +57,27 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEOMetaTags 
-        title="Mosivant | Ship Dashboards and Web Apps in 3 to 6 Weeks"
-        description="Need a web app that drives revenue or saves team hours? Mosivant has delivered 50+ projects with a 100% completion rate. Book a free 15-minute call."
-        keywords="IT consulting, software development, website development, IT support, digital transformation"
+      <SEOMetaTags
+        title="Mosivant | Ship Dashboards & Web Apps in 3–6 Weeks"
+        description="Mosivant builds custom dashboards and web apps that drive revenue and save team hours. 50+ projects, 100% completion. Book a free scope call today."
+        keywords="custom dashboard development, web app agency, React TypeScript developers, SaaS MVP builder, ship fast web apps"
         ogImage="https://www.gomosivant.com/og-home.png"
         canonicalUrl="https://www.gomosivant.com/"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Mosivant",
+          url: "https://www.gomosivant.com",
+          logo: "https://www.gomosivant.com/og-home.png",
+          description: "Mosivant builds custom dashboards and web apps for growing businesses. Ship in 3–6 weeks with founder-led delivery.",
+          foundingDate: "2022",
+          sameAs: ["https://twitter.com/mosivant"],
+          contactPoint: {
+            "@type": "ContactPoint",
+            contactType: "sales",
+            url: "https://www.gomosivant.com/contact",
+          },
+        }}
       />
       <Navbar />
       <main className="flex-grow">
