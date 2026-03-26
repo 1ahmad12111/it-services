@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import ClientsSection from "@/components/home/ClientsSection";
 import ServiceOverview from "@/components/home/ServiceOverview";
+import PortfolioSection from "@/components/home/PortfolioSection";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import LeadMagnet from "@/components/home/LeadMagnet";
@@ -69,6 +70,9 @@ const Index = () => {
         <ClientsSection />
         <div className="animate-on-scroll opacity-0">
           <ServiceOverview />
+        </div>
+        <div className="animate-on-scroll opacity-0">
+          <PortfolioSection />
         </div>
         <div className="animate-on-scroll opacity-0">
           <WorkingProcess />
