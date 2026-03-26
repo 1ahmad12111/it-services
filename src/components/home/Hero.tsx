@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, LineChart, ShieldCheck, Cpu } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
+import { CAL_BOOKING_URL } from "@/lib/cal";
 
 const Hero = () => {
   return (
@@ -55,9 +56,9 @@ const Hero = () => {
                 className="bg-transparent border-white/20 hover:bg-lemon/10 text-white px-8 py-7 text-lg group transition-all duration-300 hover:translate-y-[-2px] rounded-xl backdrop-blur-sm"
                 asChild
               >
-                <RouterLink to="/booking">
+                <a href={CAL_BOOKING_URL} target="_blank" rel="noopener noreferrer">
                   Book a Free 15-Minute Call <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </RouterLink>
+                </a>
               </Button>
             </div>
 
