@@ -61,9 +61,11 @@ const Services = () => {
   
   return <div className="min-h-screen flex flex-col">
       <SEOMetaTags
-        title="Mosivant Services | Websites, Dashboards, and IT Support That Ship Fast"
-        description="Outcome-focused services for growing teams: launch websites in 2 to 4 weeks, dashboards in 3 to 8 weeks, and get a clear 90-day roadmap."
+        title="Web Dev Services | Websites, Dashboards & Apps | Mosivant"
+        description="Launch a conversion-focused website in 2–4 weeks or a custom dashboard in 3–8 weeks. Outcome-driven delivery with weekly demos. Get a free scope call."
+        keywords="website development services, custom dashboard builder, React app development, SaaS development agency, internal tool development"
         canonicalUrl="https://www.gomosivant.com/services"
+        ogImage="https://www.gomosivant.com/og-home.png"
       />
       <Navbar />
       <main className="flex-grow bg-black">

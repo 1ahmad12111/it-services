@@ -60,10 +60,13 @@ const BlogDetail = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
-        title={`${post.title} | Mosivant IT Blog`}
+        title={`${post.title} | Mosivant Blog`}
         description={post.excerpt}
         keywords={post.tags.join(", ")}
         ogType="article"
+        canonicalUrl={`https://www.gomosivant.com/blog/${post.id}`}
+        ogImage={post.image || "https://www.gomosivant.com/og-home.png"}
+        articlePublishedTime={post.date}
       />
       <Navbar />
       <main className="flex-grow">

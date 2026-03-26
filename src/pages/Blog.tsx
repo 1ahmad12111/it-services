@@ -31,11 +31,12 @@ const Blog = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
-        title="Blog — Web Development Insights for Business Owners | Mosivant"
-        description="Practical guides on custom dashboards, web app development, and scaling your business with technology."
-        keywords="Mosivant blog, web development guides, React dashboard insights, business technology growth"
+        title="Blog — Web Dev Guides for Business Owners | Mosivant"
+        description="Actionable guides on building custom dashboards, shipping web apps, and scaling with technology. Written by developers who ship weekly."
+        keywords="web development blog, custom dashboard guide, React app tutorial, SaaS development insights, business tech blog"
         ogType="website"
         canonicalUrl="https://www.gomosivant.com/blog"
+        ogImage="https://www.gomosivant.com/og-home.png"
       />
       <Navbar />
       <main className="flex-grow">

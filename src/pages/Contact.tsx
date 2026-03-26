@@ -11,11 +11,12 @@ import SEOMetaTags from "@/components/common/SEOMetaTags";
 const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <SEOMetaTags 
-        title="Contact Mosivant — Book a Free 15-Minute Scope Call"
-        description="Get in touch for a free project consultation. We respond within 24 hours."
-        keywords="contact, IT consulting, technology services, Mosivant contact"
+      <SEOMetaTags
+        title="Contact Mosivant — Free 15-Min Project Scope Call"
+        description="Book a free 15-minute scope call to discuss your web app or dashboard project. We respond within 24 hours. No commitment required."
+        keywords="contact Mosivant, book web dev consultation, free project scope call, hire React developers, web app estimate"
         canonicalUrl="https://www.gomosivant.com/contact"
+        ogImage="https://www.gomosivant.com/og-home.png"
       />
       <Navbar />
       <main className="flex-grow">

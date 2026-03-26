@@ -152,11 +152,10 @@ const CaseStudies = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEOMetaTags
-        title="Case Studies — Real Results from Custom Web Development | Mosivant"
-        description="See how we helped a logistics startup save 8h/week, a DTC brand cut $4,000/month in wasted ad spend, and a healthcare clinic drop no-shows by 60%."
-        keywords="Mosivant case studies, logistics dashboard, ecommerce analytics dashboard, healthcare scheduling software, React TypeScript agency"
+        title="Case Studies — Real Client Results | Mosivant"
+        description="See how Mosivant saved a logistics startup 8h/week, cut $4K/month in wasted ad spend for a DTC brand, and reduced no-shows by 60% for a clinic."
+        keywords="web development case studies, custom dashboard results, React app ROI, logistics dashboard case study, ecommerce analytics results"
         canonicalUrl="https://www.gomosivant.com/case-studies"
-        ogType="article"
         ogImage="https://www.gomosivant.com/og-home.png"
       />
       <Helmet>
