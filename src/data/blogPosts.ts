@@ -27,6 +27,17 @@ const rawBlogPosts: Omit<BlogPost, "image">[] = [
     content: blogContent["react-development-cost-2026"]
   },
   {
+    id: "custom-saas-dashboard-development",
+    title: "Custom SaaS Dashboard Development: Features, Timeline, and Budget",
+    excerpt: "Planning a custom SaaS dashboard? This practical guide covers the must-have features, realistic build timelines (6–16 weeks), full budget breakdown, and the architectural choices that save money long-term.",
+    author: "Faisal Ahmad",
+    date: "2026-03-26",
+    category: "Web Development",
+    tags: ["SaaS dashboard", "custom dashboard", "React", "TypeScript", "web development", "SMB", "data visualization"],
+    readTime: 13,
+    content: blogContent["custom-saas-dashboard-development"]
+  },
+  {
     id: "custom-web-app-development-cost",
     title: "How Much Does a Custom Web App Cost in 2026? Honest Pricing From a Studio That Builds Them",
     excerpt: "Custom web app development costs range from $3,000 to $50,000+ depending on scope. Here's a breakdown from a studio that builds them — no fluff, real numbers.",

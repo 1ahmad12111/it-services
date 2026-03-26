@@ -1202,5 +1202,354 @@ export const blogContent: Record<string, ContentSection[]> = {
       type: "callout",
       text: "We build React and TypeScript web applications for growing businesses. Fixed pricing, fast timelines, and you talk directly to the engineers. Get a free estimate at gomosivant.com/#contact — no sales pitch, just a number and a timeline."
     }
+  ],
+  "custom-saas-dashboard-development": [
+    {
+      type: "paragraph",
+      text: "A SaaS dashboard is the nerve center of your product. It's where users log in, understand their data, and decide whether your software is worth keeping. Build it well, and retention climbs. Build it poorly, and no amount of marketing fixes the churn. Yet most teams either underestimate the build effort or overcomplicate the feature set before they've validated anything."
+    },
+    {
+      type: "paragraph",
+      text: "This guide covers what actually goes into a custom SaaS dashboard — the features, the realistic timeline, the budget breakdown, and the architectural choices that save you money long-term. Whether you're building your first admin portal or rebuilding a legacy one, this is the honest version."
+    },
+    {
+      type: "heading2",
+      text: "What Is a Custom SaaS Dashboard?"
+    },
+    {
+      type: "paragraph",
+      text: "A custom SaaS dashboard is a purpose-built user interface that displays real-time or near-real-time data specific to your product or service. Unlike off-the-shelf analytics tools (Mixpanel, Metabase, Looker), a custom dashboard is designed around your exact data model, your users' workflows, and your product's specific value proposition."
+    },
+    {
+      type: "paragraph",
+      text: "There are three common types:"
+    },
+    {
+      type: "list",
+      items: [
+        "Customer-facing dashboards: What your end users see after logging in — usage stats, reports, account management.",
+        "Admin/ops dashboards: What your internal team uses to manage customers, monitor metrics, and run operations.",
+        "Embedded analytics: Charts and data views embedded inside a broader product, powered by your own data pipeline."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "Each type has different performance requirements, security considerations, and design complexity. Most SaaS products eventually need all three."
+    },
+    {
+      type: "heading2",
+      text: "Core Features of a Well-Built SaaS Dashboard"
+    },
+    {
+      type: "paragraph",
+      text: "Not every dashboard needs every feature. But these are the building blocks most SaaS products need sooner or later:"
+    },
+    {
+      type: "heading3",
+      text: "1. Authentication & Role-Based Access Control (RBAC)"
+    },
+    {
+      type: "paragraph",
+      text: "This is foundational. Users need to log in securely, and different users see different data. A team member shouldn't see billing data. A read-only analyst shouldn't be able to delete records. RBAC defines what each role can view, create, edit, or delete."
+    },
+    {
+      type: "paragraph",
+      text: "Typical auth stack in 2026: Auth.js, Clerk, or Supabase Auth on the frontend; JWT tokens with short expiry; refresh token rotation; MFA support for admin roles. Skimping here creates security debt that's painful to fix later."
+    },
+    {
+      type: "heading3",
+      text: "2. Data Visualization (Charts, Tables, KPI Cards)"
+    },
+    {
+      type: "paragraph",
+      text: "The visual layer of your dashboard. This is what users actually interact with. Common components include:"
+    },
+    {
+      type: "list",
+      items: [
+        "KPI cards: Single numbers with trend indicators (revenue this month vs. last month)",
+        "Line/bar charts: Trend over time — sessions, signups, revenue, churn",
+        "Tables with sort/filter/pagination: Detailed records — transactions, users, logs",
+        "Pie/donut charts: Distribution breakdowns — traffic sources, plan tiers",
+        "Heatmaps and funnel charts: User behavior, conversion paths"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "Libraries like Recharts, Tremor, or Chart.js handle rendering. The real cost is in wiring them to your actual data — transformations, aggregations, caching, and making sure the numbers don't lie."
+    },
+    {
+      type: "heading3",
+      text: "3. Real-Time Data Updates"
+    },
+    {
+      type: "paragraph",
+      text: "Whether you need true real-time (WebSocket subscriptions for live activity feeds) or near-real-time (polling every 30 seconds for metrics dashboards) depends on your use case. Real-time adds meaningful complexity and infrastructure cost — only build it if users genuinely need to act on data within seconds. Most SaaS dashboards are better served with smart caching and scheduled refreshes."
+    },
+    {
+      type: "heading3",
+      text: "4. Filtering, Date Ranges & Drill-Downs"
+    },
+    {
+      type: "paragraph",
+      text: "Static charts have limited value. Users need to filter by date range, segment, account, product, or geography. Drill-downs let them click a bar in a chart and see the underlying records. This interactivity is often what separates a useful dashboard from a pretty one — but it significantly increases frontend and API complexity."
+    },
+    {
+      type: "heading3",
+      text: "5. Notifications & Alerts"
+    },
+    {
+      type: "paragraph",
+      text: "Proactive dashboards don't wait for users to log in. They push alerts when something important happens — a metric crosses a threshold, a payment fails, a user reaches a usage limit. In-app notifications, email digests, and Slack webhooks are common delivery mechanisms. Building a reliable notification system is often underestimated in scope."
+    },
+    {
+      type: "heading3",
+      text: "6. Export & Reporting"
+    },
+    {
+      type: "paragraph",
+      text: "PDF or CSV export is a table-stakes feature for B2B SaaS. Finance teams need reports. Operations teams need data exports. Scheduled email reports are common for executive dashboards. These are not glamorous to build but they're non-negotiable for enterprise buyers."
+    },
+    {
+      type: "heading3",
+      text: "7. Audit Logs & Activity History"
+    },
+    {
+      type: "paragraph",
+      text: "Who changed what, and when? Audit trails matter for compliance (SOC 2, HIPAA, GDPR), enterprise buyers, and debugging. This is often skipped in early builds and retrofitted painfully later. If you're targeting enterprise, build it in from day one."
+    },
+    {
+      type: "heading3",
+      text: "8. Responsive Design & Accessibility"
+    },
+    {
+      type: "paragraph",
+      text: "Dashboards need to work on a 13\" laptop, a 27\" monitor, and sometimes a tablet. WCAG 2.1 AA compliance matters if you're selling to government or enterprise. Responsive tables and charts are harder to get right than they look — budget accordingly."
+    },
+    {
+      type: "heading2",
+      text: "Realistic Timeline: From Kickoff to Launch"
+    },
+    {
+      type: "paragraph",
+      text: "Timeline depends on scope, but here's a realistic breakdown for a mid-complexity SaaS dashboard build with a 2–3 person team:"
+    },
+    {
+      type: "list",
+      items: [
+        "Week 1–2: Discovery, wireframes, data model design, API contract definition",
+        "Week 3–5: Auth system, core layout, navigation, design system / component library",
+        "Week 6–9: Data integration — APIs, database queries, caching layer, chart components",
+        "Week 10–12: Filters, drill-downs, notifications, export features",
+        "Week 13–14: QA, performance testing, accessibility review, staging deployment",
+        "Week 15–16: Production deployment, monitoring setup, handover documentation"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "That's roughly 14–16 weeks for a solid v1. Rush it below 10 weeks and corners get cut — usually in QA, performance, and the features users ask for in week 2 of post-launch. Extend it past 20 weeks without clear milestones and scope creep takes over."
+    },
+    {
+      type: "paragraph",
+      text: "For simpler admin panels (internal tooling, read-only ops dashboards), 6–8 weeks is achievable. For embedded analytics with multi-tenant data isolation and complex drill-downs, budget 20+ weeks."
+    },
+    {
+      type: "heading2",
+      text: "Budget Breakdown: What Does It Actually Cost?"
+    },
+    {
+      type: "paragraph",
+      text: "Here are realistic budget ranges for custom SaaS dashboard development in 2026, assuming a professional team (not the cheapest bidder, not a US agency with $250/hr rates):"
+    },
+    {
+      type: "list",
+      items: [
+        "Simple admin panel (CRUD, basic charts, roles): $8,000 – $18,000",
+        "Mid-complexity dashboard (filtering, real-time, export): $20,000 – $50,000",
+        "Full SaaS customer portal (multi-tenant, embedded analytics, notifications): $50,000 – $120,000",
+        "Enterprise-grade platform (compliance, audit logs, SSO, complex data pipeline): $100,000 – $300,000+"
+      ]
+    },
+    {
+      type: "heading3",
+      text: "Where the Budget Actually Goes"
+    },
+    {
+      type: "paragraph",
+      text: "A lot of founders assume most cost is in the visuals. It's not. Here's a realistic allocation for a $40,000 dashboard build:"
+    },
+    {
+      type: "list",
+      items: [
+        "Backend / API development (data layer, queries, caching): ~35%",
+        "Frontend React/TypeScript development (components, state, interactivity): ~30%",
+        "Auth, RBAC, and security layer: ~10%",
+        "Design (wireframes, UI/UX, component system): ~15%",
+        "QA, testing, and deployment: ~10%"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "The backend is where most projects get expensive. Connecting to multiple data sources, handling aggregations at scale, building a caching layer so your dashboard doesn't hammer the database on every filter change — this takes real engineering time."
+    },
+    {
+      type: "heading3",
+      text: "Hidden Costs to Plan For"
+    },
+    {
+      type: "paragraph",
+      text: "These items are often missing from initial estimates:"
+    },
+    {
+      type: "list",
+      items: [
+        "Third-party integrations (Stripe, HubSpot, Salesforce, Slack): add $2,000–$8,000 per integration depending on complexity",
+        "Infrastructure and hosting: $100–$500/month for a production setup (Vercel, AWS, Railway, Supabase)",
+        "Ongoing maintenance: budget 10–15% of build cost annually for updates, dependency upgrades, and bug fixes",
+        "Post-launch iterations: real users will immediately request 10 new features — leave budget for a Phase 2",
+        "Performance optimization: once you have real data volume, query performance often needs a dedicated sprint"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Tech Stack Choices That Affect Your Budget"
+    },
+    {
+      type: "paragraph",
+      text: "The stack you choose affects both build speed and long-term maintenance cost. In 2026, these are the most common (and cost-effective) choices for SaaS dashboards:"
+    },
+    {
+      type: "heading3",
+      text: "Frontend"
+    },
+    {
+      type: "list",
+      items: [
+        "React + TypeScript: The dominant choice. Vast ecosystem, strong typing reduces bugs, large talent pool.",
+        "Next.js: Adds SSR/ISR for SEO pages and faster initial load. Recommended if your dashboard has public-facing pages.",
+        "Tremor or shadcn/ui: Pre-built component libraries designed for dashboards — significantly reduces design and development time.",
+        "Recharts or Visx: Flexible charting libraries. Recharts is faster to implement; Visx gives more control for complex visualizations."
+      ]
+    },
+    {
+      type: "heading3",
+      text: "Backend"
+    },
+    {
+      type: "list",
+      items: [
+        "Node.js + tRPC or REST: Fast to build, great TypeScript alignment with the frontend.",
+        "Python + FastAPI: Preferred when there's heavy data processing or ML components.",
+        "Supabase: Excellent for rapid builds — gives you Postgres, Auth, and real-time out of the box.",
+        "Redis: Essential for caching aggregated metrics. Prevents repeated expensive database queries on every dashboard load."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "The worst thing you can do budget-wise is pick a trendy but niche stack because an engineer prefers it. Smaller talent pools mean higher rates and slower iteration when that engineer leaves."
+    },
+    {
+      type: "heading2",
+      text: "Common Mistakes That Blow Timelines and Budgets"
+    },
+    {
+      type: "paragraph",
+      text: "After building dashboards for dozens of teams, here are the patterns that reliably cause projects to run over:"
+    },
+    {
+      type: "list",
+      items: [
+        "Building before the data model is finalized. If the underlying database schema changes mid-build, the API and frontend both need to be reworked. Lock down your data model before writing a single component.",
+        "Designing for perfection on v1. The best SaaS dashboards in the world shipped a version 1 that was embarrassingly simple. Ship, learn, iterate.",
+        "Underestimating filter/drill-down complexity. \"Just add a filter\" sounds trivial. But applying a date range across 12 different charts, each with its own data source, is a serious engineering task.",
+        "No API caching strategy. Every dashboard interaction shouldn't be a fresh database query. Without caching, performance degrades fast at scale and your database costs spike.",
+        "Skipping the loading and empty states. A dashboard that shows blank charts while data loads — or when a user has no data yet — looks broken. Design these states explicitly.",
+        "Feature creep before launch. Every stakeholder has a list of 'must-have' features. Ruthlessly prioritize: what does the user need to get value on day one? Ship that."
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Build vs. Buy: When Does a Custom Dashboard Make Sense?"
+    },
+    {
+      type: "paragraph",
+      text: "Custom isn't always the answer. Before committing to a build, consider:"
+    },
+    {
+      type: "list",
+      items: [
+        "Off-the-shelf tools like Metabase, Retool, or Grafana can get you an internal dashboard in days for $0–$500/month. Use these for internal ops dashboards where branding and UX don't matter.",
+        "Embedded analytics platforms like Cube, Preset, or Sigma let you add charts to your product without a full custom build. Good for adding analytics to an existing SaaS product.",
+        "Custom dashboards make sense when: your data model is unique, you need specific interactivity, you're building a core differentiator, or you're embedding it in a customer-facing product where UX matters."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "The rule of thumb: if the dashboard IS your product (or a core part of your customer's daily workflow), build it custom. If it's internal tooling that only your team uses, start with off-the-shelf and customize later."
+    },
+    {
+      type: "heading2",
+      text: "How to Scope Your Dashboard Project"
+    },
+    {
+      type: "paragraph",
+      text: "Before you talk to any developer, get clear on these five questions:"
+    },
+    {
+      type: "list",
+      items: [
+        "Who are the users, and what decisions do they make with this data? (This determines what to show.)",
+        "Where does the data come from? (Database, third-party APIs, CSV uploads, real-time events?)",
+        "What's the access model? (Single tenant vs. multi-tenant? Role hierarchy?)",
+        "What does 'done' look like for v1? (List 5 screens, not 25.)",
+        "What's the growth path? (Will this need to handle 10x the data volume in 12 months?)"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "Bring these answers to a scoping conversation and you'll get a much more accurate estimate. Developers who ask these questions upfront are the ones worth hiring."
+    },
+    {
+      type: "heading2",
+      text: "What Good Looks Like: A Real-World Example"
+    },
+    {
+      type: "paragraph",
+      text: "Here's a condensed example of a dashboard we built for a B2B logistics SaaS company:"
+    },
+    {
+      type: "list",
+      items: [
+        "Scope: Customer-facing dashboard showing shipment status, delivery performance, cost analytics, and carrier comparison.",
+        "Users: Operations managers at 50+ enterprise clients, each with their own data slice.",
+        "Stack: React + TypeScript frontend, Node.js API, PostgreSQL with Redis caching, hosted on AWS.",
+        "Timeline: 14 weeks from kickoff to production.",
+        "Key decisions: Multi-tenant data isolation at the row level, pre-aggregated tables for performance, Recharts for all visualizations, CSV export for monthly reports.",
+        "Post-launch: Average user session time increased from 2 minutes (in previous tool) to 11 minutes. Customer success calls dropped 40% because users could self-serve answers."
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "The product outcome — not just the tech outcome — is what matters. A dashboard that saves your customers 6 hours a week is a retention moat. That's what good looks like."
+    },
+    {
+      type: "heading2",
+      text: "Summary: Key Takeaways"
+    },
+    {
+      type: "list",
+      items: [
+        "Custom SaaS dashboards range from $8K for simple admin panels to $300K+ for enterprise-grade platforms.",
+        "Realistic timelines are 6–16 weeks for most v1 builds with a competent team.",
+        "The backend data layer typically costs more than the frontend UI — don't underestimate it.",
+        "Lock down your data model before development starts. Changes mid-build are expensive.",
+        "Build the simplest version that gets users value. Ship, learn, iterate.",
+        "For internal dashboards, consider off-the-shelf tools first. For customer-facing dashboards, custom is usually worth it."
+      ]
+    },
+    {
+      type: "callout",
+      text: "We specialize in React and TypeScript dashboard development for SaaS products and SMBs. Fixed pricing, clear timelines, and direct communication with the engineers building your product. If you're planning a dashboard build or rebuild, reach out at gomosivant.com/contact — we'll scope it with you and give you a straight estimate within 48 hours."
+    }
   ]
 };
