@@ -5,6 +5,17 @@ import { generateBlogImage } from "../utils/blogImages";
 
 const rawBlogPosts: Omit<BlogPost, "image">[] = [
   {
+    id: "typescript-vs-javascript-business-web-apps",
+    title: "TypeScript vs JavaScript for Business Web Apps: Which Saves More Money?",
+    excerpt: "TypeScript and JavaScript both power production apps — but for business web apps maintained over time, one consistently saves more money. Here's the honest breakdown with real cost numbers.",
+    author: "Faisal Ahmad",
+    date: "2026-03-28",
+    category: "Web Development",
+    tags: ["TypeScript", "JavaScript", "web development", "SMB", "cost guide", "React", "software quality"],
+    readTime: 11,
+    content: blogContent["typescript-vs-javascript-business-web-apps"]
+  },
+  {
     id: "saas-custom-admin-dashboard",
     title: "Why Your SaaS Needs a Custom Admin Dashboard (Not Another Off-the-Shelf Tool)",
     excerpt: "Tool stacking feels cheap until it slows the company. Here's why growing SaaS teams outgrow off-the-shelf dashboards, how to tell when you're ready for custom, and how to build without a 6-month monster project.",
