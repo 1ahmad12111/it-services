@@ -3,12 +3,13 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle, ExternalLink } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
+import { CAL_BOOKING_URL } from "@/lib/cal";
 
 const benefits = [
-  "Strategic IT roadmap development",
-  "Custom digital solutions",
-  "Enterprise system optimization",
-  "24/7 technical support"
+  "15-minute call — no pitch, just scoping",
+  "Fixed price and timeline before any work starts",
+  "Working demo within the first week",
+  "Full code ownership when we're done"
 ];
 
 const CtaSection = () => {
@@ -30,11 +31,11 @@ const CtaSection = () => {
             <div className="flex flex-col md:flex-row gap-16">
               <div className="md:w-1/2 text-center md:text-left">
                 <div className="inline-flex bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm border border-white/10">
-                  Strategic Partnership
+                  2 project slots open this month
                 </div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Ready to Accelerate Your <span className="text-gradient bg-gradient-to-r from-coral to-lemon">Digital Transformation?</span></h2>
+                <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Got a build in mind? <span className="bg-clip-text text-transparent bg-gradient-to-r from-coral to-lemon">Let's scope it out.</span></h2>
                 <p className="text-xl text-white mb-8 leading-relaxed">
-                  Partner with MOSIVANT to unlock new opportunities for growth, innovation, and operational excellence.
+                  Book a free 15-minute call. We'll figure out what you need, what it'll cost, and whether we're the right fit — no pressure, no pitch deck.
                 </p>
                 <div className="space-y-4 mb-10">
                   {benefits.map((benefit, index) => (
@@ -49,9 +50,9 @@ const CtaSection = () => {
                     className="bg-gradient-to-r from-coral to-coral/90 hover:from-coral/90 hover:to-coral text-black px-8 py-7 text-lg shadow-xl shadow-black/30 transition-all duration-300 hover:translate-y-[-2px] rounded-xl border border-coral/20"
                     asChild
                   >
-                    <RouterLink to="/booking">
-                      Schedule a Consultation
-                    </RouterLink>
+                    <a href={CAL_BOOKING_URL} target="_blank" rel="noopener noreferrer">
+                      Book a Free 15-Minute Call
+                    </a>
                   </Button>
                   <Button 
                     variant="outline" 
@@ -59,7 +60,7 @@ const CtaSection = () => {
                     asChild
                   >
                     <RouterLink to="/services">
-                      Explore Our Solutions <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                      See Our Work <ExternalLink className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     </RouterLink>
                   </Button>
                 </div>
@@ -75,32 +76,23 @@ const CtaSection = () => {
                           <div className="w-3 h-3 bg-lemon rounded-full"></div>
                           <div className="w-3 h-3 bg-white rounded-full"></div>
                         </div>
-                        <div className="h-6 w-24 bg-gray-800 rounded-md"></div>
+                        <div className="text-xs text-gray-400 font-mono">project-scope.tsx</div>
                       </div>
                       
-                      <div className="flex-1 overflow-hidden flex flex-col justify-center items-center">
-                        <div className="animate-pulse-slow">
-                          <div className="h-24 w-24 mx-auto mb-6">
-                            <img 
-                              src="/lovable-uploads/34880202-0804-4af2-a75d-b60725da0d26.png" 
-                              alt="MOSIVANT logo"
-                              className="h-full w-full"
-                            />
-                          </div>
-                        </div>
-                        
-                        <div className="space-y-3 w-full max-w-xs">
-                          <div className="h-4 bg-gray-700/60 rounded w-full"></div>
-                          <div className="h-4 bg-gray-700/60 rounded w-5/6"></div>
-                          <div className="h-4 bg-gray-700/60 rounded w-3/4"></div>
-                        </div>
-                        
-                        <div className="mt-8">
-                          <div className="h-10 w-32 bg-gradient-to-r from-coral to-lemon rounded-lg"></div>
-                        </div>
+                      <div className="flex-1 overflow-hidden flex flex-col justify-center space-y-4 font-mono text-sm">
+                        <div className="text-gray-400">// Your next project</div>
+                        <div><span className="text-coral">const</span> <span className="text-lemon">project</span> = {"{"}</div>
+                        <div className="pl-4"><span className="text-gray-300">timeline:</span> <span className="text-green-400">"3–6 weeks"</span>,</div>
+                        <div className="pl-4"><span className="text-gray-300">price:</span> <span className="text-green-400">"fixed upfront"</span>,</div>
+                        <div className="pl-4"><span className="text-gray-300">demos:</span> <span className="text-green-400">"every week"</span>,</div>
+                        <div className="pl-4"><span className="text-gray-300">ownership:</span> <span className="text-green-400">"100% yours"</span>,</div>
+                        <div className="pl-4"><span className="text-gray-300">surprises:</span> <span className="text-coral">false</span></div>
+                        <div>{"}"}</div>
                       </div>
                       
-                      <div className="mt-6 h-16 bg-gray-800/30 rounded-lg w-full"></div>
+                      <div className="mt-6 h-16 bg-gray-800/30 rounded-lg w-full flex items-center px-4">
+                        <span className="text-gray-400 text-sm font-mono">$ ready to ship? <span className="text-lemon animate-pulse">▌</span></span>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -4,28 +4,28 @@ import { CheckCircle } from "lucide-react";
 
 const features = [
   {
-    title: "Enterprise Experience",
-    description: "We've helped Fortune 500 companies and leading enterprises solve complex technology challenges."
+    title: "You talk to the founder, not a project manager",
+    description: "Faisal runs every project. No hand-off to a junior team you've never met. You get the same engineer from kick-off to launch."
   },
   {
-    title: "Innovation-First Approach",
-    description: "Our solutions leverage the latest technologies and methodologies to give you a competitive edge."
+    title: "Fixed milestones, not open-ended retainers",
+    description: "Every project has a defined scope, timeline, and price before we write a line of code. No surprise invoices, no scope creep on our end."
   },
   {
-    title: "Industry Expertise",
-    description: "Deep domain knowledge across multiple industries enables us to deliver contextual solutions."
+    title: "We've shipped 50+ projects since 2022",
+    description: "Dashboards, internal tools, SaaS portals, e-commerce platforms. All finished. 100% completion rate across every client we've worked with."
   },
   {
-    title: "Global Talent Network",
-    description: "Access to our global pool of skilled technology professionals and specialized expertise."
+    title: "React and TypeScript are all we do",
+    description: "We don't spread across 12 stacks. Deep specialization means faster builds, cleaner code, and fewer bugs in production."
   },
   {
-    title: "Proven Methodologies",
-    description: "Time-tested frameworks and methodologies that ensure predictable outcomes and risk mitigation."
+    title: "You own everything when we're done",
+    description: "Full source code, deployment access, documentation. No vendor lock-in. You can take the codebase and hand it to any engineer in the future."
   },
   {
-    title: "Strategic Partnerships",
-    description: "Strategic alliances with leading technology providers to deliver best-in-class solutions."
+    title: "Weekly demos, not monthly updates",
+    description: "You see working software every week. If something's off, we catch it early — not two days before launch."
   }
 ];
 
@@ -35,9 +35,9 @@ const WhyChooseUs = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">Why Choose Mosivant</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">Why Teams Work With Mosivant</h2>
             <p className="text-xl text-black">
-              We combine technology expertise with industry insights to deliver impactful business outcomes.
+              Not the agency pitch. The honest version.
             </p>
           </div>
 

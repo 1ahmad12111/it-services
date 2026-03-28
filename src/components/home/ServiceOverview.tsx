@@ -2,45 +2,45 @@
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, Database, Globe, ShieldCheck, Smartphone, Server } from "lucide-react";
+import { ArrowRight, BarChart2, Layers, LayoutDashboard, ShoppingCart, Wrench, Zap } from "lucide-react";
 import { Link as RouterLink } from "react-router-dom";
 
 const services = [
   {
-    icon: <Globe className="h-10 w-10 text-black" />,
-    title: "Digital Transformation",
-    description: "End-to-end digital solutions that help organizations reimagine their business models and customer experiences.",
-    link: "/services#website-development"
+    icon: <LayoutDashboard className="h-10 w-10 text-black" />,
+    title: "Custom Dashboards",
+    description: "Real-time ops dashboards that replace weekly spreadsheet exports. Your team gets one source of truth — KPIs, live data, and role-based views built for how you actually work.",
+    link: "/services#dashboard-development"
   },
   {
-    icon: <Server className="h-10 w-10 text-black" />,
-    title: "Cloud Services",
-    description: "Scalable, secure cloud solutions that enable business agility and drive operational efficiency.",
-    link: "/services#it-consulting"
+    icon: <Zap className="h-10 w-10 text-black" />,
+    title: "SaaS MVPs",
+    description: "From idea to working product in 4–6 weeks. We scope it tight, build it fast, and ship something real users can actually test — not a prototype that lives in Figma forever.",
+    link: "/services#saas-development"
   },
   {
-    icon: <Code className="h-10 w-10 text-black" />,
-    title: "Software Engineering",
-    description: "Custom software development with modern tech stacks designed to address your unique business challenges.",
-    link: "/services#software-development"
+    icon: <Layers className="h-10 w-10 text-black" />,
+    title: "Internal Tools",
+    description: "CRM add-ons, admin portals, workflow automation, approval systems. If your team is doing things manually that a custom tool could handle in seconds, we can build it.",
+    link: "/services#internal-tools"
   },
   {
-    icon: <Database className="h-10 w-10 text-black" />,
-    title: "Data & Analytics",
-    description: "Turn your data into actionable insights with our advanced analytics and AI-powered solutions.",
-    link: "/services#it-consulting"
+    icon: <ShoppingCart className="h-10 w-10 text-black" />,
+    title: "E-commerce & Storefronts",
+    description: "Custom Shopify themes, headless storefronts, or full-stack product platforms. Checkout optimization, product filtering, loyalty systems — built to convert, not just look nice.",
+    link: "/services#ecommerce"
   },
   {
-    icon: <Smartphone className="h-10 w-10 text-black" />,
-    title: "Experience Design",
-    description: "Human-centered design approach that creates meaningful digital experiences for your customers.",
-    link: "/services#website-development"
+    icon: <BarChart2 className="h-10 w-10 text-black" />,
+    title: "Analytics & Reporting",
+    description: "Connect your data sources and surface what matters. We integrate with APIs, databases, and third-party tools so leaders can make decisions from one screen — not five tabs.",
+    link: "/services#analytics"
   },
   {
-    icon: <ShieldCheck className="h-10 w-10 text-black" />,
-    title: "Cybersecurity",
-    description: "Comprehensive security solutions to protect your digital assets and ensure business continuity.",
-    link: "/services#it-support"
+    icon: <Wrench className="h-10 w-10 text-black" />,
+    title: "Rescue & Rebuild",
+    description: "Inherited a broken codebase? Stuck with a vendor who went silent? We audit what's there, fix what's fixable, and tell you honestly what needs to be rebuilt from scratch.",
+    link: "/services#rescue"
   }
 ];
 
@@ -49,9 +49,9 @@ const ServiceOverview = () => {
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">Our Solutions Portfolio</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-black">What We Build</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            End-to-end digital solutions designed to drive growth, innovation and operational excellence
+            React and TypeScript, start to finish. Every project is scoped, fixed-price, and shipped on time.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ const ServiceOverview = () => {
             asChild
           >
             <RouterLink to="/services">
-              View All Services <ArrowRight className="ml-2 h-5 w-5" />
+              See How We Work <ArrowRight className="ml-2 h-5 w-5" />
             </RouterLink>
           </Button>
         </div>

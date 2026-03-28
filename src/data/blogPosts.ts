@@ -5,6 +5,17 @@ import { generateBlogImage } from "../utils/blogImages";
 
 const rawBlogPosts: Omit<BlogPost, "image">[] = [
   {
+    id: "saas-custom-admin-dashboard",
+    title: "Why Your SaaS Needs a Custom Admin Dashboard (Not Another Off-the-Shelf Tool)",
+    excerpt: "Tool stacking feels cheap until it slows the company. Here's why growing SaaS teams outgrow off-the-shelf dashboards, how to tell when you're ready for custom, and how to build without a 6-month monster project.",
+    author: "Faisal Ahmad",
+    date: "2026-03-28",
+    category: "Software Development",
+    tags: ["SaaS", "admin dashboard", "custom software", "internal tools", "React", "SMB"],
+    readTime: 10,
+    content: blogContent["saas-custom-admin-dashboard"]
+  },
+  {
     id: "custom-dashboard-5-signs",
     title: "5 Signs Your Business Needs a Custom Dashboard (And How to Build One Fast)",
     excerpt: "Most founders don't realize they need a custom dashboard until manual reporting eats their week. Here are five signs it's time — plus a fast build plan that doesn't drag on for six months.",
