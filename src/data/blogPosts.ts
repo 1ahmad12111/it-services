@@ -16,6 +16,50 @@ const rawBlogPosts: Omit<BlogPost, "image">[] = [
     content: blogContent["replace-spreadsheet-reporting-custom-operations-dashboard"]
   },
   {
+    id: "saas-mvp-development",
+    title: "How to Build a SaaS MVP in 2026 (Without Burning 6 Months and $50K)",
+    excerpt: "Most MVPs fail on scope, not code. This guide breaks down what to build first, what to skip, realistic cost ranges, and how to ship a launch-ready SaaS MVP in weeks.",
+    author: "Faisal Ahmad",
+    date: "2026-03-27",
+    category: "Software Development",
+    tags: ["SaaS MVP development", "MVP", "startup", "product development", "React", "Node.js", "PostgreSQL"],
+    readTime: 12,
+    content: blogContent["saas-mvp-development"]
+  },
+  {
+    id: "hire-web-app-developer",
+    title: "How to Hire a Web App Developer for Your Business (Without Getting Burned)",
+    excerpt: "A practical hiring playbook for founders: how to scope your project, where to find developers, what to ask before signing, and how to avoid expensive hiring mistakes.",
+    author: "Faisal Ahmad",
+    date: "2026-03-28",
+    category: "Web Development",
+    tags: ["hire web app developer", "web app development", "founder guide", "agency vs freelancer", "project scoping"],
+    readTime: 10,
+    content: blogContent["hire-web-app-developer"]
+  },
+  {
+    id: "custom-dashboard-development-cost-timeline",
+    title: "Custom Dashboard Development: Costs, Timeline, and What to Actually Expect",
+    excerpt: "Custom dashboards usually cost $4,000-$15,000 and ship in 3-6 weeks. Here is what raises cost, when custom is the right choice, and how to avoid expensive overbuild.",
+    author: "Faisal Ahmad",
+    date: "2026-03-29",
+    category: "Web Development",
+    tags: ["custom dashboard development", "dashboard cost", "business dashboard", "React dashboard", "operations reporting"],
+    readTime: 12,
+    content: blogContent["custom-dashboard-development-cost-timeline"]
+  },
+  {
+    id: "outsource-web-app-development",
+    title: "How to Outsource Web App Development Without Losing Time, Money, or Your Mind",
+    excerpt: "Outsourcing can work well when you scope clearly and choose the right team. This guide covers process, pricing, timelines, and red flags to watch before you hire.",
+    author: "Mosivant",
+    date: "2026-03-30",
+    category: "Web Development",
+    tags: ["outsource web app development", "web app agency", "software outsourcing", "SMB", "project management"],
+    readTime: 11,
+    content: blogContent["outsource-web-app-development"]
+  },
+  {
     id: "typescript-vs-javascript-business-web-apps",
     title: "TypeScript vs JavaScript for Business Web Apps: Which Saves More Money?",
     excerpt: "TypeScript and JavaScript both power production apps — but for business web apps maintained over time, one consistently saves more money. Here's the honest breakdown with real cost numbers.",

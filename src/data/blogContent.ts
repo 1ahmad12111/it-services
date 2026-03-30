@@ -2537,5 +2537,434 @@ export const blogContent: Record<string, ContentSection[]> = {
       type: "callout",
       text: "Ready to replace your spreadsheet stack with a live operations dashboard? We build custom React + TypeScript dashboards for SMBs — focused scope, fast delivery, clean code. Start with a free 15-minute consultation at /contact."
     }
+  ],
+  "saas-mvp-development": [
+    {
+      type: "paragraph",
+      text: "Most SaaS MVPs fail before launch because the team builds too much, not too little. I keep seeing the same pattern: extra features, late feedback, and a budget that runs out before user one signs in."
+    },
+    {
+      type: "paragraph",
+      text: "If you want traction fast, your first version must prove one idea. Not ten."
+    },
+    {
+      type: "heading2",
+      text: "What MVP Really Means"
+    },
+    {
+      type: "paragraph",
+      text: "An MVP is the smallest product that can test your core hypothesis with real users. It is not your full v1. If your brief includes advanced analytics, full admin tooling, multi-role billing, and polished onboarding on day one, you are planning a bigger release."
+    },
+    {
+      type: "heading2",
+      text: "How I Scope a SaaS MVP"
+    },
+    {
+      type: "heading3",
+      text: "1. Define one repeat user loop"
+    },
+    {
+      type: "paragraph",
+      text: "Write one sentence: a user does X and gets Y value in under Z minutes. If this is fuzzy, your product definition is still fuzzy."
+    },
+    {
+      type: "heading3",
+      text: "2. Decide what to build and what to fake"
+    },
+    {
+      type: "list",
+      items: [
+        "Manual back-office steps are fine in early weeks",
+        "Hardcoded values are fine until patterns stabilize",
+        "Use Stripe, Clerk, and managed infra instead of custom replacements"
+      ]
+    },
+    {
+      type: "heading3",
+      text: "3. Split must-have vs later"
+    },
+    {
+      type: "paragraph",
+      text: "Ask each feature: can we validate without this? If yes, move it to phase two."
+    },
+    {
+      type: "heading3",
+      text: "4. Map user flow, not feature wishlist"
+    },
+    {
+      type: "paragraph",
+      text: "Users complete flows. They do not care about your internal feature list. Cut anything that does not move a new user to first value."
+    },
+    {
+      type: "heading3",
+      text: "5. Define launch before coding"
+    },
+    {
+      type: "paragraph",
+      text: "Set a clear done line. Without that, an MVP turns into endless edits."
+    },
+    {
+      type: "heading2",
+      text: "What SaaS MVP Development Costs in 2026"
+    },
+    {
+      type: "list",
+      items: [
+        "Micro MVP: $3,000-$7,000 for one core workflow and basic auth",
+        "Launch-ready MVP: $8,000-$18,000 with auth, billing, and usable UX",
+        "SaaS foundation build: $20,000-$40,000+ for multi-tenant setup and deeper ops tooling"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Typical Timeline"
+    },
+    {
+      type: "list",
+      items: [
+        "Scoping and wireframes: 3-5 days",
+        "Backend and schema: 5-7 days",
+        "Frontend core flows: 7-10 days",
+        "Integrations and launch prep: 6-10 days",
+        "Total for launch-ready MVP: about 3-6 weeks"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Stack I Recommend for Fast Delivery"
+    },
+    {
+      type: "list",
+      items: [
+        "Frontend: React or Next.js",
+        "Backend: Node.js with a clean API layer",
+        "Database: PostgreSQL on a managed platform",
+        "Auth: Clerk or Supabase Auth",
+        "Billing: Stripe",
+        "Deploy: Vercel plus Railway or Fly.io"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Mistakes That Blow Up MVP Budgets"
+    },
+    {
+      type: "list",
+      items: [
+        "Building for 10,000 users before you have 10",
+        "Waiting for perfection before user testing",
+        "Treating the MVP as a finished product instead of a learning tool"
+      ]
+    },
+    {
+      type: "callout",
+      text: "If you want a scoped SaaS MVP plan with realistic cost and timeline, start with a short discovery call and lock phase-one scope before development."
+    }
+  ],
+  "hire-web-app-developer": [
+    {
+      type: "paragraph",
+      text: "Hiring a web app developer gets expensive when the scope is vague. Most bad outcomes start before the contract, not after it."
+    },
+    {
+      type: "paragraph",
+      text: "Here is the practical playbook I would use if I had to hire a team this week."
+    },
+    {
+      type: "heading2",
+      text: "Start With a One-Page Brief"
+    },
+    {
+      type: "list",
+      items: [
+        "Who uses the app and what they need to do",
+        "What data goes in and out",
+        "What success looks like in 90 days"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "Without this, quotes are guesses and you cannot compare proposals fairly."
+    },
+    {
+      type: "heading2",
+      text: "Where to Find Developers"
+    },
+    {
+      type: "list",
+      items: [
+        "Freelance platforms for individual contributors and flexible budgets",
+        "Small studios for end-to-end ownership and delivery discipline",
+        "LinkedIn and referrals for high-signal candidates outside marketplaces"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "What Matters Most During Vetting"
+    },
+    {
+      type: "list",
+      items: [
+        "Relevant shipped work, not generic portfolio claims",
+        "Clear communication in plain language",
+        "Questions before quote, not instant pricing",
+        "Defined QA process and post-launch support",
+        "Clear source-code ownership terms"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Red Flags"
+    },
+    {
+      type: "list",
+      items: [
+        "Very low quote compared with every other quote",
+        "No change-request process",
+        "No access to the engineers who will do the work",
+        "No mention of testing, rollout, or warranty"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "How to Structure the Contract"
+    },
+    {
+      type: "paragraph",
+      text: "Use a paid discovery phase first. Then break work into milestones with clear deliverables, weekly demos, and milestone-tied payments. This gives both sides clarity and keeps the build under control."
+    },
+    {
+      type: "heading2",
+      text: "Typical Cost Ranges"
+    },
+    {
+      type: "list",
+      items: [
+        "Internal tool or dashboard: $4,000-$12,000",
+        "Client portal: $6,000-$18,000",
+        "SaaS MVP: $8,000-$25,000",
+        "Complex integration-heavy app: $12,000-$40,000+"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "The right hire is rarely the cheapest bidder. It is the team that asks hard questions early, scopes tightly, and shows proof of similar delivery."
+    },
+    {
+      type: "callout",
+      text: "Before signing anyone, ask for project examples, team roles, QA plan, communication cadence, and written code ownership terms."
+    }
+  ],
+  "custom-dashboard-development-cost-timeline": [
+    {
+      type: "paragraph",
+      text: "A custom dashboard can save a lot of manual reporting time, but only if the scope stays focused. If you overbuild on day one, budget and timeline both slip."
+    },
+    {
+      type: "paragraph",
+      text: "This guide gives you realistic numbers and a simple way to decide whether custom is worth it."
+    },
+    {
+      type: "heading2",
+      text: "When Custom Dashboard Development Makes Sense"
+    },
+    {
+      type: "list",
+      items: [
+        "Your data sits in multiple systems and needs one unified view",
+        "Different user roles need different visibility",
+        "Your team uses this every day and needs speed and clarity",
+        "Off-the-shelf tools keep forcing workarounds"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "When It Does Not"
+    },
+    {
+      type: "list",
+      items: [
+        "One platform already gives you near-enough reporting",
+        "You only need occasional ad hoc queries",
+        "You need production results in a few days with zero iteration"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Custom Dashboard Development Cost"
+    },
+    {
+      type: "list",
+      items: [
+        "$3,000-$6,000: single-source dashboard with one role and core charts",
+        "$6,000-$12,000: multi-source data, role-based views, exports, deeper filters",
+        "$12,000-$20,000+: multi-tenant logic, advanced permissions, heavy integrations"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Timeline You Can Plan Around"
+    },
+    {
+      type: "list",
+      items: [
+        "Focused dashboard: 2-3 weeks",
+        "Most business dashboards: 3-5 weeks",
+        "Complex product-grade dashboards: 5-8 weeks"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "What Raises Price"
+    },
+    {
+      type: "list",
+      items: [
+        "True real-time updates instead of periodic refresh",
+        "Many third-party integrations with inconsistent APIs",
+        "Custom calculated metrics across systems",
+        "Advanced filter builders, saved views, and exports",
+        "Granular authentication and permission rules"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Tooling vs Custom Build"
+    },
+    {
+      type: "paragraph",
+      text: "Retool or Metabase can ship fast for internal-only needs. Custom works better when UX, ownership, and long-term fit matter more than immediate setup speed."
+    },
+    {
+      type: "heading2",
+      text: "What Good Delivery Looks Like"
+    },
+    {
+      type: "list",
+      items: [
+        "A scoped estimate with assumptions, not a wide price band",
+        "Week-by-week milestones with working software demos",
+        "Data model discussion before UI polish",
+        "Full code and deployment ownership at handover"
+      ]
+    },
+    {
+      type: "callout",
+      text: "If your team spends hours every week merging spreadsheet reports, a focused phase-one dashboard usually pays for itself within months."
+    }
+  ],
+  "outsource-web-app-development": [
+    {
+      type: "paragraph",
+      text: "Outsourcing web app development works when process is solid. It fails when scope is fuzzy and communication is slow."
+    },
+    {
+      type: "paragraph",
+      text: "The teams that get good results are not lucky. They set rules before build starts."
+    },
+    {
+      type: "heading2",
+      text: "When Outsourcing Is a Good Fit"
+    },
+    {
+      type: "list",
+      items: [
+        "You need to start in days, not after a long hiring cycle",
+        "You know the business problem but need technical execution help",
+        "You do not want permanent in-house engineering headcount yet",
+        "You want a team that already ships similar apps every month"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Common App Types Outsourced by SMB Teams"
+    },
+    {
+      type: "list",
+      items: [
+        "Internal dashboards and reporting tools",
+        "SaaS MVPs with auth and billing basics",
+        "Business workflow automation tools",
+        "Custom integration and API layers"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Scope Before You Hire"
+    },
+    {
+      type: "list",
+      items: [
+        "Business problem in plain language",
+        "User groups and expected volume",
+        "Top three features that must exist in phase one",
+        "Systems and data sources that already exist",
+        "A 90-day success metric"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "This one-page brief will improve quote quality more than any negotiation tactic."
+    },
+    {
+      type: "heading2",
+      text: "How to Evaluate an Agency"
+    },
+    {
+      type: "list",
+      items: [
+        "Ask for similar shipped projects, not generic capability decks",
+        "Confirm who will code, test, and manage delivery",
+        "Review scope-change process before contract signing",
+        "Require weekly status updates and a shared tracker",
+        "Confirm post-launch warranty and support terms"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Typical Outsourcing Timeline"
+    },
+    {
+      type: "list",
+      items: [
+        "Weeks 1-2: discovery and technical scope",
+        "Weeks 2-4: design and early prototypes",
+        "Weeks 4-8: feature build and integrations",
+        "Weeks 8-10: QA and hardening",
+        "Weeks 10-12: launch and handover"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Typical Pricing"
+    },
+    {
+      type: "list",
+      items: [
+        "Internal dashboard: $4,000-$10,000",
+        "Automation tool: $5,000-$12,000",
+        "SaaS MVP without billing: $10,000-$18,000",
+        "SaaS MVP with billing and admin: $15,000-$28,000",
+        "Custom API layer: $3,000-$8,000"
+      ]
+    },
+    {
+      type: "heading2",
+      text: "Red Flags You Should Not Ignore"
+    },
+    {
+      type: "list",
+      items: [
+        "No discovery step before pricing",
+        "No daily timezone overlap for communication",
+        "No explicit QA stage",
+        "No handover checklist for repo, infra, and docs",
+        "Sales pitch built only around AI speed claims"
+      ]
+    },
+    {
+      type: "callout",
+      text: "If you outsource, protect quality with a strong brief, milestone-based delivery, and clear ownership terms from day one."
+    }
   ]
 };
