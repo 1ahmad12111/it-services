@@ -2193,5 +2193,349 @@ export const blogContent: Record<string, ContentSection[]> = {
       type: "callout",
       text: "Building a web app or dashboard for your business and want to get the architecture right from day one? We build React + TypeScript apps for SMBs and SaaS teams — reliable delivery, clean code, and clear timelines. Visit /contact to start the conversation."
     }
+  ],
+
+  "replace-spreadsheet-reporting-custom-operations-dashboard": [
+    {
+      type: "paragraph",
+      text: "Somewhere in your business right now, someone is copy-pasting numbers from one spreadsheet into another. Maybe it's you. Maybe it's your ops manager. Either way, it's eating hours every week — hours spent doing work that should take seconds."
+    },
+    {
+      type: "paragraph",
+      text: "Spreadsheets were never meant to be your operations brain. They're useful for quick calculations and small datasets, but when your business grows and data starts flowing in from multiple systems — your CRM, your project management tool, your billing platform, your fulfilment system — spreadsheets become the bottleneck, not the solution."
+    },
+    {
+      type: "paragraph",
+      text: "This guide walks through exactly how to replace spreadsheet-based reporting with a custom operations dashboard: why it matters, when it's worth the investment, what to build, and how to build it without a six-month monster project."
+    },
+    {
+      type: "heading2",
+      text: "Why Spreadsheets Break at Scale"
+    },
+    {
+      type: "paragraph",
+      text: "Spreadsheets are flexible by design, but that flexibility becomes a liability as your team and data grow. Here's where they consistently fail:"
+    },
+    {
+      type: "heading3",
+      text: "Manual Data Entry = Stale Data"
+    },
+    {
+      type: "paragraph",
+      text: "Your spreadsheet is only as current as the last time someone updated it. For businesses making real-time decisions — on inventory, pipeline, team capacity, revenue — stale data leads to bad decisions. By the time your weekly report is compiled on Monday morning, it already describes last week."
+    },
+    {
+      type: "heading3",
+      text: "No Single Source of Truth"
+    },
+    {
+      type: "paragraph",
+      text: "When multiple people maintain copies of 'the master spreadsheet,' you eventually end up with three versions of the truth. Teams argue over numbers. Decisions get delayed while someone figures out which version is right. This is a systems problem, not a people problem — and no amount of better spreadsheet discipline fixes it."
+    },
+    {
+      type: "heading3",
+      text: "Formula Debt Compounds Over Time"
+    },
+    {
+      type: "paragraph",
+      text: "Spreadsheet logic is invisible. A formula in column Z references columns A, D, and Q, pulls data from a hidden sheet, and was written by someone who left 18 months ago. Nobody wants to touch it. The business works around it. The debt builds."
+    },
+    {
+      type: "heading3",
+      text: "No Permissions, No Audit Trail"
+    },
+    {
+      type: "paragraph",
+      text: "Spreadsheets treat all editors equally. There's no way to show a sales rep only their pipeline while hiding margins. There's no record of who changed what, when, and why. In regulated industries, this alone is a compliance risk."
+    },
+    {
+      type: "heading3",
+      text: "Visualisation Is an Afterthought"
+    },
+    {
+      type: "paragraph",
+      text: "Yes, Excel and Google Sheets can make charts. But generating a meaningful, executive-ready visual from raw operational data requires significant manual effort that gets repeated every reporting cycle — time that compounds painfully."
+    },
+    {
+      type: "heading2",
+      text: "What a Custom Operations Dashboard Actually Replaces"
+    },
+    {
+      type: "paragraph",
+      text: "Before building anything, it helps to be specific about what a custom dashboard is replacing. In most SMBs, the typical spreadsheet stack looks something like this:"
+    },
+    {
+      type: "list",
+      items: [
+        "A weekly KPI tracker updated manually from CRM exports",
+        "A project status tracker maintained by a project manager",
+        "A revenue and billing report pulled from accounting software and reformatted",
+        "An inventory or fulfilment tracker synced ad hoc from an ops tool",
+        "A headcount or capacity spreadsheet updated in team meetings"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "A well-scoped operations dashboard pulls these data sources into a single live view — no manual exports, no reformatting, no version confusion. The business sees its real operating state in real time, and can take action from a single screen."
+    },
+    {
+      type: "heading2",
+      text: "5 Signs You're Ready for a Custom Operations Dashboard"
+    },
+    {
+      type: "paragraph",
+      text: "Not every business is at the right inflection point to justify a custom build. Here are five signals that you've crossed the threshold:"
+    },
+    {
+      type: "heading3",
+      text: "1. You're Spending 5+ Hours a Week on Reporting"
+    },
+    {
+      type: "paragraph",
+      text: "If a team member's job description has 'compile the weekly report' as a standing task, that's 200+ hours a year spent on data wrangling instead of decision-making. At a fully-loaded cost of $40–$80/hr, that's $8,000–$16,000 in annual labour for a task that automation could handle continuously."
+    },
+    {
+      type: "heading3",
+      text: "2. Decisions Get Delayed Waiting for Reports"
+    },
+    {
+      type: "paragraph",
+      text: "If your leadership team waits for the Monday report to make decisions that should have been made on Thursday, you're operating with structural lag. Custom dashboards eliminate the reporting lag entirely."
+    },
+    {
+      type: "heading3",
+      text: "3. You Have 3+ Data Sources That Don't Talk to Each Other"
+    },
+    {
+      type: "paragraph",
+      text: "CRM plus project management plus billing plus fulfilment — each lives in its own silo. A custom dashboard acts as the integration layer, pulling data from all systems into a unified view without requiring anyone to manually stitch it together."
+    },
+    {
+      type: "heading3",
+      text: "4. Your Team Works From Different Spreadsheet Versions"
+    },
+    {
+      type: "paragraph",
+      text: "When version control becomes a regular conversation — 'are you looking at the updated one?' — you've outgrown the medium. This is the moment to centralise."
+    },
+    {
+      type: "heading3",
+      text: "5. You Have Role-Based Access Requirements"
+    },
+    {
+      type: "paragraph",
+      text: "Sales reps shouldn't see margins. Contractors shouldn't see payroll. Clients should see project progress, not internal capacity. Spreadsheets can't do this cleanly. A custom dashboard builds permissions in from day one."
+    },
+    {
+      type: "heading2",
+      text: "What to Include in Your Operations Dashboard (Core Features)"
+    },
+    {
+      type: "paragraph",
+      text: "Scope creep kills dashboard projects before they launch. Start with the essentials, ship fast, then layer in complexity. Here's what belongs in version one:"
+    },
+    {
+      type: "heading3",
+      text: "Live Data Integrations"
+    },
+    {
+      type: "paragraph",
+      text: "Connect directly to your data sources via API rather than relying on exports. Common integrations for SMB operations dashboards include Salesforce, HubSpot, or Pipedrive (CRM); QuickBooks, Xero, or Stripe (billing); Jira, Linear, Asana, or Monday (project tracking); Shopify or WooCommerce (ecommerce); and Google Sheets or Airtable (for teams transitioning from spreadsheets gradually)."
+    },
+    {
+      type: "heading3",
+      text: "KPI Cards and Trend Lines"
+    },
+    {
+      type: "paragraph",
+      text: "The top of every good operations dashboard shows the 5–8 numbers that actually matter: revenue this month vs last month, open pipeline, active projects, team utilisation, support ticket volume, fulfilment rate. Cards with directional trend indicators (up/down vs previous period) make status visible at a glance without reading any data."
+    },
+    {
+      type: "heading3",
+      text: "Drill-Down Tables"
+    },
+    {
+      type: "paragraph",
+      text: "Behind every KPI card is a table of records. Good dashboards let you click from 'Open Pipeline: $240K' to the actual list of deals, sortable and filterable, without switching to a different application."
+    },
+    {
+      type: "heading3",
+      text: "Role-Based Views"
+    },
+    {
+      type: "paragraph",
+      text: "Different users need different lenses on the same data. Executives want the revenue summary. Account managers want their accounts. Operations want capacity. Build views per role, not one view that tries to serve everyone and serves no one well."
+    },
+    {
+      type: "heading3",
+      text: "Alerts and Notifications"
+    },
+    {
+      type: "paragraph",
+      text: "A dashboard that requires someone to log in to check for problems is still reactive. Add alert logic for key thresholds — pipeline drops below $X, a project goes overdue, inventory hits a reorder point — and push those alerts to Slack, email, or SMS so the right person knows immediately."
+    },
+    {
+      type: "heading2",
+      text: "The Build Approach: What Works for SMBs"
+    },
+    {
+      type: "paragraph",
+      text: "The most common mistake SMBs make when building an operations dashboard is treating it like an enterprise BI project. They spend weeks on discovery, months on design, and end up with something too complex to use or too slow to ship. The right approach is faster and more iterative."
+    },
+    {
+      type: "heading3",
+      text: "Phase 1: The Minimum Useful Dashboard (4–6 Weeks)"
+    },
+    {
+      type: "paragraph",
+      text: "Identify the three data sources causing the most manual work and the five KPIs the leadership team checks most often. Build a read-only dashboard that pulls live data from those three sources and displays those five KPIs with drill-down capability. Deploy it. Use it. Identify what's missing after two weeks of actual use — that's your phase two scope."
+    },
+    {
+      type: "heading3",
+      text: "Phase 2: Role-Based Access and Additional Sources (4–6 Weeks)"
+    },
+    {
+      type: "paragraph",
+      text: "Add authentication and role-based views. Integrate the remaining data sources that made the phase-one list. Add alert rules for the most critical thresholds. This is also the phase where you add any data entry capabilities if the dashboard needs to replace not just reporting but also data collection workflows."
+    },
+    {
+      type: "heading3",
+      text: "Phase 3: Advanced Analytics and Automation (Ongoing)"
+    },
+    {
+      type: "paragraph",
+      text: "Once the core is solid and the team actually uses it, add predictive analytics, automated reporting (PDF exports sent on schedule), deeper integrations, and any AI-assisted anomaly detection you've identified. Phase 3 is ongoing — it evolves as the business evolves."
+    },
+    {
+      type: "heading2",
+      text: "Technology Stack: What We Actually Recommend"
+    },
+    {
+      type: "paragraph",
+      text: "For SMB operations dashboards in 2026, the most cost-effective and maintainable stack is:"
+    },
+    {
+      type: "list",
+      items: [
+        "Frontend: React with TypeScript — fast, highly componentised, large ecosystem of charting and data grid libraries",
+        "Data visualisation: Recharts, Tremor, or Nivo — production-quality charts with minimal setup",
+        "Data grid: TanStack Table — the gold standard for sortable, filterable, paginated tables in React",
+        "Backend/API: Node.js or Python (FastAPI) — straightforward integration layer between your data sources and your frontend",
+        "Database: PostgreSQL for structured operational data, with a caching layer (Redis) if real-time polling from multiple APIs",
+        "Authentication: Clerk, Auth0, or Supabase Auth — role-based access without building auth from scratch",
+        "Hosting: Vercel (frontend) + Railway or Render (backend) — low DevOps overhead, reasonable cost at SMB scale"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "This stack ships fast, scales to millions of records without architectural changes, and is maintainable by any competent React/TypeScript team — not just the original developers."
+    },
+    {
+      type: "heading2",
+      text: "Cost to Build: Realistic Numbers"
+    },
+    {
+      type: "paragraph",
+      text: "A custom operations dashboard isn't free, but it's more affordable than most SMBs expect — and the ROI calculation is straightforward."
+    },
+    {
+      type: "list",
+      items: [
+        "Phase 1 (minimum useful dashboard, 2–3 integrations): $4,000 – $10,000",
+        "Phase 2 (role-based access, additional integrations, alerts): $5,000 – $12,000",
+        "Full scope (phases 1+2 delivered together): $8,000 – $18,000",
+        "Ongoing maintenance and feature additions: $500 – $2,000/month (optional)"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "Compare that to the alternative: a team member spending 8–10 hours per week on manual reporting, multiplied by their fully-loaded cost. At $50/hr, that's $20,000–$25,000 in annual labour. A well-scoped dashboard typically pays for itself within 6–12 months and keeps compounding savings every year after that."
+    },
+    {
+      type: "heading2",
+      text: "Common Mistakes to Avoid"
+    },
+    {
+      type: "heading3",
+      text: "Building Everything at Once"
+    },
+    {
+      type: "paragraph",
+      text: "The ten-tab dashboard with real-time everything, predictive analytics, and AI anomaly detection sounds great until you're six months in with nothing deployed and the team is still using spreadsheets. Ship a focused v1 in weeks, not months."
+    },
+    {
+      type: "heading3",
+      text: "Skipping Data Quality Work"
+    },
+    {
+      type: "paragraph",
+      text: "A dashboard that surfaces inaccurate data is worse than no dashboard — it creates false confidence. Before you build the interface, audit your underlying data sources. If your CRM has missing fields or inconsistent tagging, fix that first. Garbage in, garbage out applies directly."
+    },
+    {
+      type: "heading3",
+      text: "Not Involving the Actual Users"
+    },
+    {
+      type: "paragraph",
+      text: "The ops manager who currently maintains the spreadsheets knows exactly what matters and what's noise. Get them in the room during the design phase. The best dashboards are built with their users, not for them."
+    },
+    {
+      type: "heading3",
+      text: "Over-Engineering the Backend"
+    },
+    {
+      type: "paragraph",
+      text: "Most SMB operations dashboards don't need a complex microservices architecture, a dedicated data warehouse, or a real-time streaming pipeline. A well-indexed PostgreSQL database with scheduled syncs from your APIs handles the majority of business use cases cleanly and cheaply. Scale the infrastructure when the data demands it — not before."
+    },
+    {
+      type: "heading2",
+      text: "A Quick ROI Calculation Template"
+    },
+    {
+      type: "paragraph",
+      text: "Before committing to a build, run this quick calculation:"
+    },
+    {
+      type: "list",
+      items: [
+        "Hours per week your team spends on manual reporting/data wrangling: ___",
+        "Fully-loaded hourly cost of that team member(s): $___",
+        "Annual manual reporting cost: (hours × cost × 52) = $___",
+        "Estimated dashboard build cost: $___",
+        "Break-even point: build cost ÷ (annual savings ÷ 12) = ___ months"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "Most SMBs we talk to find their break-even is between 6 and 18 months, with the dashboard continuing to save money for years afterward. The decision usually becomes easy once the numbers are on paper."
+    },
+    {
+      type: "heading2",
+      text: "Getting Started: The First Conversation"
+    },
+    {
+      type: "paragraph",
+      text: "You don't need a perfect spec to start. You need a clear answer to three questions:"
+    },
+    {
+      type: "list",
+      items: [
+        "What are the 5–8 KPIs your leadership team checks most often?",
+        "What are the 2–3 data sources causing the most manual work right now?",
+        "Who needs access, and what should each role see?"
+      ]
+    },
+    {
+      type: "paragraph",
+      text: "Answer those three questions and you have 80% of what a development team needs to scope a phase-one dashboard. The rest becomes clear once you're using real software instead of planning documents."
+    },
+    {
+      type: "paragraph",
+      text: "The companies that get the most out of custom dashboards are the ones that start focused, ship fast, and iterate based on actual use. The ones that wait for the perfect requirements document end up waiting forever."
+    },
+    {
+      type: "callout",
+      text: "Ready to replace your spreadsheet stack with a live operations dashboard? We build custom React + TypeScript dashboards for SMBs — focused scope, fast delivery, clean code. Start with a free 15-minute consultation at /contact."
+    }
   ]
 };

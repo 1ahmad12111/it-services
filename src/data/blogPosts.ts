@@ -5,6 +5,17 @@ import { generateBlogImage } from "../utils/blogImages";
 
 const rawBlogPosts: Omit<BlogPost, "image">[] = [
   {
+    id: "replace-spreadsheet-reporting-custom-operations-dashboard",
+    title: "How to Replace Spreadsheet Reporting with a Custom Operations Dashboard",
+    excerpt: "Spreadsheets were never meant to run your operations. Here's a practical guide to replacing manual reporting workflows with a live custom dashboard — scope, tech stack, realistic costs, and how to ship phase one in 4–6 weeks.",
+    author: "Faisal Ahmad",
+    date: "2026-03-30",
+    category: "Web Development",
+    tags: ["operations dashboard", "custom dashboard", "spreadsheet automation", "React", "TypeScript", "SMB", "business intelligence", "web app"],
+    readTime: 12,
+    content: blogContent["replace-spreadsheet-reporting-custom-operations-dashboard"]
+  },
+  {
     id: "typescript-vs-javascript-business-web-apps",
     title: "TypeScript vs JavaScript for Business Web Apps: Which Saves More Money?",
     excerpt: "TypeScript and JavaScript both power production apps — but for business web apps maintained over time, one consistently saves more money. Here's the honest breakdown with real cost numbers.",
